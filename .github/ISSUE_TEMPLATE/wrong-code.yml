@@ -1,0 +1,36 @@
+name: Wrong code
+description: A listed cheat doesn't work, or its effect, requirement or platform is wrong.
+title: "Wrong code: "
+labels: ["wrong code"]
+body:
+  - type: input
+    id: game
+    attributes:
+      label: Game
+    validations:
+      required: true
+  - type: input
+    id: platform
+    attributes:
+      label: Platform
+      description: The platform tab you were on, and your exact console if you know it (for example PS4, Xbox Series X).
+    validations:
+      required: true
+  - type: input
+    id: cheat
+    attributes:
+      label: Cheat
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: What you entered, and what the game did.
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Where the correct code is listed
+      description: A link helps a lot. Codes are only changed when a source backs them up.

@@ -27,7 +27,7 @@
   }
 
   var SORTS = [['new', 'Newest'], ['old', 'Oldest'], ['az', 'A–Z'], ['most', 'Most cheats']];
-  var PLATS = ['All', 'PC', 'PlayStation', 'Xbox', 'Handheld'];
+  var PLATS = ['All', 'PC', 'PlayStation', 'Xbox', 'Switch', 'Handheld'];
   var cmp = {
     new: function (a, b) { return b.order - a.order; },
     old: function (a, b) { return a.order - b.order; },
@@ -61,7 +61,7 @@
     if (g.pending) {
       act.appendChild(el('p', { style: 'margin:0;font-weight:500', text: 'No cheats are confirmed for ' + g.short + ' yet.' }));
     } else {
-      act.appendChild(el('a', { class: 'btn-primary', href: 'game.html#' + g.slug, text: 'See all ' + g.count + ' ' + g.short + ' cheats' }));
+      act.appendChild(el('a', { class: 'btn-primary', href: 'game.html?g=' + g.slug, text: 'See all ' + g.count + ' ' + g.short + ' cheats' }));
       if (g.sample) act.appendChild(el('span', { class: 'muted', style: 'font-size:15px' }, ['Example: ', el('span', { class: 'mono', style: 'font-weight:600;color:var(--ink)', text: g.sample })]));
     }
   }

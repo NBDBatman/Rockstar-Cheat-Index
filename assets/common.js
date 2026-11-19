@@ -41,6 +41,10 @@ var CI = (function () {
   var XBOX = { Cross: 'A', Circle: 'B', Square: 'X', Triangle: 'Y', L1: 'LB', R1: 'RB', L2: 'LT', R2: 'RT', Up: '↑', Down: '↓', Left: '←', Right: '→' };
   var XBOX_WORDS = { Cross: 'A', Circle: 'B', Square: 'X', Triangle: 'Y', L1: 'LB', R1: 'RB', L2: 'LT', R2: 'RT' };
   var DS = { Up: '↑', Down: '↓', Left: '←', Right: '→' };
+  // Switch (Definitive Edition): same button positions as PlayStation, Nintendo letters.
+  var SWITCH_WORDS = { Cross: 'B', Circle: 'A', Square: 'Y', Triangle: 'X', L1: 'L', R1: 'R', L2: 'ZL', R2: 'ZR' };
+  var SWITCH = { Cross: 'B', Circle: 'A', Square: 'Y', Triangle: 'X', L1: 'L', R1: 'R', L2: 'ZL', R2: 'ZR', Up: '↑', Down: '↓', Left: '←', Right: '→' };
+  var WORDS = { xbox: XBOX_WORDS, 'switch': SWITCH_WORDS };
 
   function parseCombo(s) {
     var hold = null;
@@ -49,13 +53,14 @@ var CI = (function () {
   }
   function comboWords(s, pad) {
     var c = parseCombo(s);
-    var words = c.keys.map(function (k) { return pad === 'xbox' ? (XBOX_WORDS[k] || k) : k; });
-    var h = c.hold ? (pad === 'xbox' ? (XBOX_WORDS[c.hold] || c.hold) : c.hold) : null;
+    var w = WORDS[pad] || {};
+    var words = c.keys.map(function (k) { return w[k] || k; });
+    var h = c.hold ? (w[c.hold] || c.hold) : null;
     return (h ? 'Hold ' + h + ', then ' : '') + words.join(', ');
   }
   function renderCombo(s, pad) {
     var c = parseCombo(s);
-    var map = pad === 'xbox' ? XBOX : pad === 'ds' ? DS : PS;
+    var map = pad === 'xbox' ? XBOX : pad === 'switch' ? SWITCH : pad === 'ds' ? DS : PS;
     var wrap = el('span', { class: 'keys', role: 'img', 'aria-label': comboWords(s, pad) });
     if (c.hold) wrap.appendChild(el('span', { class: 'hold', 'aria-hidden': 'true', text: 'Hold ' + (map[c.hold] || c.hold) + ', then' }));
     c.keys.forEach(function (k) { wrap.appendChild(el('span', { class: 'key', 'aria-hidden': 'true', text: map[k] || k })); });
@@ -127,6 +132,36 @@ var CI = (function () {
     return null;
   }
 
-  return { el: el, getJSON: getJSON, lastGame: lastGame, renderCombo: renderCombo, comboWords: comboWords, cover: cover, countText: countText,
+  // The visitor's last picked platform id (pc, ps, xbox...), used to open the next game on it.
+  function lastPlatform(id) {
+    try {
+      if (id) localStorage.setItem('ci-plat', id);
+      else return localStorage.getItem('ci-plat');
+    } catch (e) {}
+    return null;
+  }
+
+  // Starred cheats, by game slug: { "gta-sa": ["Effect name", ...] }. Kept in memory too,
+  // so starring still works for the visit when the browser blocks storage.
+  var starMem = null;
+  function readStars() {
+    if (starMem) return starMem;
+    try { starMem = JSON.parse(localStorage.getItem('ci-stars') || '{}') || {}; } catch (e) { starMem = {}; }
+    return starMem;
+  }
+  function stars(slug) { return (readStars()[slug] || []).slice(); }
+  function setStars(slug, list) {
+    var all = readStars();
+    if (list.length) all[slug] = list; else delete all[slug];
+    try { localStorage.setItem('ci-stars', JSON.stringify(all)); } catch (e) {}
+  }
+
+  // Works offline after the first visit. Browsers only allow this on https and localhost.
+  if ('serviceWorker' in navigator && window.isSecureContext) {
+    window.addEventListener('load', function () { navigator.serviceWorker.register('sw.js').catch(function () {}); });
+  }
+
+  return { el: el, getJSON: getJSON, lastGame: lastGame, lastPlatform: lastPlatform, stars: stars, setStars: setStars,
+    renderCombo: renderCombo, comboWords: comboWords, cover: cover, countText: countText,
     focusKey: focusKey, restoreFocus: restoreFocus, copy: copy, announce: announce };
 })();

@@ -1,0 +1,44 @@
+name: Found a missing code
+description: You know the code for a cheat marked TBD, or a cheat that isn't listed.
+title: "Found code: "
+labels: ["new code"]
+body:
+  - type: input
+    id: game
+    attributes:
+      label: Game
+    validations:
+      required: true
+  - type: input
+    id: platform
+    attributes:
+      label: Platform
+    validations:
+      required: true
+  - type: input
+    id: cheat
+    attributes:
+      label: Cheat
+    validations:
+      required: true
+  - type: input
+    id: code
+    attributes:
+      label: Code
+      description: Exactly as you enter it. For combos, the buttons in order, for example "R1 R2 L1 Up Down".
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Source
+      description: Where you found it. GTA VI codes are only added once two independent sources agree.
+    validations:
+      required: true
+  - type: checkboxes
+    id: official
+    attributes:
+      label: Official cheats only
+      options:
+        - label: This is a code built into the game, not a mod, trainer or cheat device.
+          required: true

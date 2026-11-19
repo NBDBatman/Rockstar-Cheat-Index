@@ -61,6 +61,8 @@ Each cheat looks like:
 - San Andreas only: `xbox360` (2014 port) swaps bumpers and triggers: L1→LT, L2→LB, R1→RT, R2→RB. `xboxog` (2005 original Xbox) is L1→L trigger, R1→R trigger, L2→White, R2→Black. The `xboxog` input isn't derived: each cheat has its own `xboxog` code, written with PlayStation names, and only where iGrandTheftAuto's Xbox list matched. Some original Xbox sequences differ from PS2, so don't derive it.
 - `"not": ["xbox", "switch"]` hides a cheat on those tabs even when the input is derived. Used for cheats removed from the Definitive Edition, on tabs that only cover the Definitive Edition.
 - Switch (Definitive Edition only) keeps button positions: Cross→B, Circle→A, Square→Y, Triangle→X, L1→L, R1→R, L2→ZL, R2→ZR. Checked against Nintendo Wire's lists for all three games.
+- `risk` is a side effect that can harm a save, crash the game or block a mission. It shows as a "Careful:" line in the warning colour. Needs two sources that describe the same effect; skip minor glitches.
+- `checked` (game files only, `YYYY-MM-DD`) is the day the game's codes were last checked against sources. Update it whenever you re-check, never otherwise. The data check requires it.
 - `requirement` is something the player must have or do first: a newspaper unlock, a specific edition, phone only. `note` is anything else, like an alternate code.
 - Categories in use: Player, Weapons, Money, Wanted, Vehicles, World, Pedestrians, Score, Levels, Other.
 
@@ -75,6 +77,10 @@ Each cheat looks like:
 - When cheats are added or removed, update `count` in `data/games.json`.
 - Every new game needs its cover, `covers/<slug>.jpg` at 600x800, and a `sitemap.xml` entry, in the same change.
 - Stars are saved by effect name (localStorage `ci-stars`), so renaming an effect drops anyone's star on it. Rename only when it's worth it.
+
+## Controller practice
+
+On combo tabs, once the browser has seen a gamepad, each cheat gets a Practise button. `CI.padButtons(code, pad)` maps a stored combo to the browser's standard button numbers (0 bottom face button, 4/5 L1/R1, 6/7 L2/R2, 12 to 15 d-pad). Supported pads: `ps`, `xbox`, `switch`, `xbox360` (triggers and bumpers swapped), `ds`. `xboxog` can't be practised, as no modern pad has White/Black. Progress is shown with ink classes `.key.hit` and `.key.next`, never the accent. Escape stops. Keep the Practise button hidden when no pad has been seen.
 
 ## Offline cache
 

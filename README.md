@@ -29,7 +29,9 @@ Cheat Index is the opposite. It only lists codes that are built into the games, 
 - **Works offline, and installs like an app.** After your first visit, every game's cheats open with no connection. Add it to your home screen to keep it a tap away.
 - **Press `/` to search** from anywhere, or to filter on a game page.
 - **Report a code from the code itself.** Each cheat has a Report link that opens a GitHub issue with the game, platform and cheat filled in.
-- **Requirements and warnings up front.** Each page notes newspaper unlocks, edition-specific codes, and whether cheats turn off achievements or saving.
+- **Requirements and warnings up front.** Each page notes newspaper unlocks, edition-specific codes, and whether cheats turn off achievements or saving. Cheats that can wreck a save, crash the game or block a mission are flagged with a Careful line.
+- **Practise combos on a real controller.** Plug in a PlayStation, Xbox or Switch pad and press a button, and each combo gets a Practise button. The keys light up as you hit them, so you can learn a long code before trying it in game.
+- **Dated.** Each game says when its codes were last checked against sources.
 - **Dark by default, with a light mode.** It works on a phone, with a keyboard and with a screen reader.
 
 ## Games covered
@@ -67,6 +69,23 @@ Use the Report link next to the cheat, or [open an issue](https://github.com/NBD
 
 You can also fix it yourself. Each game is a single JSON file, so most fixes are a one-line pull request. See [Contributing](#contributing).
 
+## Use the data
+
+Every cheat is in plain JSON, free to use in your own fan site, app, bot or spreadsheet under the MIT License. The files are served with open CORS, so you can fetch them straight from a web page.
+
+- **The game list:** `https://nbdbatman.github.io/Rockstar-Cheat-Index/data/games.json` gives every game's `slug`, `title`, `year`, `consoles` and `count`.
+- **One game:** `https://nbdbatman.github.io/Rockstar-Cheat-Index/data/<slug>.json` gives its `inputs` (one per platform) and `cheats`.
+- **Reading a cheat:** each cheat's `codes` is keyed by input id. A combo is written with PlayStation button names (`Cross`, `L1`, `Up` and so on). An input with `"derive": "ps"` (Xbox, Switch) takes the PlayStation code and maps the buttons, as described in [Editing a game](#editing-a-game). A cheat with `"tbd": true` exists but its code isn't known yet. A cheat with `"not": [...]` doesn't work on those inputs.
+
+```js
+const base = 'https://nbdbatman.github.io/Rockstar-Cheat-Index/data/';
+const sa = await (await fetch(base + 'gta-sa.json')).json();
+const tank = sa.cheats.find(c => c.effect === 'Spawn a Rhino tank');
+console.log(tank.codes.pc); // AIWPRTON
+```
+
+If you use it, a link back to Cheat Index is appreciated, and so are corrections sent back as issues. Field names won't change without a note in this README.
+
 ## Contributing
 
 ### The rules
@@ -92,13 +111,16 @@ Each game lives in `data/<slug>.json`. A cheat looks like this:
     "phone": "1-999-724-654-5537"
   },
   "requirement": "Optional. Something the player must have or do first.",
-  "note": "Optional. Anything else, like an alternate code."
+  "note": "Optional. Anything else, like an alternate code.",
+  "risk": "Optional. A side effect that can harm a save, crash the game or block a mission."
 }
 ```
 
 - **`codes`** keys match the `inputs` at the top of the file: `pc`, `ps`, `ps2`, `psp`, `ds`, `phone`, `phrase`, `mobile`. Leave a key out and the cheat is hidden on that platform. If two versions use different codes for the same effect, give each version its own entry. A cheat that's missing from one version of a derived tab gets `"not": ["switch"]` (for example), which hides it there.
 - **Combos** use PlayStation button names, separated by spaces: `Cross Circle Square Triangle L1 R1 L2 R2 Up Down Left Right`. Use `L` and `R` for PSP shoulders, and `A B X Y L R` for DS. Start with `HOLD:L1 ` when a button is held down.
 - **Xbox and Switch combos are generated** from the PlayStation ones, so you don't write them separately.
+- **Risks** need two sources that describe the same side effect. Leave out minor glitches.
+- **Checked date:** each game file has `"checked": "YYYY-MM-DD"`. Set it to today when you check that game's codes against sources.
 - **Categories:** Player, Weapons, Money, Wanted, Vehicles, World, Pedestrians, Score, Levels, Other.
 - **Counts:** when you add or remove a cheat, update that game's `count` in `data/games.json` to match.
 - **Checks:** every push and pull request runs `.github/check_data.py`. It catches invalid JSON, a wrong `count`, mismatched `consoles`, unknown buttons, missing covers and more. You can run it yourself from the repo root before opening a pull request.

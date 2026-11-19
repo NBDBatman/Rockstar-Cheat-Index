@@ -50,13 +50,15 @@
    "platforms": [
     "PC",
     "PlayStation",
-    "Xbox"
+    "Xbox",
+    "Switch"
    ],
    "consoles": [
     "PC",
     "PS2",
     "PS4",
     "PS5",
+    "Switch",
     "Xbox One",
     "Xbox Series X/S"
    ],
@@ -76,13 +78,15 @@
    "platforms": [
     "PC",
     "PlayStation",
-    "Xbox"
+    "Xbox",
+    "Switch"
    ],
    "consoles": [
     "PC",
     "PS2",
     "PS4",
     "PS5",
+    "Switch",
     "Xbox One",
     "Xbox Series X/S"
    ],
@@ -102,7 +106,8 @@
    "platforms": [
     "PC",
     "PlayStation",
-    "Xbox"
+    "Xbox",
+    "Switch"
    ],
    "consoles": [
     "PC",
@@ -110,6 +115,7 @@
     "PS3",
     "PS4",
     "PS5",
+    "Switch",
     "Xbox 360",
     "Xbox One",
     "Xbox Series X/S"
@@ -229,18 +235,22 @@
    "year": 2010,
    "order": 10,
    "platforms": [
+    "PC",
     "PlayStation",
-    "Xbox"
+    "Xbox",
+    "Switch"
    ],
    "consoles": [
+    "PC",
     "PS3",
     "PS4",
+    "Switch",
     "Xbox 360"
    ],
    "methods": [
     "Phrase"
    ],
-   "count": 20,
+   "count": 21,
    "sample": "He gives strength to the weak"
   },
   {

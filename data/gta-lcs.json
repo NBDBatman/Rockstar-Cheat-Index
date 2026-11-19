@@ -44,7 +44,7 @@
    }
   },
   {
-   "effect": "Full armor",
+   "effect": "Full armour",
    "category": "Player",
    "codes": {
     "ps2": "L1 R1 Circle L1 R1 Cross L1 R1",
@@ -164,7 +164,7 @@
    }
   },
   {
-   "effect": "Change bike tires",
+   "effect": "Change bike tyres",
    "category": "Vehicles",
    "codes": {
     "ps2": "Circle Right Cross Up Right Cross L1 Square",

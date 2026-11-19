@@ -67,7 +67,7 @@
    }
   },
   {
-   "effect": "Max health and armor",
+   "effect": "Max health and armour",
    "category": "Player",
    "codes": {
     "pc": "TURTLE",

@@ -6,13 +6,15 @@
  "platforms": [
   "PC",
   "PlayStation",
-  "Xbox"
+  "Xbox",
+  "Switch"
  ],
  "consoles": [
   "PC",
   "PS2",
   "PS4",
   "PS5",
+  "Switch",
   "Xbox One",
   "Xbox Series X/S"
  ],
@@ -41,12 +43,21 @@
    "pad": "xbox",
    "derive": "ps",
    "how": "Enter the combo on the controller during play, without pausing. Xbox 360 and later, including the Definitive Edition. The original Xbox release used different buttons."
+  },
+  {
+   "id": "switch",
+   "label": "Switch",
+   "type": "combo",
+   "pad": "switch",
+   "derive": "ps",
+   "how": "Enter the combo on the controller during play, without pausing. This is the Definitive Edition, the only version on Switch."
   }
  ],
  "warning": "Cheats turn off achievements and trophies for the session. Keep a clean save.",
  "sources": [
   "https://gtabase.com/gta-3/gta-3-cheats-pc-definitive-edition",
-  "https://www.gtabase.com/gta-3/gta-3-cheats-ps5-ps4-ps3-ps2"
+  "https://www.gtabase.com/gta-3/gta-3-cheats-ps5-ps4-ps3-ps2",
+  "https://nintendowire.com/guides/grand-theft-auto-the-trilogy-the-definitive-edition/grand-theft-auto-iii-cheat-codes/"
  ],
  "cheats": [
   {
@@ -58,7 +69,7 @@
    }
   },
   {
-   "effect": "Full armor",
+   "effect": "Full armour",
    "category": "Player",
    "codes": {
     "pc": "TORTOISE",

@@ -4,12 +4,16 @@
  "year": 2010,
  "order": 10,
  "platforms": [
+  "PC",
   "PlayStation",
-  "Xbox"
+  "Xbox",
+  "Switch"
  ],
  "consoles": [
+  "PC",
   "PS3",
   "PS4",
+  "Switch",
   "Xbox 360"
  ],
  "methods": [
@@ -20,13 +24,16 @@
    "id": "phrase",
    "label": "Phrase",
    "type": "phrase",
-   "how": "Pause, open Options, then Cheats. Press Triangle or Y, type the phrase exactly, then switch the cheat on in the list."
+   "how": "Pause, open Options, then Cheats. Choose to enter a code (Triangle or Y on a controller), type the phrase exactly, then switch the cheat on in the list."
   }
  ],
  "warning": "Cheats block achievements and trophies, and saves made with cheats on are marked as cheat saves.",
- "incomplete": true,
  "sources": [
-  "https://www.pushsquare.com/guides/red-dead-redemption-cheat-codes-list-and-secrets"
+  "https://www.pushsquare.com/guides/red-dead-redemption-cheat-codes-list-and-secrets",
+  "https://libertycity.net/guides/red-dead-redemption/8398-cheat-codes-in-red-dead-redemption-how.html",
+  "https://gameranx.com/features/id/63629/article/red-dead-redemption-all-the-cheats-codes-new-old/",
+  "https://www.ggrecon.com/guides/red-dead-redemption-cheat-codes-playstation-xbox-money-invincibility/",
+  "https://www.giga.de/games/red-dead-redemption-1-alle-cheats-fuer-pc-ps3-ps4-xbox-360-switch--01J5QM46S7EK5AGRA5AXFCQYF1"
  ],
  "cheats": [
   {
@@ -99,6 +106,14 @@
    "codes": {
     "phrase": "I am one of them famous fellas"
    }
+  },
+  {
+   "effect": "Maximum honour",
+   "category": "Player",
+   "codes": {
+    "phrase": "It aint pride. It's honor"
+   },
+   "note": "Type it as shown, with no apostrophe in \"aint\"."
   },
   {
    "effect": "Several outfits, including the Elegant Suit",

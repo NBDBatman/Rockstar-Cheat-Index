@@ -30,14 +30,14 @@
  ],
  "cheats": [
   {
-   "effect": "Restore health and armor (repairs your vehicle too)",
+   "effect": "Restore health and armour (repairs your vehicle too)",
    "category": "Player",
    "codes": {
     "phone": "362-555-0100"
    }
   },
   {
-   "effect": "Restore health, armor and ammo, plus weapons",
+   "effect": "Restore health, armour and ammo, plus weapons",
    "category": "Player",
    "codes": {
     "phone": "482-555-0100"

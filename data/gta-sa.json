@@ -6,7 +6,8 @@
  "platforms": [
   "PC",
   "PlayStation",
-  "Xbox"
+  "Xbox",
+  "Switch"
  ],
  "consoles": [
   "PC",
@@ -14,6 +15,7 @@
   "PS3",
   "PS4",
   "PS5",
+  "Switch",
   "Xbox 360",
   "Xbox One",
   "Xbox Series X/S"
@@ -43,16 +45,26 @@
    "pad": "xbox",
    "derive": "ps",
    "how": "Enter the combo on the controller during play, without pausing. Xbox 360 and later, including the Definitive Edition. The original Xbox release used different buttons."
+  },
+  {
+   "id": "switch",
+   "label": "Switch",
+   "type": "combo",
+   "pad": "switch",
+   "derive": "ps",
+   "how": "Enter the combo on the controller during play, without pausing. This is the Definitive Edition, the only version on Switch."
   }
  ],
  "warning": "Cheats turn off achievements and trophies for the session. Keep a clean save.",
  "sources": [
   "https://wiki.gtaboom.com/wiki/san-andreas-cheats",
-  "https://www.gtabase.com/gta-san-andreas/gta-san-andreas-cheats-pc-definitive-edition"
+  "https://www.gtabase.com/gta-san-andreas/gta-san-andreas-cheats-pc-definitive-edition",
+  "https://nintendowire.com/guides/grand-theft-auto-the-trilogy-the-definitive-edition/grand-theft-auto-san-andreas-cheat-codes/",
+  "https://shacknews.com/article/127651/gta-san-andreas-cheat-codes-definitive-edition"
  ],
  "cheats": [
   {
-   "effect": "$250,000, full health and full armor",
+   "effect": "$250,000, full health and full armour",
    "category": "Player",
    "codes": {
     "pc": "HESOYAM",

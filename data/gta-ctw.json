@@ -43,7 +43,7 @@
  ],
  "cheats": [
   {
-   "effect": "Full health and armor",
+   "effect": "Full health and armour",
    "category": "Player",
    "codes": {
     "ds": "L L R A A B B R",
@@ -52,7 +52,7 @@
    }
   },
   {
-   "effect": "Full armor",
+   "effect": "Full armour",
    "category": "Player",
    "codes": {
     "ds": "L L R B B A A R",

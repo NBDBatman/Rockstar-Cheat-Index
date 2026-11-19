@@ -72,7 +72,7 @@
    "how": "Enter the combo on the controller during play, without pausing. This is the Definitive Edition, the only version on Switch."
   }
  ],
- "warning": "Cheats turn off achievements and trophies for the session. Keep a clean save.",
+ "warning": "Cheats turn off achievements and trophies for the session. Keep a clean save. Using a lot of cheats can make Burning Desire, Life's a Beach, Photo Opportunity and Madd Dogg impossible to finish.",
  "sources": [
   "https://wiki.gtaboom.com/wiki/san-andreas-cheats",
   "https://www.gtabase.com/gta-san-andreas/gta-san-andreas-cheats-pc-definitive-edition",
@@ -83,8 +83,11 @@
   "https://www.gtaboom.com/san-andreas-cheats-ps2-ps3/",
   "https://pushsquare.com/guides/gta-san-andreas-definitive-edition-all-cheats",
   "https://www.gtabase.com/gta-san-andreas/gta-san-andreas-cheats-ps5-ps4-ps3-ps2",
-  "https://toucharcade.com/2023/12/18/gta-san-andreas-vice-city-gta-3-cheats-definitive-edition-netflix-mobile-iphone-android-ipad-guide-how-to-use"
+  "https://toucharcade.com/2023/12/18/gta-san-andreas-vice-city-gta-3-cheats-definitive-edition-netflix-mobile-iphone-android-ipad-guide-how-to-use",
+  "https://www.gtaboom.com/san-andreas-cheats-side-effects/",
+  "https://gta.fandom.com/wiki/Cheats_in_GTA_San_Andreas"
  ],
+ "checked": "2026-11-19",
  "cheats": [
   {
    "effect": "$250,000, full health and full armour",
@@ -94,7 +97,8 @@
     "ps": "R1 R2 L1 Cross Left Down Right Up Left Down Right Up",
     "xboxog": "R1 R2 L1 Cross Left Down Right Up Left Down Right Up"
    },
-   "note": "Definitive Edition also accepts INEEDSOMEHELP."
+   "note": "Definitive Edition also accepts INEEDSOMEHELP.",
+   "risk": "Using it during the bike chase in Just Business blows up the bike and fails the mission."
   },
   {
    "effect": "Infinite health",
@@ -313,7 +317,8 @@
     "pc": "YECGAA",
     "ps": "L1 L2 R1 R2 Up Down Left Right L1 L2 R1 R2 Up Down Left Right"
    },
-   "note": "Definitive Edition also accepts ROCKETMAN."
+   "note": "Definitive Edition also accepts ROCKETMAN.",
+   "risk": "Using it while standing on a red mission marker can crash the game."
   },
   {
    "effect": "Spawn a parachute",
@@ -333,7 +338,8 @@
     "ps": "Circle Right Circle Right Left Square Triangle Up",
     "xboxog": "Circle Right Circle Right Left Square Triangle Up"
    },
-   "note": "Definitive Edition also accepts IDOASIPLEASE."
+   "note": "Definitive Edition also accepts IDOASIPLEASE.",
+   "risk": "While it is on, the mission Mike Toreno stops at the red marker. Turn it off to carry on."
   },
   {
    "effect": "Clear wanted level",
@@ -537,7 +543,8 @@
     "ps": "R2 L2 R1 L1 L2 R2 Square Triangle Circle Triangle L2 L1",
     "xboxog": "R2 L2 R1 L1 L2 R2 Square Triangle Circle Triangle L2 L1"
    },
-   "note": "Definitive Edition also accepts ALLCARSGOBOOM."
+   "note": "Definitive Edition also accepts ALLCARSGOBOOM.",
+   "risk": "Using it during Reuniting the Families blows up Sweet's car with you inside, and during some cutscenes it can freeze the game."
   },
   {
    "effect": "Your car can't be damaged",
@@ -899,7 +906,8 @@
     "ps": "Down Up Up Up Cross R2 R1 L2 L2",
     "xboxog": "Down Up Up Up Cross R2 R1 L2 L2"
    },
-   "note": "Definitive Edition also accepts STOPPICKINGONME."
+   "note": "Definitive Edition also accepts STOPPICKINGONME.",
+   "risk": "It can't be turned off. Save while it's on and it stays on that save for good."
   },
   {
    "effect": "Pedestrians attack you with guns",
@@ -918,7 +926,8 @@
     "ps": "Down Left Up Left Cross R2 R1 L2 L1",
     "xboxog": "Down Left Up Left Cross R2 R1 L2 L1"
    },
-   "note": "Definitive Edition also accepts STATEOFEMERGENCY."
+   "note": "Definitive Edition also accepts STATEOFEMERGENCY.",
+   "risk": "It can't be turned off. Save while it's on and it stays on that save for good. It also makes Madd Dogg and Tanker Commander impossible to finish."
   },
   {
    "effect": "Gang wars everywhere",

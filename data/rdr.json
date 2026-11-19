@@ -35,6 +35,7 @@
   "https://www.ggrecon.com/guides/red-dead-redemption-cheat-codes-playstation-xbox-money-invincibility/",
   "https://www.giga.de/games/red-dead-redemption-1-alle-cheats-fuer-pc-ps3-ps4-xbox-360-switch--01J5QM46S7EK5AGRA5AXFCQYF1"
  ],
+ "checked": "2026-11-19",
  "cheats": [
   {
    "effect": "Invincibility",
@@ -141,7 +142,8 @@
    "category": "Player",
    "codes": {
     "phrase": "Oh my son, my blessed son"
-   }
+   },
+   "risk": "This finishes every story mission on your save. Make a separate save first."
   },
   {
    "effect": "Your horse never tires",

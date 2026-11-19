@@ -1,0 +1,233 @@
+{
+ "title": "Grand Theft Auto",
+ "short": "GTA",
+ "year": 1997,
+ "order": 0,
+ "platforms": [
+  "PC",
+  "PlayStation"
+ ],
+ "methods": [
+  "Typed"
+ ],
+ "inputs": [
+  {
+   "id": "pc",
+   "label": "PC",
+   "type": "text",
+   "how": "Enter the code as your player name. At character select press Delete, type it, then press Enter."
+  },
+  {
+   "id": "ps",
+   "label": "PlayStation",
+   "type": "text",
+   "how": "Enter the code as your player name, as a new name or with Rename."
+  }
+ ],
+ "warning": "Player-name codes change that save, so use a separate name for cheating.",
+ "sources": [
+  "https://www.gtaboss.gg/gta-cheat-codes/gta-1",
+  "https://www.grandtheftwiki.com/GTA_1_Cheats_(PS)"
+ ],
+ "cheats": [
+  {
+   "effect": "All weapons, armor and a Get Out of Jail Free card",
+   "category": "Weapons",
+   "codes": {
+    "ps": "PECKINPAH"
+   }
+  },
+  {
+   "effect": "All weapons",
+   "category": "Weapons",
+   "codes": {
+    "ps": "GROOVY"
+   }
+  },
+  {
+   "effect": "All weapons and more",
+   "category": "Weapons",
+   "codes": {
+    "ps": "MADEMAN"
+   }
+  },
+  {
+   "effect": "All weapons, full armor and a Get Out of Jail Free card",
+   "category": "Weapons",
+   "codes": {
+    "pc": "SUCKMYROCKET"
+   }
+  },
+  {
+   "effect": "All weapons (press * on the numpad in game)",
+   "category": "Weapons",
+   "codes": {
+    "pc": "BUCKFAST"
+   }
+  },
+  {
+   "effect": "All weapons (press * on the numpad in game), alternate",
+   "category": "Weapons",
+   "codes": {
+    "pc": "CALLMENIGEL"
+   }
+  },
+  {
+   "effect": "Infinite lives",
+   "category": "Player",
+   "codes": {
+    "pc": "ITSTANTRUM"
+   }
+  },
+  {
+   "effect": "Infinite lives, alternate",
+   "category": "Player",
+   "codes": {
+    "pc": "6031769"
+   }
+  },
+  {
+   "effect": "99 lives",
+   "category": "Player",
+   "codes": {
+    "ps": "SATANLIVES"
+   }
+  },
+  {
+   "effect": "Maximum wanted level",
+   "category": "Wanted",
+   "codes": {
+    "ps": "EATTHIS"
+   }
+  },
+  {
+   "effect": "No police",
+   "category": "Wanted",
+   "codes": {
+    "pc": "IAMTHELAW",
+    "ps": "CHUFF"
+   }
+  },
+  {
+   "effect": "No police, alternate",
+   "category": "Wanted",
+   "codes": {
+    "pc": "STEVESMATES"
+   }
+  },
+  {
+   "effect": "9,999,990 points",
+   "category": "Score",
+   "codes": {
+    "ps": "WEYHEY"
+   }
+  },
+  {
+   "effect": "999,999,999 points",
+   "category": "Score",
+   "codes": {
+    "pc": "ITCOULDBEYOU"
+   }
+  },
+  {
+   "effect": "5x score multiplier",
+   "category": "Score",
+   "codes": {
+    "ps": "EXCREMENT"
+   }
+  },
+  {
+   "effect": "10x score multiplier",
+   "category": "Score",
+   "codes": {
+    "pc": "HATE MACHINE"
+   }
+  },
+  {
+   "effect": "Level select",
+   "category": "Levels",
+   "codes": {
+    "ps": "SKYBABIES"
+   }
+  },
+  {
+   "effect": "Unlock all cities, parts 1 and 2",
+   "category": "Levels",
+   "codes": {
+    "ps": "TURF"
+   }
+  },
+  {
+   "effect": "Unlock all cities, only part 1 of Vice City",
+   "category": "Levels",
+   "codes": {
+    "ps": "URGE"
+   }
+  },
+  {
+   "effect": "Unlock Liberty City parts 1 and 2",
+   "category": "Levels",
+   "codes": {
+    "ps": "FECK"
+   }
+  },
+  {
+   "effect": "Unlock all levels in all three cities",
+   "category": "Levels",
+   "codes": {
+    "pc": "ITSGALLUS"
+   }
+  },
+  {
+   "effect": "Unlock all levels in all three cities, alternate",
+   "category": "Levels",
+   "codes": {
+    "pc": "NINEINAROW"
+   }
+  },
+  {
+   "effect": "Every cheat at once",
+   "category": "Other",
+   "codes": {
+    "ps": "T H E S H I T"
+   }
+  },
+  {
+   "effect": "Extra swearing on",
+   "category": "Other",
+   "codes": {
+    "pc": "IAMGARYPENN"
+   }
+  },
+  {
+   "effect": "Extra swearing off",
+   "category": "Other",
+   "codes": {
+    "pc": "IAMNOTGARYPENN"
+   }
+  },
+  {
+   "effect": "Mark every cutscene as seen",
+   "category": "Other",
+   "codes": {
+    "pc": "HEART OF GOLD"
+   }
+  },
+  {
+   "effect": "Show your coordinates",
+   "category": "Other",
+   "codes": {
+    "ps": "BLOWME"
+   }
+  },
+  {
+   "effect": "Debug mode",
+   "category": "Other",
+   "codes": {
+    "pc": "PORKCHARSUI"
+   }
+  }
+ ],
+ "slug": "gta",
+ "count": 28
+}

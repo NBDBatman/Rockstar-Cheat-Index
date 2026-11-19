@@ -1,0 +1,142 @@
+{
+ "title": "Grand Theft Auto IV",
+ "short": "GTA IV",
+ "year": 2008,
+ "order": 8,
+ "platforms": [
+  "PC",
+  "PlayStation",
+  "Xbox"
+ ],
+ "methods": [
+  "Phone"
+ ],
+ "inputs": [
+  {
+   "id": "phone",
+   "label": "Phone",
+   "type": "phone",
+   "how": "Open Niko's phone (d-pad up), press up again for the keypad and dial the number. The same numbers work on PC, PS3 and Xbox 360."
+  }
+ ],
+ "warning": "Some cheats block achievements and trophies. Save before you use them.",
+ "sources": [
+  "https://www.gtabase.com/grand-theft-auto-iv/gta-4-cheats-xbox-360-ps3-pc-full-list-of-cheat-codes"
+ ],
+ "cheats": [
+  {
+   "effect": "Restore health and armor (repairs your vehicle too)",
+   "category": "Player",
+   "codes": {
+    "phone": "362-555-0100"
+   }
+  },
+  {
+   "effect": "Restore health, armor and ammo, plus weapons",
+   "category": "Player",
+   "codes": {
+    "phone": "482-555-0100"
+   }
+  },
+  {
+   "effect": "Weapon set 1",
+   "category": "Weapons",
+   "codes": {
+    "phone": "486-555-0150"
+   }
+  },
+  {
+   "effect": "Weapon set 2",
+   "category": "Weapons",
+   "codes": {
+    "phone": "486-555-0100"
+   }
+  },
+  {
+   "effect": "Clear wanted level",
+   "category": "Wanted",
+   "codes": {
+    "phone": "267-555-0100"
+   }
+  },
+  {
+   "effect": "Raise wanted level",
+   "category": "Wanted",
+   "codes": {
+    "phone": "267-555-0150"
+   }
+  },
+  {
+   "effect": "Change the weather",
+   "category": "World",
+   "codes": {
+    "phone": "468-555-0100"
+   }
+  },
+  {
+   "effect": "Spawn a Cognoscenti",
+   "category": "Vehicles",
+   "codes": {
+    "phone": "227-555-0142"
+   }
+  },
+  {
+   "effect": "Spawn a Comet",
+   "category": "Vehicles",
+   "codes": {
+    "phone": "227-555-0175"
+   }
+  },
+  {
+   "effect": "Spawn an FIB Buffalo",
+   "category": "Vehicles",
+   "codes": {
+    "phone": "227-555-0100"
+   }
+  },
+  {
+   "effect": "Spawn a Super GT",
+   "category": "Vehicles",
+   "codes": {
+    "phone": "227-555-0168"
+   }
+  },
+  {
+   "effect": "Spawn a Turismo",
+   "category": "Vehicles",
+   "codes": {
+    "phone": "227-555-0147"
+   }
+  },
+  {
+   "effect": "Spawn an NRG 900",
+   "category": "Vehicles",
+   "codes": {
+    "phone": "625-555-0100"
+   }
+  },
+  {
+   "effect": "Spawn a Sanchez",
+   "category": "Vehicles",
+   "codes": {
+    "phone": "625-555-0150"
+   }
+  },
+  {
+   "effect": "Spawn an Annihilator",
+   "category": "Vehicles",
+   "codes": {
+    "phone": "359-555-0100"
+   }
+  },
+  {
+   "effect": "Spawn a Jetmax",
+   "category": "Vehicles",
+   "codes": {
+    "phone": "938-555-0100"
+   }
+  }
+ ],
+ "slug": "gta-iv",
+ "count": 16
+}

@@ -1,0 +1,373 @@
+{
+ "title": "Grand Theft Auto V",
+ "short": "GTA V",
+ "year": 2013,
+ "order": 11,
+ "platforms": [
+  "PC",
+  "PlayStation",
+  "Xbox"
+ ],
+ "methods": [
+  "Combo",
+  "Typed",
+  "Phone"
+ ],
+ "inputs": [
+  {
+   "id": "pc",
+   "label": "PC",
+   "type": "text",
+   "how": "Press ~ to open the console, type the code, press Enter."
+  },
+  {
+   "id": "ps",
+   "label": "PlayStation",
+   "type": "combo",
+   "pad": "ps",
+   "how": "Enter the combo on the controller during play, without pausing."
+  },
+  {
+   "id": "xbox",
+   "label": "Xbox",
+   "type": "combo",
+   "pad": "xbox",
+   "derive": "ps",
+   "how": "Enter the combo on the controller during play, without pausing."
+  },
+  {
+   "id": "phone",
+   "label": "Phone",
+   "type": "phone",
+   "how": "Open the in-game phone (d-pad up), go to the keypad and dial the number. Works on PS4, PS5, Xbox One, Series X/S and PC, not PS3 or Xbox 360."
+  }
+ ],
+ "warning": "Story mode only. A cheat turns off achievements and trophies for the session, and you can't save while one is active.",
+ "sources": [
+  "https://wiki.gtaboom.com/wiki/gta-5-cheats",
+  "https://www.gtabase.com/articles/grand-theft-auto-v/gta-5-cheats-for-ps5-ps4-ps3-all-cheat-codes-phone-numbers"
+ ],
+ "cheats": [
+  {
+   "effect": "Invincibility for five minutes",
+   "category": "Player",
+   "codes": {
+    "pc": "PAINKILLER",
+    "ps": "Right Cross Right Left Right R1 Right Left Cross Triangle",
+    "phone": "1-999-724-654-5537"
+   }
+  },
+  {
+   "effect": "Max health and armor",
+   "category": "Player",
+   "codes": {
+    "pc": "TURTLE",
+    "ps": "Circle L1 Triangle R2 Cross Square Circle Right Square L1 L1 L1",
+    "phone": "1-999-887-853"
+   }
+  },
+  {
+   "effect": "Recharge special ability",
+   "category": "Player",
+   "codes": {
+    "pc": "POWERUP",
+    "ps": "Cross Cross Square R1 L1 Cross Right Left Cross",
+    "phone": "1-999-769-3787"
+   }
+  },
+  {
+   "effect": "Fast run",
+   "category": "Player",
+   "codes": {
+    "pc": "CATCHME",
+    "ps": "Triangle Left Right Right L2 L1 Square",
+    "phone": "1-999-228-2463"
+   }
+  },
+  {
+   "effect": "Fast swim",
+   "category": "Player",
+   "codes": {
+    "pc": "GOTGILLS",
+    "ps": "Left Left L1 Right Right R2 Left L2 Right",
+    "phone": "1-999-468-44557"
+   }
+  },
+  {
+   "effect": "Super jump",
+   "category": "Player",
+   "codes": {
+    "pc": "HOPTOIT",
+    "ps": "Left Left Triangle Triangle Right Right Left Right Square R1 R2",
+    "phone": "1-999-467-8648"
+   }
+  },
+  {
+   "effect": "Drunk mode",
+   "category": "Player",
+   "codes": {
+    "pc": "LIQUOR",
+    "ps": "Triangle Right Right Left Right Square Circle Left",
+    "phone": "1-999-547-861"
+   }
+  },
+  {
+   "effect": "Skyfall (drop from the sky)",
+   "category": "Player",
+   "codes": {
+    "pc": "SKYFALL",
+    "ps": "L1 L2 R1 R2 Left Right Left Right L1 L2 R1 R2 Left Right Left Right",
+    "phone": "1-999-759-3255"
+   }
+  },
+  {
+   "effect": "Parachute",
+   "category": "Player",
+   "codes": {
+    "pc": "SKYDIVE",
+    "ps": "Left Right L1 L2 R1 R2 R2 Left Left Right L1",
+    "phone": "1-999-759-3483"
+   }
+  },
+  {
+   "effect": "All weapons and ammo",
+   "category": "Weapons",
+   "codes": {
+    "pc": "TOOLUP",
+    "ps": "Triangle R2 Left L1 Cross Right Triangle Down Square L1 L1 L1",
+    "phone": "1-999-866-587"
+   }
+  },
+  {
+   "effect": "Explosive rounds",
+   "category": "Weapons",
+   "codes": {
+    "pc": "HIGHEX",
+    "ps": "Right Square Cross Left R1 R2 Left Right Right L1 L1 L1",
+    "phone": "1-999-444-439"
+   }
+  },
+  {
+   "effect": "Explosive melee",
+   "category": "Weapons",
+   "codes": {
+    "pc": "HOTHANDS",
+    "ps": "Right Left Cross Triangle R1 Circle Circle Circle L2",
+    "phone": "1-999-4684-2637"
+   }
+  },
+  {
+   "effect": "Flaming bullets",
+   "category": "Weapons",
+   "codes": {
+    "pc": "INCENDIARY",
+    "ps": "L1 R1 Square R1 Left R2 R1 Left Square Right L1 L1",
+    "phone": "1-999-462-363-4279"
+   }
+  },
+  {
+   "effect": "Slow-motion aiming",
+   "category": "Weapons",
+   "codes": {
+    "pc": "DEADEYE",
+    "ps": "Square L2 R1 Triangle Left Square L2 Right Cross",
+    "phone": "1-999-332-3393"
+   }
+  },
+  {
+   "effect": "Raise wanted level",
+   "category": "Wanted",
+   "codes": {
+    "pc": "FUGITIVE",
+    "ps": "R1 R1 Circle R2 Left Right Left Right Left Right",
+    "phone": "1-999-3844-8483"
+   }
+  },
+  {
+   "effect": "Lower wanted level",
+   "category": "Wanted",
+   "codes": {
+    "pc": "LAWYERUP",
+    "ps": "R1 R1 Circle R2 Right Left Right Left Right Left",
+    "phone": "1-999-5299-3787"
+   }
+  },
+  {
+   "effect": "Spawn a Buzzard helicopter",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "BUZZOFF",
+    "ps": "Circle Circle L1 Circle Circle Circle L1 L2 R1 Triangle Circle Triangle",
+    "phone": "1-999-289-9633"
+   }
+  },
+  {
+   "effect": "Spawn a Comet",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "COMET",
+    "ps": "R1 Circle R2 Right L1 L2 Cross Cross Square R1",
+    "phone": "1-999-266-38"
+   }
+  },
+  {
+   "effect": "Spawn a Rapid GT",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "RAPIDGT",
+    "ps": "R2 L1 Circle Right L1 R1 Right Left Circle R2",
+    "phone": "1-999-727-4348"
+   }
+  },
+  {
+   "effect": "Spawn a limo",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "VINEWOOD",
+    "ps": "R2 Right L2 Left Left R1 L1 Circle Right",
+    "phone": "1-999-846-39663"
+   }
+  },
+  {
+   "effect": "Spawn a PCJ-600",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "ROCKET",
+    "ps": "R1 Right Left Right R2 Left Right Square Right L2 L1 L1",
+    "phone": "1-999-762-538"
+   }
+  },
+  {
+   "effect": "Spawn a Sanchez",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "OFFROAD",
+    "ps": "Circle Cross L1 Circle Circle L1 Circle R1 R2 L2 L1 L1",
+    "phone": "1-999-633-7623"
+   }
+  },
+  {
+   "effect": "Spawn a BMX",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "BANDIT",
+    "ps": "Left Left Right Right Left Right Square Circle Triangle R1 R2",
+    "phone": "1-999-226-348"
+   }
+  },
+  {
+   "effect": "Spawn a Caddy",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "HOLEIN1",
+    "ps": "Circle L1 Left R1 L2 Cross R1 L1 Circle Cross",
+    "phone": "1-999-4653-461"
+   }
+  },
+  {
+   "effect": "Spawn a Trashmaster",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "TRASHED",
+    "ps": "Circle R1 Circle R1 Left Left R1 L1 Circle Right",
+    "phone": "1-999-872-433"
+   }
+  },
+  {
+   "effect": "Spawn a Duster crop duster",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "FLYSPRAY",
+    "ps": "Right Left R1 R1 R1 Left Triangle Triangle Cross Circle L1 L1",
+    "phone": "1-999-359-77729"
+   }
+  },
+  {
+   "effect": "Spawn a stunt plane",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "BARNSTORM",
+    "ps": "Circle Right L1 L2 Left R1 L1 L1 Left Left Cross Triangle",
+    "phone": "1-999-2276-78676"
+   }
+  },
+  {
+   "effect": "Spawn a Duke O'Death",
+   "category": "Vehicles",
+   "codes": {
+    "phone": "1-999-3328-4227"
+   },
+   "requirement": "Phone only. Newer versions (PS4, PS5, Xbox One, Series X/S, PC)."
+  },
+  {
+   "effect": "Spawn a Kraken submarine",
+   "category": "Vehicles",
+   "codes": {
+    "phone": "1-999-282-2537"
+   },
+   "requirement": "Phone only. Newer versions."
+  },
+  {
+   "effect": "Spawn a Dodo seaplane",
+   "category": "Vehicles",
+   "codes": {
+    "phone": "1-999-398-4628"
+   },
+   "requirement": "Phone only. Newer versions."
+  },
+  {
+   "effect": "Slippery cars",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "SNOWDAY",
+    "ps": "Triangle R1 R1 Left R1 L1 R2 L1",
+    "phone": "1-999-766-9329"
+   }
+  },
+  {
+   "effect": "Moon gravity",
+   "category": "World",
+   "codes": {
+    "pc": "FLOATER",
+    "ps": "Left Left L1 R1 L1 Right Left L1 Left",
+    "phone": "1-999-356-2837"
+   }
+  },
+  {
+   "effect": "Change the weather",
+   "category": "World",
+   "codes": {
+    "pc": "MAKEITRAIN",
+    "ps": "R2 Cross L1 L1 L2 L2 L2 Square",
+    "phone": "1-999-625-348-7246"
+   }
+  },
+  {
+   "effect": "Slow motion",
+   "category": "World",
+   "codes": {
+    "pc": "SLOWMO",
+    "ps": "Triangle Left Right Right Square R2 R1",
+    "phone": "1-999-756-966"
+   }
+  },
+  {
+   "effect": "Director Mode",
+   "category": "Other",
+   "codes": {
+    "phone": "1-999-578-25368"
+   },
+   "requirement": "Phone only. Newer versions."
+  },
+  {
+   "effect": "Black phone",
+   "category": "Other",
+   "codes": {
+    "phone": "1-999-367-3767"
+   },
+   "requirement": "Phone only. Newer versions. Only turns the phone black."
+  }
+ ],
+ "slug": "gta-v",
+ "count": 36
+}

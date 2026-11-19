@@ -1,0 +1,366 @@
+{
+ "title": "Grand Theft Auto 2",
+ "short": "GTA 2",
+ "year": 1999,
+ "order": 1,
+ "platforms": [
+  "PC",
+  "PlayStation"
+ ],
+ "methods": [
+  "Typed"
+ ],
+ "inputs": [
+  {
+   "id": "pc",
+   "label": "PC",
+   "type": "text",
+   "how": "Enter GOURANGA as your player name first, then edit the name to the code. Some codes only work on the US or European release."
+  },
+  {
+   "id": "ps",
+   "label": "PlayStation",
+   "type": "text",
+   "how": "Enter the code as your player name."
+  }
+ ],
+ "warning": "Player-name codes change that save, so use a separate name for cheating.",
+ "sources": [
+  "https://www.gtaboss.gg/gta-cheat-codes/gta-2",
+  "https://www.grandtheftwiki.com/Cheats_in_GTA_2"
+ ],
+ "cheats": [
+  {
+   "effect": "Turn on cheat mode (enter first on PC)",
+   "category": "Player",
+   "codes": {
+    "pc": "GOURANGA"
+   }
+  },
+  {
+   "effect": "99 lives",
+   "category": "Player",
+   "codes": {
+    "pc": "CUTIE1"
+   }
+  },
+  {
+   "effect": "Invincibility",
+   "category": "Player",
+   "codes": {
+    "pc": "RSJABBER",
+    "ps": "LIVELONG"
+   }
+  },
+  {
+   "effect": "Invincibility, alternate",
+   "category": "Player",
+   "codes": {
+    "pc": "LIVELONG"
+   }
+  },
+  {
+   "effect": "Invincibility, alternate",
+   "category": "Player",
+   "codes": {
+    "pc": "YAKUZADEATH"
+   }
+  },
+  {
+   "effect": "Invisibility",
+   "category": "Player",
+   "codes": {
+    "pc": "HUNSRUS"
+   }
+  },
+  {
+   "effect": "Get Out of Jail Free card",
+   "category": "Player",
+   "codes": {
+    "pc": "JAILBAIT"
+   }
+  },
+  {
+   "effect": "Turbo mode",
+   "category": "Player",
+   "codes": {
+    "ps": "IGNITION"
+   }
+  },
+  {
+   "effect": "All weapons with full ammo",
+   "category": "Weapons",
+   "codes": {
+    "pc": "GODOFGTA"
+   }
+  },
+  {
+   "effect": "All weapons",
+   "category": "Weapons",
+   "codes": {
+    "pc": "BLASTBOY",
+    "ps": "NAVARONE"
+   }
+  },
+  {
+   "effect": "All weapons, alternate",
+   "category": "Weapons",
+   "codes": {
+    "pc": "FORALLGT"
+   }
+  },
+  {
+   "effect": "All weapons, alternate",
+   "category": "Weapons",
+   "codes": {
+    "pc": "NAVARONE"
+   }
+  },
+  {
+   "effect": "Double damage",
+   "category": "Weapons",
+   "codes": {
+    "pc": "SCHURULZ"
+   }
+  },
+  {
+   "effect": "Keep weapons after death or arrest",
+   "category": "Weapons",
+   "codes": {
+    "pc": "ARSESTAR"
+   }
+  },
+  {
+   "effect": "Default weapons and ammo",
+   "category": "Weapons",
+   "codes": {
+    "pc": "DAVEMOON"
+   }
+  },
+  {
+   "effect": "Electro gun with unlimited ammo",
+   "category": "Weapons",
+   "codes": {
+    "pc": "VOLTFEST"
+   }
+  },
+  {
+   "effect": "Flamethrower with unlimited ammo",
+   "category": "Weapons",
+   "codes": {
+    "pc": "FLAMEON"
+   }
+  },
+  {
+   "effect": "Maximum wanted level",
+   "category": "Wanted",
+   "codes": {
+    "pc": "DESIRES",
+    "ps": "DESIRES"
+   }
+  },
+  {
+   "effect": "No police",
+   "category": "Wanted",
+   "codes": {
+    "pc": "LOSEFEDS",
+    "ps": "LOSEFEDS"
+   }
+  },
+  {
+   "effect": "No police, alternate",
+   "category": "Wanted",
+   "codes": {
+    "pc": "ELVIS IS HERE"
+   }
+  },
+  {
+   "effect": "$200,000",
+   "category": "Money",
+   "codes": {
+    "pc": "DANISGOD"
+   }
+  },
+  {
+   "effect": "$500,000",
+   "category": "Money",
+   "codes": {
+    "pc": "MUCHCASH",
+    "ps": "MUCHCASH"
+   }
+  },
+  {
+   "effect": "$500,000, alternate",
+   "category": "Money",
+   "codes": {
+    "pc": "COOLBOY"
+   }
+  },
+  {
+   "effect": "$9,999,999",
+   "category": "Money",
+   "codes": {
+    "pc": "IAMDAVEJ"
+   }
+  },
+  {
+   "effect": "Unlimited money",
+   "category": "Money",
+   "codes": {
+    "ps": "IAMPLAYA"
+   }
+  },
+  {
+   "effect": "Free shopping",
+   "category": "Money",
+   "codes": {
+    "pc": "EATSOUP"
+   }
+  },
+  {
+   "effect": "5x multiplier",
+   "category": "Score",
+   "codes": {
+    "pc": "HIGHFIVE",
+    "ps": "HIGHFIVE"
+   }
+  },
+  {
+   "effect": "10x multiplier",
+   "category": "Score",
+   "codes": {
+    "pc": "SEGARULZ"
+   }
+  },
+  {
+   "effect": "10 million points",
+   "category": "Score",
+   "codes": {
+    "pc": "BIGSCORE"
+   }
+  },
+  {
+   "effect": "All levels, all weapons and invincibility",
+   "category": "Levels",
+   "codes": {
+    "pc": "IAMASUCKER"
+   }
+  },
+  {
+   "effect": "Unlock all three cities",
+   "category": "Levels",
+   "codes": {
+    "pc": "UKGAMER"
+   }
+  },
+  {
+   "effect": "Unlock all three cities, alternate",
+   "category": "Levels",
+   "codes": {
+    "pc": "BEMEALL"
+   }
+  },
+  {
+   "effect": "Unlock the first two cities",
+   "category": "Levels",
+   "codes": {
+    "pc": "GINGERRR"
+   }
+  },
+  {
+   "effect": "Unlock all levels, including bonus levels",
+   "category": "Levels",
+   "codes": {
+    "pc": "TUMYFROG"
+   }
+  },
+  {
+   "effect": "Level select",
+   "category": "Levels",
+   "codes": {
+    "pc": "ITSALLUP",
+    "ps": "ITSALLUP"
+   }
+  },
+  {
+   "effect": "Only muggers on the streets",
+   "category": "Pedestrians",
+   "codes": {
+    "pc": "BUCKFAST"
+   }
+  },
+  {
+   "effect": "Naked pedestrians",
+   "category": "Pedestrians",
+   "codes": {
+    "pc": "NEKKID"
+   }
+  },
+  {
+   "effect": "Pedestrians are Elvis impersonators",
+   "category": "Pedestrians",
+   "codes": {
+    "pc": "LASVEGAS"
+   }
+  },
+  {
+   "effect": "Respect from all three gangs",
+   "category": "Pedestrians",
+   "codes": {
+    "pc": "MADEMAN"
+   }
+  },
+  {
+   "effect": "All cars are small",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "FISHFLAP"
+   }
+  },
+  {
+   "effect": "More gore",
+   "category": "Other",
+   "codes": {
+    "pc": "GOREFEST"
+   }
+  },
+  {
+   "effect": "Increased brutality",
+   "category": "Other",
+   "codes": {
+    "pc": "BEEFCAKE"
+   }
+  },
+  {
+   "effect": "No exploding scores",
+   "category": "Other",
+   "codes": {
+    "pc": "COCKTART"
+   }
+  },
+  {
+   "effect": "Show your coordinates",
+   "category": "Other",
+   "codes": {
+    "ps": "WUGGLES"
+   }
+  },
+  {
+   "effect": "Debug scripts",
+   "category": "Other",
+   "codes": {
+    "pc": "NO FRILLS",
+    "ps": "NOFRILLS"
+   }
+  },
+  {
+   "effect": "A hamster runs across the screen",
+   "category": "Other",
+   "codes": {
+    "pc": "MEATMAN"
+   }
+  }
+ ],
+ "slug": "gta-2",
+ "count": 46
+}

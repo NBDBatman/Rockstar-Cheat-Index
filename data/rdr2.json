@@ -1,0 +1,297 @@
+{
+ "title": "Red Dead Redemption 2",
+ "short": "RDR2",
+ "year": 2018,
+ "order": 12,
+ "platforms": [
+  "PC",
+  "PlayStation",
+  "Xbox"
+ ],
+ "methods": [
+  "Phrase"
+ ],
+ "inputs": [
+  {
+   "id": "phrase",
+   "label": "Phrase",
+   "type": "phrase",
+   "how": "Pause, open Settings, then press Triangle or Y for Cheats. Press it again to type the phrase, then switch the cheat on in the list."
+  }
+ ],
+ "warning": "Cheats turn off saving, achievements and trophies. Restart the game to go back to normal play.",
+ "sources": [
+  "https://www.gtabase.com/red-dead-redemption-2/guides/red-dead-redemption-2-cheat-codes-ps4-xbox-one"
+ ],
+ "cheats": [
+  {
+   "effect": "Refill health, stamina and Dead Eye",
+   "category": "Player",
+   "codes": {
+    "phrase": "You flourish before you die"
+   }
+  },
+  {
+   "effect": "Raise your stat bars",
+   "category": "Player",
+   "codes": {
+    "phrase": "Seek all the bounty of this place"
+   }
+  },
+  {
+   "effect": "Refill and fortify every bar",
+   "category": "Player",
+   "codes": {
+    "phrase": "You Seek More Than The World Offers"
+   },
+   "requirement": "Unlocked by a newspaper bought after Chapter 6."
+  },
+  {
+   "effect": "Infinite stamina",
+   "category": "Player",
+   "codes": {
+    "phrase": "The lucky be strong evermore"
+   },
+   "requirement": "Unlocked by a newspaper bought after Chapter 5."
+  },
+  {
+   "effect": "Infinite Dead Eye",
+   "category": "Player",
+   "codes": {
+    "phrase": "Be greedy only for foresight"
+   }
+  },
+  {
+   "effect": "Dead Eye rank 1",
+   "category": "Player",
+   "codes": {
+    "phrase": "Guide me better"
+   }
+  },
+  {
+   "effect": "Dead Eye rank 2",
+   "category": "Player",
+   "codes": {
+    "phrase": "Make me better"
+   }
+  },
+  {
+   "effect": "Dead Eye rank 3",
+   "category": "Player",
+   "codes": {
+    "phrase": "I shall be better"
+   }
+  },
+  {
+   "effect": "Dead Eye rank 4",
+   "category": "Player",
+   "codes": {
+    "phrase": "I still seek more"
+   }
+  },
+  {
+   "effect": "Dead Eye rank 5",
+   "category": "Player",
+   "codes": {
+    "phrase": "I seek and I find"
+   }
+  },
+  {
+   "effect": "Get drunk instantly",
+   "category": "Player",
+   "codes": {
+    "phrase": "A fool on command"
+   }
+  },
+  {
+   "effect": "Raise honor",
+   "category": "Player",
+   "codes": {
+    "phrase": "Virtue Unearned is not virtue"
+   },
+   "requirement": "Unlocked by a newspaper bought after Chapter 4."
+  },
+  {
+   "effect": "Lowest honor",
+   "category": "Player",
+   "codes": {
+    "phrase": "You revel in your disgrace, I see"
+   }
+  },
+  {
+   "effect": "Neutral honor",
+   "category": "Player",
+   "codes": {
+    "phrase": "Balance. All is balance"
+   }
+  },
+  {
+   "effect": "Unlock all outfits",
+   "category": "Player",
+   "codes": {
+    "phrase": "Vanity. All is vanity"
+   }
+  },
+  {
+   "effect": "Learn every crafting recipe",
+   "category": "Player",
+   "codes": {
+    "phrase": "Eat of Knowledge"
+   }
+  },
+  {
+   "effect": "Unlock all camp upgrades",
+   "category": "Player",
+   "codes": {
+    "phrase": "Share"
+   }
+  },
+  {
+   "effect": "Simple weapon set",
+   "category": "Weapons",
+   "codes": {
+    "phrase": "A simple life, a beautiful death"
+   }
+  },
+  {
+   "effect": "Heavy weapon set",
+   "category": "Weapons",
+   "codes": {
+    "phrase": "Greed is American Virtue"
+   },
+   "requirement": "Unlocked by a newspaper bought after Chapter 3."
+  },
+  {
+   "effect": "Stealth weapon set",
+   "category": "Weapons",
+   "codes": {
+    "phrase": "Death is silence"
+   }
+  },
+  {
+   "effect": "Gunslinger weapon set",
+   "category": "Weapons",
+   "codes": {
+    "phrase": "History is written by fools"
+   }
+  },
+  {
+   "effect": "Infinite ammo",
+   "category": "Weapons",
+   "codes": {
+    "phrase": "Abundance is the dullest desire"
+   },
+   "requirement": "Unlocked by a newspaper bought in Valentine during Chapter 1."
+  },
+  {
+   "effect": "$500",
+   "category": "Money",
+   "codes": {
+    "phrase": "Greed is now a virtue"
+   }
+  },
+  {
+   "effect": "Raise wanted level",
+   "category": "Wanted",
+   "codes": {
+    "phrase": "You want punishment"
+   }
+  },
+  {
+   "effect": "Lower wanted level",
+   "category": "Wanted",
+   "codes": {
+    "phrase": "You want freedom"
+   }
+  },
+  {
+   "effect": "Clear bounties and lockdowns",
+   "category": "Wanted",
+   "codes": {
+    "phrase": "You want everyone to go away"
+   }
+  },
+  {
+   "effect": "Reveal the whole map",
+   "category": "World",
+   "codes": {
+    "phrase": "You Long for Sight but See Nothing"
+   },
+   "requirement": "Unlocked by a newspaper bought after Chapter 3."
+  },
+  {
+   "effect": "Better bond with your horses",
+   "category": "Vehicles",
+   "codes": {
+    "phrase": "My kingdom is a horse"
+   }
+  },
+  {
+   "effect": "Call your horse from anywhere",
+   "category": "Vehicles",
+   "codes": {
+    "phrase": "Better than my dog"
+   }
+  },
+  {
+   "effect": "Spawn a race horse",
+   "category": "Vehicles",
+   "codes": {
+    "phrase": "Run! Run! Run!"
+   }
+  },
+  {
+   "effect": "Spawn a war horse",
+   "category": "Vehicles",
+   "codes": {
+    "phrase": "You are a beast built for war"
+   },
+   "requirement": "Unlocked by a newspaper bought after the Epilogue."
+  },
+  {
+   "effect": "Spawn a superior horse",
+   "category": "Vehicles",
+   "codes": {
+    "phrase": "You want more than you have"
+   }
+  },
+  {
+   "effect": "Spawn a random horse",
+   "category": "Vehicles",
+   "codes": {
+    "phrase": "You want something new"
+   }
+  },
+  {
+   "effect": "Spawn a stagecoach",
+   "category": "Vehicles",
+   "codes": {
+    "phrase": "The best of the old ways"
+   }
+  },
+  {
+   "effect": "Spawn a wagon",
+   "category": "Vehicles",
+   "codes": {
+    "phrase": "Keep your dreams simple"
+   }
+  },
+  {
+   "effect": "Spawn a circus wagon",
+   "category": "Vehicles",
+   "codes": {
+    "phrase": "Would you be happier as a clown?"
+   },
+   "requirement": "Unlocked by a newspaper bought after the Epilogue."
+  },
+  {
+   "effect": "Spawn a buggy",
+   "category": "Vehicles",
+   "codes": {
+    "phrase": "Keep your dreams light"
+   }
+  }
+ ],
+ "slug": "rdr2",
+ "count": 37
+}

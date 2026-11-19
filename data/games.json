@@ -1,0 +1,240 @@
+{
+ "updated": "2026-11-19",
+ "games": [
+  {
+   "slug": "gta",
+   "title": "Grand Theft Auto",
+   "short": "GTA",
+   "year": 1997,
+   "order": 0,
+   "platforms": [
+    "PC",
+    "PlayStation"
+   ],
+   "methods": [
+    "Typed"
+   ],
+   "count": 28,
+   "sample": "SUCKMYROCKET"
+  },
+  {
+   "slug": "gta-2",
+   "title": "Grand Theft Auto 2",
+   "short": "GTA 2",
+   "year": 1999,
+   "order": 1,
+   "platforms": [
+    "PC",
+    "PlayStation"
+   ],
+   "methods": [
+    "Typed"
+   ],
+   "count": 46,
+   "sample": "GOURANGA"
+  },
+  {
+   "slug": "gta-iii",
+   "title": "Grand Theft Auto III",
+   "short": "GTA III",
+   "year": 2001,
+   "order": 2,
+   "platforms": [
+    "PC",
+    "PlayStation",
+    "Xbox"
+   ],
+   "methods": [
+    "Combo",
+    "Typed"
+   ],
+   "count": 25,
+   "sample": "GESUNDHEIT"
+  },
+  {
+   "slug": "gta-vc",
+   "title": "GTA: Vice City",
+   "short": "Vice City",
+   "year": 2002,
+   "order": 3,
+   "platforms": [
+    "PC",
+    "PlayStation",
+    "Xbox"
+   ],
+   "methods": [
+    "Combo",
+    "Typed"
+   ],
+   "count": 58,
+   "sample": "ASPIRINE"
+  },
+  {
+   "slug": "gta-sa",
+   "title": "GTA: San Andreas",
+   "short": "San Andreas",
+   "year": 2004,
+   "order": 4,
+   "platforms": [
+    "PC",
+    "PlayStation",
+    "Xbox"
+   ],
+   "methods": [
+    "Combo",
+    "Typed"
+   ],
+   "count": 88,
+   "sample": "HESOYAM"
+  },
+  {
+   "slug": "gta-lcs",
+   "title": "GTA: Liberty City Stories",
+   "short": "LCS",
+   "year": 2005,
+   "order": 5,
+   "platforms": [
+    "Handheld",
+    "PlayStation"
+   ],
+   "methods": [
+    "Combo"
+   ],
+   "count": 43,
+   "sample": null
+  },
+  {
+   "slug": "bully",
+   "title": "Bully",
+   "short": "Bully",
+   "year": 2006,
+   "order": 6,
+   "platforms": [
+    "PlayStation"
+   ],
+   "methods": [
+    "Combo"
+   ],
+   "count": 8,
+   "sample": null
+  },
+  {
+   "slug": "gta-vcs",
+   "title": "GTA: Vice City Stories",
+   "short": "VCS",
+   "year": 2006,
+   "order": 7,
+   "platforms": [
+    "Handheld",
+    "PlayStation"
+   ],
+   "methods": [
+    "Combo"
+   ],
+   "count": 36,
+   "sample": null
+  },
+  {
+   "slug": "gta-iv",
+   "title": "Grand Theft Auto IV",
+   "short": "GTA IV",
+   "year": 2008,
+   "order": 8,
+   "platforms": [
+    "PC",
+    "PlayStation",
+    "Xbox"
+   ],
+   "methods": [
+    "Phone"
+   ],
+   "count": 16,
+   "sample": "362-555-0100"
+  },
+  {
+   "slug": "gta-ctw",
+   "title": "GTA: Chinatown Wars",
+   "short": "Chinatown Wars",
+   "year": 2009,
+   "order": 9,
+   "platforms": [
+    "Handheld"
+   ],
+   "methods": [
+    "Combo",
+    "Typed"
+   ],
+   "count": 21,
+   "sample": "LIFEUP"
+  },
+  {
+   "slug": "rdr",
+   "title": "Red Dead Redemption",
+   "short": "RDR",
+   "year": 2010,
+   "order": 10,
+   "platforms": [
+    "PlayStation",
+    "Xbox"
+   ],
+   "methods": [
+    "Phrase"
+   ],
+   "count": 20,
+   "sample": "He gives strength to the weak"
+  },
+  {
+   "slug": "gta-v",
+   "title": "Grand Theft Auto V",
+   "short": "GTA V",
+   "year": 2013,
+   "order": 11,
+   "platforms": [
+    "PC",
+    "PlayStation",
+    "Xbox"
+   ],
+   "methods": [
+    "Combo",
+    "Typed",
+    "Phone"
+   ],
+   "count": 36,
+   "sample": "PAINKILLER"
+  },
+  {
+   "slug": "rdr2",
+   "title": "Red Dead Redemption 2",
+   "short": "RDR2",
+   "year": 2018,
+   "order": 12,
+   "platforms": [
+    "PC",
+    "PlayStation",
+    "Xbox"
+   ],
+   "methods": [
+    "Phrase"
+   ],
+   "count": 37,
+   "sample": "You flourish before you die"
+  },
+  {
+   "slug": "gta-vi",
+   "title": "Grand Theft Auto VI",
+   "short": "GTA VI",
+   "year": 2026,
+   "order": 13,
+   "platforms": [
+    "PlayStation",
+    "Xbox"
+   ],
+   "methods": [
+    "To be confirmed"
+   ],
+   "count": 0,
+   "pending": true,
+   "sample": null
+  }
+ ]
+}

@@ -1,0 +1,216 @@
+{
+ "title": "GTA: Chinatown Wars",
+ "short": "Chinatown Wars",
+ "year": 2009,
+ "order": 9,
+ "platforms": [
+  "Handheld"
+ ],
+ "methods": [
+  "Combo",
+  "Typed"
+ ],
+ "inputs": [
+  {
+   "id": "ds",
+   "label": "DS",
+   "type": "combo",
+   "pad": "ds",
+   "how": "Enter the combo during play."
+  },
+  {
+   "id": "psp",
+   "label": "PSP",
+   "type": "combo",
+   "pad": "ps",
+   "how": "Enter the combo during play."
+  },
+  {
+   "id": "mobile",
+   "label": "Mobile",
+   "type": "text",
+   "how": "Rearrange the letters on the whiteboard in any safehouse to spell the word."
+  }
+ ],
+ "warning": "Using a cheat turns off autosave. Reload a clean save afterwards.",
+ "sources": [
+  "https://www.gtabase.com/articles/gta-chinatown-wars-cheats-cheat-codes-for-psp-ds-mobile"
+ ],
+ "cheats": [
+  {
+   "effect": "Full health and armor",
+   "category": "Player",
+   "codes": {
+    "ds": "L L R A A B B R",
+    "psp": "L L R Circle Circle Cross Cross R",
+    "mobile": "LIFEUP"
+   }
+  },
+  {
+   "effect": "Full armor",
+   "category": "Player",
+   "codes": {
+    "ds": "L L R B B A A R",
+    "psp": "L L R Cross Cross Circle Circle R",
+    "mobile": "SHELLY"
+   }
+  },
+  {
+   "effect": "Lower wanted level",
+   "category": "Wanted",
+   "codes": {
+    "ds": "R X X Y Y R L L",
+    "psp": "R Triangle Triangle Square Square R L L",
+    "mobile": "COPOUT"
+   }
+  },
+  {
+   "effect": "Raise wanted level",
+   "category": "Wanted",
+   "codes": {
+    "ds": "L L R Y Y X X R",
+    "psp": "L L R Square Square Triangle Triangle R",
+    "mobile": "COPIN"
+   }
+  },
+  {
+   "effect": "Weapon set 1",
+   "category": "Weapons",
+   "codes": {
+    "ds": "R Up B Down Left R B Right",
+    "psp": "R Up Cross Down Left R Cross Right",
+    "mobile": "LOADOA"
+   }
+  },
+  {
+   "effect": "Weapon set 2",
+   "category": "Weapons",
+   "codes": {
+    "ds": "R Up A Down Left R A Right",
+    "psp": "R Up Circle Down Left R Circle Right",
+    "mobile": "LOADOB"
+   }
+  },
+  {
+   "effect": "Weapon set 3",
+   "category": "Weapons",
+   "codes": {
+    "ds": "R Up Y Down Left R Y Right",
+    "psp": "R Up Square Down Left R Square Right",
+    "mobile": "LOADOC"
+   }
+  },
+  {
+   "effect": "Weapon set 4",
+   "category": "Weapons",
+   "codes": {
+    "ds": "R Up X Down Left R X Right",
+    "psp": "R Up Triangle Down Left R Triangle Right",
+    "mobile": "LOADOD"
+   }
+  },
+  {
+   "effect": "Explosive pistol rounds",
+   "category": "Weapons",
+   "codes": {
+    "ds": "L R X Y A B Up Down",
+    "psp": "L R Triangle Square Circle Cross Up Down",
+    "mobile": "BOOMCAN"
+   }
+  },
+  {
+   "effect": "Sunny weather",
+   "category": "World",
+   "codes": {
+    "ds": "Up Down Left Right A B L R",
+    "psp": "Up Down Left Right Circle Cross L R"
+   }
+  },
+  {
+   "effect": "Extra sunny weather",
+   "category": "World",
+   "codes": {
+    "ds": "Up Down Left Right B X L R",
+    "psp": "Up Down Left Right Cross Triangle L R"
+   }
+  },
+  {
+   "effect": "Cloudy weather",
+   "category": "World",
+   "codes": {
+    "ds": "Up Down Left Right X Y L R",
+    "psp": "Up Down Left Right Triangle Square L R"
+   }
+  },
+  {
+   "effect": "Foggy weather",
+   "category": "World",
+   "codes": {
+    "ds": "Up Down Left Right Y B R L",
+    "psp": "Up Down Left Right Square Cross R L"
+   }
+  },
+  {
+   "effect": "Rainy weather",
+   "category": "World",
+   "codes": {
+    "ds": "Up Down Left Right Y A L R",
+    "psp": "Up Down Left Right Square Circle L R"
+   }
+  },
+  {
+   "effect": "Heavy rain",
+   "category": "World",
+   "codes": {
+    "ds": "Up Down Left Right A X R L",
+    "psp": "Up Down Left Right Circle Triangle R L"
+   }
+  },
+  {
+   "effect": "Stormy weather",
+   "category": "World",
+   "codes": {
+    "ds": "Up Down Left Right B Y R L",
+    "psp": "Up Down Left Right Cross Square R L",
+    "mobile": "TEMPEST"
+   }
+  },
+  {
+   "effect": "$10,000",
+   "category": "Money",
+   "codes": {
+    "mobile": "CASHIN"
+   }
+  },
+  {
+   "effect": "Jump ahead one day",
+   "category": "World",
+   "codes": {
+    "mobile": "JUMPDAY"
+   }
+  },
+  {
+   "effect": "Jump ahead one hour",
+   "category": "World",
+   "codes": {
+    "mobile": "JUMPHR"
+   }
+  },
+  {
+   "effect": "Jump ahead six hours",
+   "category": "World",
+   "codes": {
+    "mobile": "JUMPHRS"
+   }
+  },
+  {
+   "effect": "Stop the clock",
+   "category": "World",
+   "codes": {
+    "mobile": "NOTIME"
+   }
+  }
+ ],
+ "slug": "gta-ctw",
+ "count": 21
+}

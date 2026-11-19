@@ -1,0 +1,87 @@
+{
+ "title": "Bully",
+ "short": "Bully",
+ "year": 2006,
+ "order": 6,
+ "platforms": [
+  "PlayStation"
+ ],
+ "methods": [
+  "Combo"
+ ],
+ "inputs": [
+  {
+   "id": "ps2",
+   "label": "PS2",
+   "type": "combo",
+   "pad": "ps",
+   "how": "Plug a second controller into port 2 and enter the combo on it during play."
+  }
+ ],
+ "warning": "These are PS2 codes. No built-in cheats are listed here for Scholarship or Anniversary Edition.",
+ "sources": [
+  "https://www.gamesradar.com/au/bully-cheats/"
+ ],
+ "cheats": [
+  {
+   "effect": "Full health",
+   "category": "Player",
+   "codes": {
+    "ps2": "HOLD:L1 R2 R2 R2"
+   }
+  },
+  {
+   "effect": "All Hobo fighting moves",
+   "category": "Player",
+   "codes": {
+    "ps2": "HOLD:L1 Up Left Down Right Triangle Square Cross Circle"
+   },
+   "note": "Not shown on the stats screen."
+  },
+  {
+   "effect": "All gym grapple moves",
+   "category": "Player",
+   "codes": {
+    "ps2": "HOLD:L1 Up Left Down Down Triangle Square Cross Cross"
+   },
+   "note": "Not shown on the stats screen."
+  },
+  {
+   "effect": "All clothes",
+   "category": "Player",
+   "codes": {
+    "ps2": "L1 L1 R1 L1 L1 L1 R1 R1"
+   }
+  },
+  {
+   "effect": "Money",
+   "category": "Money",
+   "codes": {
+    "ps2": "HOLD:L1 Triangle Square Circle Cross"
+   }
+  },
+  {
+   "effect": "All weapons",
+   "category": "Weapons",
+   "codes": {
+    "ps2": "HOLD:L1 Up Up Up Up"
+   }
+  },
+  {
+   "effect": "Full ammo",
+   "category": "Weapons",
+   "codes": {
+    "ps2": "HOLD:L1 Up Up"
+   }
+  },
+  {
+   "effect": "Unlimited ammo",
+   "category": "Weapons",
+   "codes": {
+    "ps2": "HOLD:L1 Up Down Up Down"
+   }
+  }
+ ],
+ "slug": "bully",
+ "count": 8
+}

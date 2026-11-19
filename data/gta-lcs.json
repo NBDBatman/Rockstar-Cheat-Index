@@ -1,0 +1,377 @@
+{
+ "title": "GTA: Liberty City Stories",
+ "short": "LCS",
+ "year": 2005,
+ "order": 5,
+ "platforms": [
+  "Handheld",
+  "PlayStation"
+ ],
+ "methods": [
+  "Combo"
+ ],
+ "inputs": [
+  {
+   "id": "psp",
+   "label": "PSP",
+   "type": "combo",
+   "pad": "ps",
+   "how": "Enter the combo during play, without pausing."
+  },
+  {
+   "id": "ps2",
+   "label": "PS2",
+   "type": "combo",
+   "pad": "ps",
+   "how": "Enter the combo during play, without pausing."
+  }
+ ],
+ "warning": "Some cheats, like the pedestrian ones, cannot be turned off. Save first.",
+ "sources": [
+  "https://www.gtabase.com/more/gta-liberty-city-stories/cheat-codes"
+ ],
+ "cheats": [
+  {
+   "effect": "Full health",
+   "category": "Player",
+   "codes": {
+    "ps2": "L1 R1 Cross L1 R1 Square L1 R1",
+    "psp": "L R Cross L R Square L R"
+   }
+  },
+  {
+   "effect": "Full armor",
+   "category": "Player",
+   "codes": {
+    "ps2": "L1 R1 Circle L1 R1 Cross L1 R1",
+    "psp": "L R Circle L R Cross L R"
+   }
+  },
+  {
+   "effect": "Change to a random outfit",
+   "category": "Player",
+   "codes": {
+    "ps2": "L1 L1 Left L1 L1 Right Square Triangle",
+    "psp": "L L Left L L Right Square Triangle"
+   }
+  },
+  {
+   "effect": "Commit suicide",
+   "category": "Player",
+   "codes": {
+    "ps2": "L1 Down Left R1 Cross Circle Up Triangle",
+    "psp": "L Down Left R Cross Circle Up Triangle"
+   }
+  },
+  {
+   "effect": "$250,000",
+   "category": "Money",
+   "codes": {
+    "ps2": "L1 R1 Triangle L1 R1 Circle L1 R1",
+    "psp": "L R Triangle L R Circle L R"
+   }
+  },
+  {
+   "effect": "Weapon set 1",
+   "category": "Weapons",
+   "codes": {
+    "ps2": "Up Square Square Down Left Square Square Right",
+    "psp": "Up Square Square Down Left Square Square Right"
+   }
+  },
+  {
+   "effect": "Weapon set 2",
+   "category": "Weapons",
+   "codes": {
+    "ps2": "Up Circle Circle Down Left Circle Circle Right",
+    "psp": "Up Circle Circle Down Left Circle Circle Right"
+   }
+  },
+  {
+   "effect": "Weapon set 3",
+   "category": "Weapons",
+   "codes": {
+    "ps2": "Up Cross Cross Down Left Cross Cross Right",
+    "psp": "Up Cross Cross Down Left Cross Cross Right"
+   }
+  },
+  {
+   "effect": "Never wanted",
+   "category": "Wanted",
+   "codes": {
+    "ps2": "L1 L1 Triangle R1 R1 Cross Square Circle",
+    "psp": "L L Triangle R R Cross Square Circle"
+   }
+  },
+  {
+   "effect": "Raise wanted level",
+   "category": "Wanted",
+   "codes": {
+    "ps2": "L1 R1 Square L1 R1 Triangle L1 R1",
+    "psp": "L R Square L R Triangle L R"
+   }
+  },
+  {
+   "effect": "Spawn a Rhino tank",
+   "category": "Vehicles",
+   "codes": {
+    "ps2": "L1 L1 Left L1 L1 Right Triangle Circle",
+    "psp": "L L Left L L Right Triangle Circle"
+   }
+  },
+  {
+   "effect": "Spawn a Trashmaster",
+   "category": "Vehicles",
+   "codes": {
+    "ps2": "Triangle Circle Down Triangle Circle Up L1 L1",
+    "psp": "Triangle Circle Down Triangle Circle Up L L"
+   }
+  },
+  {
+   "effect": "Blow up all cars",
+   "category": "Vehicles",
+   "codes": {
+    "ps2": "L1 L1 Left L1 L1 Right Cross Square",
+    "psp": "L L Left L L Right Cross Square"
+   }
+  },
+  {
+   "effect": "Perfect handling",
+   "category": "Vehicles",
+   "codes": {
+    "ps2": "L1 Up Left R1 Triangle Circle Down Cross",
+    "psp": "L Up Left R Triangle Circle Down Cross"
+   }
+  },
+  {
+   "effect": "Cars drive on water",
+   "category": "Vehicles",
+   "codes": {
+    "ps2": "Circle Cross Down Circle Cross Up L1 L1",
+    "psp": "Circle Cross Down Circle Cross Up L L"
+   }
+  },
+  {
+   "effect": "Chrome cars",
+   "category": "Vehicles",
+   "codes": {
+    "ps2": "Triangle R1 L1 Down Down R1 R1 Triangle",
+    "psp": "Triangle R L Down Down R R Triangle"
+   }
+  },
+  {
+   "effect": "Change bike tires",
+   "category": "Vehicles",
+   "codes": {
+    "ps2": "Circle Right Cross Up Right Cross L1 Square",
+    "psp": "Circle Right Cross Up Right Cross L Square"
+   }
+  },
+  {
+   "effect": "Aggressive drivers",
+   "category": "Vehicles",
+   "codes": {
+    "ps2": "Square Square R1 Cross Cross L1 Circle Circle",
+    "psp": "Square Square R Cross Cross L Circle Circle"
+   }
+  },
+  {
+   "effect": "Traffic lights stay green",
+   "category": "Vehicles",
+   "codes": {
+    "ps2": "Triangle Triangle R1 Square Square L1 Cross Cross",
+    "psp": "Triangle Triangle R Square Square L Cross Cross"
+   }
+  },
+  {
+   "effect": "All traffic is black",
+   "category": "Vehicles",
+   "codes": {
+    "ps2": "Circle Circle R1 Triangle Triangle L1 Square Square",
+    "psp": "Circle Circle R Triangle Triangle L Square Square"
+   }
+  },
+  {
+   "effect": "All traffic is white",
+   "category": "Vehicles",
+   "codes": {
+    "ps2": "Cross Cross R1 Circle Circle L1 Triangle Triangle",
+    "psp": "Cross Cross R Circle Circle L Triangle Triangle"
+   }
+  },
+  {
+   "effect": "Sunny weather",
+   "category": "World",
+   "codes": {
+    "ps2": "L1 L1 Circle R1 R1 Square Triangle Cross",
+    "psp": "L L Circle R R Square Triangle Cross"
+   }
+  },
+  {
+   "effect": "Clear weather",
+   "category": "World",
+   "codes": {
+    "ps2": "Up Down Circle Up Down Square L1 R1",
+    "psp": "Up Down Circle Up Down Square L R"
+   }
+  },
+  {
+   "effect": "Overcast weather",
+   "category": "World",
+   "codes": {
+    "ps2": "Up Down Cross Up Down Triangle L1 R1",
+    "psp": "Up Down Cross Up Down Triangle L R"
+   }
+  },
+  {
+   "effect": "Rainy weather",
+   "category": "World",
+   "codes": {
+    "ps2": "Up Down Square Up Down Circle L1 R1",
+    "psp": "Up Down Square Up Down Circle L R"
+   }
+  },
+  {
+   "effect": "Foggy weather",
+   "category": "World",
+   "codes": {
+    "ps2": "Up Down Triangle Up Down Cross L1 R1",
+    "psp": "Up Down Triangle Up Down Cross L R"
+   }
+  },
+  {
+   "effect": "Faster clock",
+   "category": "World",
+   "codes": {
+    "ps2": "L1 L1 Left L1 L1 Right Circle Cross",
+    "psp": "L L Left L L Right Circle Cross"
+   }
+  },
+  {
+   "effect": "Faster gameplay",
+   "category": "World",
+   "codes": {
+    "ps2": "R1 R1 L1 R1 R1 L1 Down Cross",
+    "psp": "R R L R R L Down Cross"
+   }
+  },
+  {
+   "effect": "Slower gameplay",
+   "category": "World",
+   "codes": {
+    "ps2": "R1 Triangle Cross R1 Square Circle Left Right",
+    "psp": "R Triangle Cross R Square Circle Left Right"
+   }
+  },
+  {
+   "effect": "Upside-down view",
+   "category": "World",
+   "codes": {
+    "ps2": "Down Down Down Cross Cross Square R1 L1",
+    "psp": "Down Down Down Cross Cross Square R L"
+   }
+  },
+  {
+   "effect": "Upside-down view, reversed",
+   "category": "World",
+   "codes": {
+    "ps2": "Cross Cross Cross Down Down Right L1 R1",
+    "psp": "Cross Cross Cross Down Down Right L R"
+   }
+  },
+  {
+   "effect": "Big heads",
+   "category": "Pedestrians",
+   "codes": {
+    "ps2": "Down Down Down Circle Circle Cross L1 R1",
+    "psp": "Down Down Down Circle Circle Cross L R"
+   }
+  },
+  {
+   "effect": "Men follow Toni",
+   "category": "Pedestrians",
+   "codes": {
+    "ps2": "Down Down Down Triangle Triangle Circle L1 R1",
+    "psp": "Down Down Down Triangle Triangle Circle L R"
+   }
+  },
+  {
+   "effect": "Pedestrians get in your car",
+   "category": "Pedestrians",
+   "codes": {
+    "ps2": "Cross Square Down Cross Square Up R1 R1",
+    "psp": "Cross Square Down Cross Square Up R R"
+   }
+  },
+  {
+   "effect": "Pedestrians attack you",
+   "category": "Pedestrians",
+   "codes": {
+    "ps2": "L1 L1 R1 L1 L1 R1 Up Triangle",
+    "psp": "L L R L L R Up Triangle"
+   }
+  },
+  {
+   "effect": "Pedestrians carry weapons",
+   "category": "Pedestrians",
+   "codes": {
+    "ps2": "R1 R1 L1 R1 R1 L1 Right Circle",
+    "psp": "R R L R R L Right Circle"
+   }
+  },
+  {
+   "effect": "Pedestrians riot",
+   "category": "Pedestrians",
+   "codes": {
+    "ps2": "L1 L1 R1 L1 L1 R1 Left Square",
+    "psp": "L L R L L R Left Square"
+   }
+  },
+  {
+   "effect": "Show the media attention meter",
+   "category": "Other",
+   "codes": {
+    "ps2": "L1 Up Right R1 Triangle Square Down Cross",
+    "psp": "L Up Right R Triangle Square Down Cross"
+   }
+  },
+  {
+   "effect": "Show the credits",
+   "category": "Other",
+   "codes": {
+    "ps2": "L1 R1 L1 R1 Up Down L1 R1",
+    "psp": "L R L R Up Down L R"
+   }
+  },
+  {
+   "effect": "Unlock 25% of multiplayer content",
+   "category": "Other",
+   "codes": {
+    "psp": "Up Up Up Square Square Triangle R L"
+   }
+  },
+  {
+   "effect": "Unlock 50% of multiplayer content",
+   "category": "Other",
+   "codes": {
+    "psp": "Up Up Up Circle Circle Cross L R"
+   }
+  },
+  {
+   "effect": "Unlock 75% of multiplayer content",
+   "category": "Other",
+   "codes": {
+    "psp": "Up Up Up Cross Cross Square R L"
+   }
+  },
+  {
+   "effect": "Unlock 100% of multiplayer content",
+   "category": "Other",
+   "codes": {
+    "psp": "Up Up Up Triangle Triangle Circle L R"
+   }
+  }
+ ],
+ "slug": "gta-lcs",
+ "count": 43
+}

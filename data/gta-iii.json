@@ -1,0 +1,249 @@
+{
+ "title": "Grand Theft Auto III",
+ "short": "GTA III",
+ "year": 2001,
+ "order": 2,
+ "platforms": [
+  "PC",
+  "PlayStation",
+  "Xbox"
+ ],
+ "methods": [
+  "Combo",
+  "Typed"
+ ],
+ "inputs": [
+  {
+   "id": "pc",
+   "label": "PC",
+   "type": "text",
+   "how": "Type the code during play. There is no console and no Enter key."
+  },
+  {
+   "id": "ps",
+   "label": "PlayStation",
+   "type": "combo",
+   "pad": "ps",
+   "how": "Enter the combo on the controller during play, without pausing."
+  },
+  {
+   "id": "xbox",
+   "label": "Xbox",
+   "type": "combo",
+   "pad": "xbox",
+   "derive": "ps",
+   "how": "Enter the combo on the controller during play, without pausing. Xbox 360 and later, including the Definitive Edition. The original Xbox release used different buttons."
+  }
+ ],
+ "warning": "Cheats turn off achievements and trophies for the session. Keep a clean save.",
+ "sources": [
+  "https://gtabase.com/gta-3/gta-3-cheats-pc-definitive-edition",
+  "https://www.gtabase.com/gta-3/gta-3-cheats-ps5-ps4-ps3-ps2"
+ ],
+ "cheats": [
+  {
+   "effect": "Full health (repairs your vehicle too)",
+   "category": "Player",
+   "codes": {
+    "pc": "GESUNDHEIT",
+    "ps": "R2 R2 L1 R1 Left Down Right Up Left Down Right Up"
+   }
+  },
+  {
+   "effect": "Full armor",
+   "category": "Player",
+   "codes": {
+    "pc": "TORTOISE",
+    "ps": "R2 R2 L1 L2 Left Down Right Up Left Down Right Up"
+   },
+   "note": "PC also accepts TURTOISE."
+  },
+  {
+   "effect": "Change to a random outfit",
+   "category": "Player",
+   "codes": {
+    "pc": "ILIKEDRESSINGUP",
+    "ps": "Right Down Left Up L1 L2 Up Left Down Right"
+   }
+  },
+  {
+   "effect": "Big head mode",
+   "category": "Player",
+   "codes": {
+    "pc": "EXPANDDOME",
+    "ps": "Up Up Down Down Left Right Left Right Circle Cross"
+   },
+   "requirement": "Definitive Edition only."
+  },
+  {
+   "effect": "All weapons",
+   "category": "Weapons",
+   "codes": {
+    "pc": "GUNSGUNSGUNS",
+    "ps": "R2 R2 L1 R2 Left Down Right Up Left Down Right Up"
+   }
+  },
+  {
+   "effect": "$250,000",
+   "category": "Money",
+   "codes": {
+    "pc": "IFIWEREARICHMAN",
+    "ps": "R2 R2 L1 L1 Left Down Right Up Left Down Right Up"
+   }
+  },
+  {
+   "effect": "Raise wanted level",
+   "category": "Wanted",
+   "codes": {
+    "pc": "MOREPOLICEPLEASE",
+    "ps": "R2 R2 L1 R2 Left Right Left Right Left Right"
+   }
+  },
+  {
+   "effect": "Clear wanted level",
+   "category": "Wanted",
+   "codes": {
+    "pc": "NOPOLICEPLEASE",
+    "ps": "R2 R2 L1 R2 Up Down Up Down Up Down"
+   }
+  },
+  {
+   "effect": "Spawn a Rhino tank",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "GIVEUSATANK",
+    "ps": "Circle Circle Circle Circle Circle Circle R1 L2 L1 Triangle Circle Triangle"
+   }
+  },
+  {
+   "effect": "Blow up all vehicles",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "BANGBANGBANG",
+    "ps": "L2 R2 L1 R1 L2 R2 Triangle Square Circle Triangle L2 L1"
+   }
+  },
+  {
+   "effect": "Invisible cars",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "ANICESETOFWHEELS",
+    "ps": "L1 L1 Square R2 Triangle L1 Triangle"
+   },
+   "requirement": "Not in the Definitive Edition."
+  },
+  {
+   "effect": "Better car handling",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "CORNERSLIKEMAD",
+    "ps": "R1 L1 R2 L1 Left R1 R1 Triangle"
+   }
+  },
+  {
+   "effect": "Flying cars",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "CHITTYCHITTYBB",
+    "ps": "Right R2 Circle R1 L2 Down L1 R1"
+   }
+  },
+  {
+   "effect": "Sunny weather",
+   "category": "World",
+   "codes": {
+    "pc": "SKINCANCERFORME",
+    "ps": "L1 L2 R1 R2 R2 R1 L2 Triangle"
+   }
+  },
+  {
+   "effect": "Cloudy weather",
+   "category": "World",
+   "codes": {
+    "pc": "ILIKESCOTLAND",
+    "ps": "L1 L2 R1 R2 R2 R1 L2 Square"
+   }
+  },
+  {
+   "effect": "Foggy weather",
+   "category": "World",
+   "codes": {
+    "pc": "PEASOUP",
+    "ps": "L1 L2 R1 R2 R2 R1 L2 Cross"
+   }
+  },
+  {
+   "effect": "Rainy weather",
+   "category": "World",
+   "codes": {
+    "pc": "ILOVESCOTLAND",
+    "ps": "L1 L2 R1 R2 R2 R1 L2 Circle"
+   }
+  },
+  {
+   "effect": "Speed up the clock",
+   "category": "World",
+   "codes": {
+    "pc": "MADWEATHER",
+    "ps": "Circle Circle Circle Square Square Square Square Square L1 Triangle Circle Triangle"
+   }
+  },
+  {
+   "effect": "Slow motion",
+   "category": "World",
+   "codes": {
+    "pc": "BOOOOORING",
+    "ps": "Triangle Up Right Down Square R1 R2"
+   }
+  },
+  {
+   "effect": "Fast motion",
+   "category": "World",
+   "codes": {
+    "pc": "TIMEFLIESWHENYOU",
+    "ps": "Triangle Up Right Down Square L1 L2"
+   }
+  },
+  {
+   "effect": "Pedestrians riot",
+   "category": "Pedestrians",
+   "codes": {
+    "pc": "ITSALLGOINGMAAAD",
+    "ps": "Down Up Left Up Cross R1 R2 L2 L1"
+   }
+  },
+  {
+   "effect": "Pedestrians attack you",
+   "category": "Pedestrians",
+   "codes": {
+    "pc": "NOBODYLIKESME",
+    "ps": "Down Up Left Up Cross R1 R2 L1 L2"
+   }
+  },
+  {
+   "effect": "Pedestrians carry weapons",
+   "category": "Pedestrians",
+   "codes": {
+    "pc": "WEAPONSFORALL",
+    "ps": "R2 R1 Triangle Cross L2 L1 Up Down"
+   }
+  },
+  {
+   "effect": "Pedestrians carry no weapons",
+   "category": "Pedestrians",
+   "codes": {
+    "pc": "NOWEAPONSFORALL"
+   }
+  },
+  {
+   "effect": "More gore",
+   "category": "Other",
+   "codes": {
+    "pc": "NASTYLIMBSCHEAT",
+    "ps": "Square L1 Circle Down L1 R1 Triangle Right L1 Cross"
+   }
+  }
+ ],
+ "slug": "gta-iii",
+ "count": 25
+}

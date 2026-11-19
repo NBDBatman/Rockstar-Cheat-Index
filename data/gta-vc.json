@@ -1,0 +1,506 @@
+{
+ "title": "GTA: Vice City",
+ "short": "Vice City",
+ "year": 2002,
+ "order": 3,
+ "platforms": [
+  "PC",
+  "PlayStation",
+  "Xbox"
+ ],
+ "methods": [
+  "Combo",
+  "Typed"
+ ],
+ "inputs": [
+  {
+   "id": "pc",
+   "label": "PC",
+   "type": "text",
+   "how": "Type the code during play. There is no console and no Enter key."
+  },
+  {
+   "id": "ps",
+   "label": "PlayStation",
+   "type": "combo",
+   "pad": "ps",
+   "how": "Enter the combo on the controller during play, without pausing."
+  },
+  {
+   "id": "xbox",
+   "label": "Xbox",
+   "type": "combo",
+   "pad": "xbox",
+   "derive": "ps",
+   "how": "Enter the combo on the controller during play, without pausing. Xbox 360 and later, including the Definitive Edition. The original Xbox release used different buttons."
+  }
+ ],
+ "warning": "Cheats turn off achievements and trophies for the session. Keep a clean save.",
+ "sources": [
+  "https://www.grandtheftwiki.com/GTA_Vice_City_Cheats_(PC)"
+ ],
+ "cheats": [
+  {
+   "effect": "Full health (repairs your vehicle too)",
+   "category": "Player",
+   "codes": {
+    "pc": "ASPIRINE",
+    "ps": "R1 R2 L1 Circle Left Down Right Up Left Down Right Up"
+   }
+  },
+  {
+   "effect": "Full armor",
+   "category": "Player",
+   "codes": {
+    "pc": "PRECIOUSPROTECTION",
+    "ps": "R1 R2 L1 Cross Left Down Right Up Left Down Right Up"
+   }
+  },
+  {
+   "effect": "Lose most of your health",
+   "category": "Player",
+   "codes": {
+    "pc": "ICANTTAKEITANYMORE",
+    "ps": "Right L2 Down R1 Left Left R1 L1 L2 L1"
+   }
+  },
+  {
+   "effect": "Thin arms and legs",
+   "category": "Player",
+   "codes": {
+    "pc": "PROGRAMMER"
+   }
+  },
+  {
+   "effect": "Thick arms and legs",
+   "category": "Player",
+   "codes": {
+    "pc": "DEEPFRIEDMARSBARS"
+   }
+  },
+  {
+   "effect": "Tommy smokes a cigarette",
+   "category": "Player",
+   "codes": {
+    "pc": "CERTAINDEATH"
+   },
+   "requirement": "Original PC release only."
+  },
+  {
+   "effect": "Women follow Tommy",
+   "category": "Player",
+   "codes": {
+    "pc": "FANNYMAGNET",
+    "ps": "Circle Cross L1 L1 R2 Cross Cross Circle Triangle"
+   }
+  },
+  {
+   "effect": "Play as a random pedestrian",
+   "category": "Player",
+   "codes": {
+    "pc": "STILLLIKEDRESSINGUP",
+    "ps": "Right Right Left Up L1 L2 Left Up Down Right"
+   }
+  },
+  {
+   "effect": "Play as Candy Suxxx",
+   "category": "Player",
+   "codes": {
+    "pc": "IWANTBIGTITS",
+    "ps": "Circle R2 Down R1 Left Right R1 L1 Cross L2"
+   }
+  },
+  {
+   "effect": "Play as Hilary King",
+   "category": "Player",
+   "codes": {
+    "pc": "ILOOKLIKEHILARY",
+    "ps": "R1 Circle R2 L1 Right R1 L1 Cross R2"
+   }
+  },
+  {
+   "effect": "Play as Ken Rosenberg",
+   "category": "Player",
+   "codes": {
+    "pc": "MYSONISALAWYER",
+    "ps": "Right L1 Up L2 L1 Right R1 L1 Cross R1"
+   }
+  },
+  {
+   "effect": "Play as Lance Vance",
+   "category": "Player",
+   "codes": {
+    "pc": "LOOKLIKELANCE",
+    "ps": "Circle L2 Left Cross R1 L1 Cross L1"
+   }
+  },
+  {
+   "effect": "Play as Love Fist's Dick",
+   "category": "Player",
+   "codes": {
+    "pc": "WELOVEOURDICK",
+    "ps": "R1 L2 R2 L1 Right R2 Left Cross Square L1"
+   }
+  },
+  {
+   "effect": "Play as Love Fist's Jezz Torrent",
+   "category": "Player",
+   "codes": {
+    "pc": "ROCKANDROLLMAN",
+    "ps": "Down L1 Down L2 Left Cross R1 L1 Cross Cross"
+   }
+  },
+  {
+   "effect": "Play as Mercedes Cortez",
+   "category": "Player",
+   "codes": {
+    "pc": "FOXYLITTLETHING",
+    "ps": "R2 L1 Up L1 Right R1 Right Up Circle Triangle"
+   }
+  },
+  {
+   "effect": "Play as Phil Cassidy",
+   "category": "Player",
+   "codes": {
+    "pc": "ONEARMEDBANDIT",
+    "ps": "Right R1 Up R2 L1 Right R1 L1 Right Circle"
+   }
+  },
+  {
+   "effect": "Play as Ricardo Diaz",
+   "category": "Player",
+   "codes": {
+    "pc": "CHEATSHAVEBEENCRACKED",
+    "ps": "L1 L2 R1 R2 Down L1 R2 L2"
+   }
+  },
+  {
+   "effect": "Play as Sonny Forelli",
+   "category": "Player",
+   "codes": {
+    "pc": "IDONTHAVETHEMONEYSONNY",
+    "ps": "Circle L1 Circle L2 Left Cross R1 L1 Cross Cross"
+   }
+  },
+  {
+   "effect": "Weapon set 1",
+   "category": "Weapons",
+   "codes": {
+    "pc": "THUGSTOOLS",
+    "ps": "R1 R2 L1 R2 Left Down Right Up Left Down Right Up"
+   }
+  },
+  {
+   "effect": "Weapon set 2",
+   "category": "Weapons",
+   "codes": {
+    "pc": "PROFESSIONALTOOLS",
+    "ps": "R1 R2 L1 R2 Left Down Right Up Left Down Down Left"
+   }
+  },
+  {
+   "effect": "Weapon set 3",
+   "category": "Weapons",
+   "codes": {
+    "pc": "NUTTERTOOLS",
+    "ps": "R1 R2 L1 R2 Left Down Right Up Left Down Down Down"
+   }
+  },
+  {
+   "effect": "Raise wanted level by two stars",
+   "category": "Wanted",
+   "codes": {
+    "pc": "YOUWONTTAKEMEALIVE",
+    "ps": "R1 R1 Circle R2 Left Right Left Right Left Right"
+   }
+  },
+  {
+   "effect": "Clear wanted level",
+   "category": "Wanted",
+   "codes": {
+    "pc": "LEAVEMEALONE",
+    "ps": "R1 R1 Circle R2 Up Down Up Down Up Down"
+   }
+  },
+  {
+   "effect": "Spawn a Rhino tank",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "PANZER",
+    "ps": "Circle Circle L1 Circle Circle Circle L1 L2 R1 Triangle Circle Triangle"
+   }
+  },
+  {
+   "effect": "Spawn a Sabre Turbo",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "GETTHEREFAST",
+    "ps": "Right L2 Down L2 L2 Cross R1 L1 Circle Left"
+   }
+  },
+  {
+   "effect": "Spawn a Caddy",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "BETTERTHANWALKING",
+    "ps": "Circle L1 Up R1 L2 Cross R1 L1 Circle Cross"
+   }
+  },
+  {
+   "effect": "Spawn Romero's Hearse",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "THELASTRIDE",
+    "ps": "Down R2 Down R1 L2 Left R1 L1 Left Right"
+   }
+  },
+  {
+   "effect": "Spawn a Trashmaster",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "RUBBISHCAR",
+    "ps": "Circle R1 Circle R1 Left Left R1 L1 Circle Right"
+   }
+  },
+  {
+   "effect": "Spawn the Love Fist limo",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "ROCKANDROLLCAR",
+    "ps": "R2 Up L2 Left Left R1 L1 Circle Right"
+   }
+  },
+  {
+   "effect": "Spawn a Hotring Racer",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "GETTHEREAMAZINGLYFAST",
+    "ps": "R1 Circle R2 Right L1 L2 Cross Cross Square R1"
+   }
+  },
+  {
+   "effect": "Spawn a Hotring Racer, second version",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "GETTHEREVERYFASTINDEED",
+    "ps": "R2 L1 Circle Right L1 R1 Right Up Circle R2"
+   }
+  },
+  {
+   "effect": "Spawn a Bloodring Banger",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "GETTHEREQUICKLY",
+    "ps": "Up Right Right L1 Right Up Square L2"
+   }
+  },
+  {
+   "effect": "Spawn a Bloodring Banger, second version",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "TRAVELINSTYLE",
+    "ps": "Down R1 Circle L2 L2 Cross R1 L1 Left Left"
+   }
+  },
+  {
+   "effect": "Blow up all vehicles",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "BIGBANG",
+    "ps": "R2 L2 R1 L1 L2 R2 Square Triangle Circle Triangle L2 L1"
+   }
+  },
+  {
+   "effect": "Cars drive on water",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "SEAWAYS",
+    "ps": "Right R2 Circle R1 L2 Square R1 R2"
+   }
+  },
+  {
+   "effect": "Flying cars",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "COMEFLYWITHME",
+    "ps": "Right R2 Circle R1 L2 Down L1 R1"
+   }
+  },
+  {
+   "effect": "Flying boats",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "AIRSHIP"
+   }
+  },
+  {
+   "effect": "Only car wheels are visible",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "WHEELSAREALLINEED",
+    "ps": "Triangle L1 Triangle R2 Square L1 L1"
+   }
+  },
+  {
+   "effect": "Assorted vehicle changes",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "LOADSOFLITTLETHINGS",
+    "ps": "R1 Cross Triangle Right R2 Square Up Down Square"
+   }
+  },
+  {
+   "effect": "Better grip and higher jumps",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "GRIPISEVERYTHING",
+    "ps": "Triangle R1 R1 Left R1 L1 R2 L1"
+   }
+  },
+  {
+   "effect": "Aggressive drivers",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "MIAMITRAFFIC",
+    "ps": "R2 Circle R1 L2 Left R1 L1 R2 L2"
+   }
+  },
+  {
+   "effect": "All traffic is black",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "IWANTITPAINTEDBLACK",
+    "ps": "Circle L2 Up R1 Left Cross R1 L1 Left Circle"
+   }
+  },
+  {
+   "effect": "All traffic is pink",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "AHAIRDRESSERSCAR",
+    "ps": "Circle L1 Down L2 Left Cross R1 L1 Right Circle"
+   }
+  },
+  {
+   "effect": "Traffic lights stay green",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "GREENLIGHT",
+    "ps": "Right R1 Up L2 L2 Left R1 L1 R1 R1"
+   }
+  },
+  {
+   "effect": "Sunny weather",
+   "category": "World",
+   "codes": {
+    "pc": "ALOVELYDAY",
+    "ps": "R2 Cross L1 L1 L2 L2 L2 Down"
+   }
+  },
+  {
+   "effect": "Light clouds",
+   "category": "World",
+   "codes": {
+    "pc": "APLEASANTDAY",
+    "ps": "R2 Cross L1 L1 L2 L2 L2 Triangle"
+   }
+  },
+  {
+   "effect": "Overcast weather",
+   "category": "World",
+   "codes": {
+    "pc": "ABITDRIEG",
+    "ps": "R2 Cross L1 L1 L2 L2 L2 Square"
+   }
+  },
+  {
+   "effect": "Stormy weather",
+   "category": "World",
+   "codes": {
+    "pc": "CATSANDDOGS",
+    "ps": "R2 Cross L1 L1 L2 L2 L2 Circle"
+   }
+  },
+  {
+   "effect": "Foggy weather",
+   "category": "World",
+   "codes": {
+    "pc": "CANTSEEATHING",
+    "ps": "R2 Cross L1 L1 L2 L2 L2 Cross"
+   }
+  },
+  {
+   "effect": "Speed up the game",
+   "category": "World",
+   "codes": {
+    "pc": "ONSPEED",
+    "ps": "Triangle Up Right Down L2 L1 Square"
+   }
+  },
+  {
+   "effect": "Slow down the game",
+   "category": "World",
+   "codes": {
+    "pc": "BOOOOOOORING",
+    "ps": "Triangle Up Right Down Square R2 R1"
+   }
+  },
+  {
+   "effect": "Speed up the clock",
+   "category": "World",
+   "codes": {
+    "pc": "LIFEISPASSINGMEBY",
+    "ps": "Circle Circle L1 Square L1 Square Square Square L1 Triangle Circle Triangle"
+   }
+  },
+  {
+   "effect": "Pedestrians carry weapons",
+   "category": "Pedestrians",
+   "codes": {
+    "pc": "OURGODGIVENRIGHTTOBEARARMS",
+    "ps": "R2 R1 Cross Triangle Cross Triangle Up Down"
+   }
+  },
+  {
+   "effect": "Pedestrians hate you (can't be undone)",
+   "category": "Pedestrians",
+   "codes": {
+    "pc": "NOBODYLIKESME",
+    "ps": "Down Up Up Up Cross R2 R1 L2 L2"
+   }
+  },
+  {
+   "effect": "Pedestrians riot (can't be undone)",
+   "category": "Pedestrians",
+   "codes": {
+    "pc": "FIGHTFIGHTFIGHT",
+    "ps": "Down Left Up Left Cross R2 R1 L2 L1"
+   }
+  },
+  {
+   "effect": "Your gang are women in bikinis with guns",
+   "category": "Pedestrians",
+   "codes": {
+    "pc": "CHICKSWITHGUNS",
+    "ps": "Right L1 Circle L2 Left Cross R1 L1 L1 Cross"
+   }
+  },
+  {
+   "effect": "Police come back to life",
+   "category": "Pedestrians",
+   "codes": {
+    "ps": "Circle L1 Down L2 Left Cross R1 L1 Right Cross"
+   }
+  },
+  {
+   "effect": "Show media level",
+   "category": "Other",
+   "codes": {
+    "pc": "CHASESTAT",
+    "ps": "R2 Circle Up L1 Right R1 Right Up Square Triangle"
+   }
+  }
+ ],
+ "slug": "gta-vc",
+ "count": 58
+}

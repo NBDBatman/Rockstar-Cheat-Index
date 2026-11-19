@@ -1,0 +1,837 @@
+{
+ "title": "GTA: San Andreas",
+ "short": "San Andreas",
+ "year": 2004,
+ "order": 4,
+ "platforms": [
+  "PC",
+  "PlayStation",
+  "Xbox"
+ ],
+ "methods": [
+  "Combo",
+  "Typed"
+ ],
+ "inputs": [
+  {
+   "id": "pc",
+   "label": "PC",
+   "type": "text",
+   "how": "Type the code during play. There is no console and no Enter key."
+  },
+  {
+   "id": "ps",
+   "label": "PlayStation",
+   "type": "combo",
+   "pad": "ps",
+   "how": "Enter the combo on the controller during play, without pausing."
+  },
+  {
+   "id": "xbox",
+   "label": "Xbox",
+   "type": "combo",
+   "pad": "xbox",
+   "derive": "ps",
+   "how": "Enter the combo on the controller during play, without pausing. Xbox 360 and later, including the Definitive Edition. The original Xbox release used different buttons."
+  }
+ ],
+ "warning": "Cheats turn off achievements and trophies for the session. Keep a clean save.",
+ "sources": [
+  "https://wiki.gtaboom.com/wiki/san-andreas-cheats",
+  "https://www.gtabase.com/gta-san-andreas/gta-san-andreas-cheats-pc-definitive-edition"
+ ],
+ "cheats": [
+  {
+   "effect": "$250,000, full health and full armor",
+   "category": "Player",
+   "codes": {
+    "pc": "HESOYAM",
+    "ps": "R1 R2 L1 Cross Left Down Right Up Left Down Right Up"
+   },
+   "note": "Definitive Edition also accepts INEEDSOMEHELP."
+  },
+  {
+   "effect": "Infinite health",
+   "category": "Player",
+   "codes": {
+    "pc": "BAGUVIX",
+    "ps": "Down Cross Right Left Right R1 Right Down Up Triangle"
+   },
+   "note": "Definitive Edition also accepts CAINEMVHZC."
+  },
+  {
+   "effect": "Infinite lung capacity",
+   "category": "Player",
+   "codes": {
+    "pc": "CVWKXAM",
+    "ps": "Down Left L1 Down Down R2 Down L2 Down"
+   },
+   "note": "Definitive Edition also accepts MANFROMATLANTIS."
+  },
+  {
+   "effect": "Adrenaline mode",
+   "category": "Player",
+   "codes": {
+    "pc": "MUNASEF",
+    "ps": "Cross Cross Square R1 L1 Cross Down Left Cross"
+   },
+   "note": "Definitive Edition also accepts ANOSEONGLASS."
+  },
+  {
+   "effect": "CJ never gets hungry",
+   "category": "Player",
+   "codes": {
+    "pc": "AEDUWNV",
+    "ps": "Square L2 R1 Triangle Up Square L2 Up Cross"
+   },
+   "note": "Definitive Edition also accepts IAMNEVERHUNGRY."
+  },
+  {
+   "effect": "Maximum fat",
+   "category": "Player",
+   "codes": {
+    "pc": "BTCDBCB",
+    "ps": "Triangle Up Up Left Right Square Circle Down"
+   },
+   "note": "Definitive Edition also accepts WHOATEALLTHEPIES."
+  },
+  {
+   "effect": "Maximum muscle",
+   "category": "Player",
+   "codes": {
+    "pc": "JYSDSOD",
+    "ps": "Triangle Up Up Left Right Square Circle Left"
+   },
+   "note": "Definitive Edition also accepts BUFFMEUP."
+  },
+  {
+   "effect": "Minimum fat and muscle",
+   "category": "Player",
+   "codes": {
+    "pc": "KVGYZQK",
+    "ps": "Triangle Up Up Left Right Square Circle Right"
+   },
+   "note": "Definitive Edition also accepts LEANANDMEAN."
+  },
+  {
+   "effect": "Maximum respect",
+   "category": "Player",
+   "codes": {
+    "pc": "OGXSDAG",
+    "ps": "L1 R1 Triangle Down R2 Cross L1 Up L2 L2 L1 L1"
+   },
+   "note": "Definitive Edition also accepts WORSHIPME."
+  },
+  {
+   "effect": "Maximum sex appeal",
+   "category": "Player",
+   "codes": {
+    "pc": "EHIBXQS",
+    "ps": "Circle Triangle Triangle Up Circle R1 L2 Up Triangle L1 L1 L1"
+   },
+   "note": "Definitive Edition also accepts HELLOLADIES."
+  },
+  {
+   "effect": "Maximum driving skills",
+   "category": "Player",
+   "codes": {
+    "pc": "VQIMAHA",
+    "ps": "Square L2 Cross R1 L2 L2 Left R1 Right L1 L1 L1"
+   },
+   "note": "Definitive Edition also accepts NATURALTALENT."
+  },
+  {
+   "effect": "Super jump",
+   "category": "Player",
+   "codes": {
+    "pc": "LFGMHAL",
+    "ps": "Up Up Triangle Triangle Up Up Left Right Square R2 R2"
+   },
+   "note": "Definitive Edition also accepts KANGAROO."
+  },
+  {
+   "effect": "Super punch",
+   "category": "Player",
+   "codes": {
+    "pc": "IAVENJQ",
+    "ps": "Up Left Cross Triangle R1 Circle Circle Circle L2"
+   },
+   "note": "Definitive Edition also accepts STINGLIKEABEE."
+  },
+  {
+   "effect": "Big head mode",
+   "category": "Player",
+   "codes": {
+    "pc": "EXPANDDOME",
+    "ps": "Up Up Down Down Left Right Left Right Circle Cross"
+   },
+   "requirement": "Definitive Edition only."
+  },
+  {
+   "effect": "Commit suicide",
+   "category": "Player",
+   "codes": {
+    "pc": "SZCMAWO",
+    "ps": "Right L2 Down R1 Left Left R1 L1 L2 L1"
+   },
+   "note": "Definitive Edition also accepts GOODBYECRUELWORLD."
+  },
+  {
+   "effect": "Weapon set 1",
+   "category": "Weapons",
+   "codes": {
+    "pc": "LXGIWYL",
+    "ps": "R1 R2 L1 R2 Left Down Right Up Left Down Right Up"
+   },
+   "note": "Definitive Edition also accepts THUGSARMOURY."
+  },
+  {
+   "effect": "Weapon set 2",
+   "category": "Weapons",
+   "codes": {
+    "pc": "KJKSZPJ",
+    "ps": "R1 R2 L1 R2 Left Down Right Up Left Down Down Left"
+   },
+   "note": "Definitive Edition also accepts PROFESSIONALSKIT."
+  },
+  {
+   "effect": "Weapon set 3",
+   "category": "Weapons",
+   "codes": {
+    "pc": "UZUMYMW",
+    "ps": "R1 R2 L1 R2 Left Down Right Up Left Down Down Down"
+   },
+   "note": "Definitive Edition also accepts NUTTERSTOYS."
+  },
+  {
+   "effect": "Infinite ammo, no reload",
+   "category": "Weapons",
+   "codes": {
+    "pc": "WANRLTW",
+    "ps": "L1 R1 Square R1 Left R2 R1 Left Square Down L1 L1"
+   },
+   "note": "Definitive Edition also accepts FULLCLIP."
+  },
+  {
+   "effect": "Hitman level for all weapons",
+   "category": "Weapons",
+   "codes": {
+    "pc": "NCSGDAG",
+    "ps": "Down Square Cross Left R1 R2 Left Down Down L1 L1 L1"
+   },
+   "note": "Definitive Edition also accepts PROFESSIONALKILLER."
+  },
+  {
+   "effect": "Aim while driving",
+   "category": "Weapons",
+   "codes": {
+    "pc": "OUIQDMW",
+    "ps": "Up Up Square L2 Right Cross R1 Down R2 Circle"
+   },
+   "note": "Definitive Edition also accepts IWANNADRIVEBY."
+  },
+  {
+   "effect": "Spawn a jetpack",
+   "category": "Weapons",
+   "codes": {
+    "pc": "YECGAA",
+    "ps": "L1 L2 R1 R2 Up Down Left Right L1 L2 R1 R2 Up Down Left Right"
+   },
+   "note": "Definitive Edition also accepts ROCKETMAN."
+  },
+  {
+   "effect": "Spawn a parachute",
+   "category": "Weapons",
+   "codes": {
+    "pc": "AIYPWZQP",
+    "ps": "Left Right L1 L2 R1 R2 R2 Up Down Right L1"
+   },
+   "note": "Definitive Edition also accepts LETSGOBASEJUMPING."
+  },
+  {
+   "effect": "Never wanted",
+   "category": "Wanted",
+   "codes": {
+    "pc": "AEZAKMI",
+    "ps": "Circle Right Circle Right Left Square Triangle Up"
+   },
+   "note": "Definitive Edition also accepts IDOASIPLEASE."
+  },
+  {
+   "effect": "Clear wanted level",
+   "category": "Wanted",
+   "codes": {
+    "pc": "ASNAEB",
+    "ps": "R1 R1 Circle R2 Up Down Up Down Up Down"
+   },
+   "note": "Definitive Edition also accepts TURNDOWNTHEHEAT."
+  },
+  {
+   "effect": "Raise wanted level by two stars",
+   "category": "Wanted",
+   "codes": {
+    "pc": "OSRBLHH",
+    "ps": "R1 R1 Circle R2 Left Right Left Right Left Right"
+   },
+   "note": "Definitive Edition also accepts TURNUPTHEHEAT."
+  },
+  {
+   "effect": "Six-star wanted level",
+   "category": "Wanted",
+   "codes": {
+    "pc": "LJSPQK",
+    "ps": "Circle Right Circle Right Left Square Cross Down"
+   },
+   "note": "Definitive Edition also accepts BRINGITON."
+  },
+  {
+   "effect": "Spawn a Rhino tank",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "AIWPRTON",
+    "ps": "Circle Circle L1 Circle Circle Circle L1 L2 R1 Triangle Circle Triangle"
+   },
+   "note": "Definitive Edition also accepts TIMETOKICKASS."
+  },
+  {
+   "effect": "Spawn a Hydra jet",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "JUMPJET",
+    "ps": "Triangle Triangle Square Circle Cross L1 L1 Down Up"
+   }
+  },
+  {
+   "effect": "Spawn a Hunter helicopter",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "OHDUDE",
+    "ps": "Circle Cross L1 Circle Circle L1 Circle R1 R2 L2 L1 L1"
+   }
+  },
+  {
+   "effect": "Spawn a Monster truck",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "AGBDLCID",
+    "ps": "Right Up R1 R1 R1 Down Triangle Triangle Cross Circle L1 L1"
+   },
+   "note": "Definitive Edition also accepts MONSTERMASH."
+  },
+  {
+   "effect": "Spawn a Quadbike",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "AKJJYGLC",
+    "ps": "Left Left Down Down Up Up Square Circle Triangle R1 R2"
+   },
+   "note": "Definitive Edition also accepts FOURWHEELFUN."
+  },
+  {
+   "effect": "Spawn a Stunt Plane",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "URKQSRK",
+    "ps": "Circle Up L1 L2 Down R1 L1 L1 Left Left Cross Triangle"
+   },
+   "note": "Definitive Edition also accepts FLYINGTOSTUNT."
+  },
+  {
+   "effect": "Spawn a Vortex hovercraft",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "KGGGDKP",
+    "ps": "Triangle Triangle Square Circle Cross L1 L2 Down Down"
+   },
+   "note": "Definitive Edition also accepts IWANTTOHOVER."
+  },
+  {
+   "effect": "Spawn a Tanker truck",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "AMOMHRER",
+    "ps": "R1 Up Left Right R2 Up Right Square Right L2 L1 L1"
+   },
+   "note": "Definitive Edition also accepts HITTHEROADJACK."
+  },
+  {
+   "effect": "Spawn a Dozer",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "EEGCYXT",
+    "ps": "R2 L1 L1 Right Right Up Up Cross L1 Left"
+   },
+   "note": "Definitive Edition also accepts ITSALLBULL."
+  },
+  {
+   "effect": "Spawn a Stretch limo",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "KRIJEBR",
+    "ps": "R2 Up L2 Left Left R1 L1 Circle Right"
+   },
+   "note": "Definitive Edition also accepts CELEBRITYSTATUS."
+  },
+  {
+   "effect": "Spawn a Romero hearse",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "AQTBCODX",
+    "ps": "Down R2 Down R1 L2 Left R1 L1 Left Right"
+   },
+   "note": "Definitive Edition also accepts WHERESTHEFUNERAL."
+  },
+  {
+   "effect": "Spawn a Trashmaster",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "UBHYZHQ",
+    "ps": "Circle R1 Circle R1 Left Left R1 L1 Circle Right"
+   },
+   "note": "Definitive Edition also accepts TRUEGRIME."
+  },
+  {
+   "effect": "Spawn a Rancher",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "JQNTDMH",
+    "ps": "Up Right Right L1 Right Up Square L2"
+   },
+   "note": "Definitive Edition also accepts DOUGHNUTHANDICAP."
+  },
+  {
+   "effect": "Spawn a Caddy",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "RZHSUEW",
+    "ps": "Circle L1 Up R1 L2 Cross R1 L1 Circle Cross"
+   },
+   "note": "Definitive Edition also accepts 18HOLES."
+  },
+  {
+   "effect": "Spawn a Bloodring Banger",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "CQZIJMB",
+    "ps": "Down R1 Circle L2 L2 Cross R1 L1 Left Left"
+   },
+   "note": "Definitive Edition also accepts OLDSPEEDDEMON."
+  },
+  {
+   "effect": "Spawn a Hotring Racer",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "PDNEJOH",
+    "ps": "R1 Circle R2 Right L1 L2 Cross Cross Square R1"
+   },
+   "note": "Definitive Edition also accepts VROCKPOKEY."
+  },
+  {
+   "effect": "Spawn a Hotring Racer, second version",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "VPJTQWV",
+    "ps": "R2 L1 Circle Right L1 R1 Right Up Circle R2"
+   },
+   "note": "Definitive Edition also accepts JUSTTRYANDSTOPME."
+  },
+  {
+   "effect": "Blow up all cars",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "CPKTNWT",
+    "ps": "R2 L2 R1 L1 L2 R2 Square Triangle Circle Triangle L2 L1"
+   },
+   "note": "Definitive Edition also accepts ALLCARSGOBOOM."
+  },
+  {
+   "effect": "Your car can't be damaged",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "JCNRUAD",
+    "ps": "L1 L2 L2 Up Down Down Up R1 R2 R2"
+   },
+   "note": "Definitive Edition also accepts TOUCHMYCARYOUDIE."
+  },
+  {
+   "effect": "Flying cars",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "RIPAZHA",
+    "ps": "Square Down L2 Up L1 Circle Up Cross Left"
+   },
+   "note": "Definitive Edition also accepts CHITTYCHITTYBANGBANG."
+  },
+  {
+   "effect": "Flying boats",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "AFSNMSMW",
+    "ps": "R2 Circle Up L1 Right R1 Right Up Square Triangle"
+   },
+   "note": "Definitive Edition also accepts FLYINGFISH."
+  },
+  {
+   "effect": "Cars drive on water",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "GKPNMQ",
+    "ps": "Right R2 Circle R1 L2 Square R1 R2"
+   },
+   "note": "Definitive Edition also accepts DRIVEONWATER."
+  },
+  {
+   "effect": "Cars float away when hit",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "BSXSGGC",
+    "ps": "Square R2 Down Down Left Down Left Left L2 Cross"
+   },
+   "note": "Definitive Edition also accepts BUBBLECARS."
+  },
+  {
+   "effect": "Invisible cars",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "XICWMD",
+    "ps": "Triangle L1 Triangle R2 Square L1 L1"
+   },
+   "note": "Definitive Edition also accepts WHEELSONLYPLEASE."
+  },
+  {
+   "effect": "Perfect handling",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "PGGOMOY",
+    "ps": "Triangle R1 R1 Left R1 L1 R2 L1"
+   },
+   "note": "Definitive Edition also accepts STICKLIKEGLUE."
+  },
+  {
+   "effect": "Nitro on all cars",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "COXEFGU",
+    "ps": "Left Triangle R1 L1 Up Square Triangle Down Circle L2 L1 L1"
+   },
+   "note": "Definitive Edition also accepts SPEEDFREAK."
+  },
+  {
+   "effect": "Taxis get nitro and hydraulics",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "VKYPQCF",
+    "ps": "Up Cross Triangle Cross Triangle Cross Square R2 Right"
+   },
+   "note": "Definitive Edition also accepts TAXINITRO."
+  },
+  {
+   "effect": "Bike super jump",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "JHJOECW",
+    "ps": "Triangle Square Circle Circle Square Circle Circle L1 L2 L2 R1 R2"
+   },
+   "note": "Definitive Edition also accepts CJPHONEHOME."
+  },
+  {
+   "effect": "Aggressive traffic",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "YLTEICZ",
+    "ps": "R2 Circle R1 L2 Left R1 L1 R2 L2"
+   },
+   "note": "Definitive Edition also accepts ALLDRIVERSARECRIMINALS."
+  },
+  {
+   "effect": "Traffic lights stay green",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "ZEIIVG",
+    "ps": "R1 Up L2 L2 Left R1 L1 R1 R1"
+   },
+   "note": "Definitive Edition also accepts DONTTRYANDSTOPME."
+  },
+  {
+   "effect": "All traffic is black",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "IOWDLAC",
+    "ps": "Circle L2 Up R1 Left Cross R1 L1 Left Circle"
+   },
+   "note": "Definitive Edition also accepts SOLONGASITSBLACK."
+  },
+  {
+   "effect": "All traffic is pink",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "LLQPFBN",
+    "ps": "Circle L1 Down L2 Left Cross R1 L1 Right Circle"
+   },
+   "note": "Definitive Edition also accepts PINKISTHENEWCOOL."
+  },
+  {
+   "effect": "All traffic is junk cars",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "BGKGTJH",
+    "ps": "L2 Right L1 Up Cross L1 L2 R2 R1 L1 L1 L1"
+   },
+   "note": "Definitive Edition also accepts EVERYONEISPOOR."
+  },
+  {
+   "effect": "All traffic is sports cars",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "GUSNHDE",
+    "ps": "Up L1 R1 Up Right Up Cross L2 Cross L1"
+   },
+   "note": "Definitive Edition also accepts EVERYONEISRICH."
+  },
+  {
+   "effect": "Sunny weather",
+   "category": "World",
+   "codes": {
+    "pc": "MGHXYR",
+    "ps": "R2 Cross L1 L1 L2 L2 L2 Triangle"
+   },
+   "note": "Definitive Edition also accepts SCOTTISHSUMMER."
+  },
+  {
+   "effect": "Very sunny weather",
+   "category": "World",
+   "codes": {
+    "pc": "ICIKPYH",
+    "ps": "R2 Cross L1 L1 L2 L2 L2 Down"
+   },
+   "note": "Definitive Edition also accepts TOODAMNHOT."
+  },
+  {
+   "effect": "Cloudy weather",
+   "category": "World",
+   "codes": {
+    "pc": "ALNSFMZO",
+    "ps": "L2 Down Down Left Square Left R2 Square Cross R1 L1 L1"
+   },
+   "note": "Definitive Edition also accepts DULLDULLDAY."
+  },
+  {
+   "effect": "Foggy weather",
+   "category": "World",
+   "codes": {
+    "pc": "CFVFGMJ",
+    "ps": "R2 Cross L1 L1 L2 L2 L2 Cross"
+   },
+   "note": "Definitive Edition also accepts CANTSEEWHEREIMGOING."
+  },
+  {
+   "effect": "Stormy weather",
+   "category": "World",
+   "codes": {
+    "pc": "AUIFRVQS",
+    "ps": "R2 Cross L1 L1 L2 L2 L2 Circle"
+   },
+   "note": "Definitive Edition also accepts STAYINANDWATCHTV."
+  },
+  {
+   "effect": "Sandstorm",
+   "category": "World",
+   "codes": {
+    "pc": "CWJXUOC",
+    "ps": "Up Down L1 L1 L2 L2 L1 L2 R1 R2"
+   },
+   "note": "Definitive Edition also accepts SANDINMYEARS."
+  },
+  {
+   "effect": "Always midnight",
+   "category": "World",
+   "codes": {
+    "pc": "XJVSNAJ",
+    "ps": "Square L1 R1 Right Cross Up L1 Left Left"
+   },
+   "note": "Definitive Edition also accepts NIGHTPROWLER."
+  },
+  {
+   "effect": "Always 9pm with an orange sky",
+   "category": "World",
+   "codes": {
+    "pc": "OFVIAC",
+    "ps": "Left Left L2 R1 Right Square Square L1 L2 Cross"
+   },
+   "note": "Definitive Edition also accepts DONTBRINGONTHENIGHT."
+  },
+  {
+   "effect": "Faster clock",
+   "category": "World",
+   "codes": {
+    "pc": "YSOHNUL",
+    "ps": "Circle Circle L1 Square L1 Square Square Square L1 Triangle Circle Triangle"
+   },
+   "note": "Definitive Edition also accepts TIMEJUSTFLIESBY."
+  },
+  {
+   "effect": "Faster gameplay",
+   "category": "World",
+   "codes": {
+    "pc": "PPGWJHT",
+    "ps": "Triangle Up Right Down L2 L1 Square"
+   },
+   "note": "Definitive Edition also accepts SPEEDITUP."
+  },
+  {
+   "effect": "Slower gameplay",
+   "category": "World",
+   "codes": {
+    "pc": "LIYOAAY",
+    "ps": "Triangle Up Right Down Square R2 R1"
+   },
+   "note": "Definitive Edition also accepts SLOWITDOWN."
+  },
+  {
+   "effect": "Beach party theme",
+   "category": "Pedestrians",
+   "codes": {
+    "pc": "CIKGCGX",
+    "ps": "Up Up Down Down Square Circle L1 R1 Triangle Down"
+   },
+   "note": "Definitive Edition also accepts LIFESABEACH."
+  },
+  {
+   "effect": "Carnival theme",
+   "category": "Pedestrians",
+   "codes": {
+    "pc": "PRIEBJ",
+    "ps": "Triangle Triangle L1 Square Square Circle Square Down Circle"
+   },
+   "note": "Definitive Edition also accepts CRAZYTOWN."
+  },
+  {
+   "effect": "Elvis theme",
+   "category": "Pedestrians",
+   "codes": {
+    "pc": "ASBHGRB",
+    "ps": "L1 Circle Triangle L1 L1 Square L2 Up Down Left"
+   },
+   "note": "Definitive Edition also accepts BLUESUEDESHOES."
+  },
+  {
+   "effect": "Kinky theme",
+   "category": "Pedestrians",
+   "codes": {
+    "pc": "BEKKNQV",
+    "ps": "Square Right Square Square L2 Cross Triangle Cross Triangle"
+   },
+   "note": "Definitive Edition also accepts LOVECONQUERSALL."
+  },
+  {
+   "effect": "Rural theme",
+   "category": "Pedestrians",
+   "codes": {
+    "pc": "FVTMNBZ",
+    "ps": "L1 L1 R1 R1 L2 L1 R2 Down Left Up"
+   },
+   "note": "Definitive Edition also accepts HICKSVILLE."
+  },
+  {
+   "effect": "Ninja theme",
+   "category": "Pedestrians",
+   "codes": {
+    "pc": "AFPHULTL",
+    "ps": "Cross Cross Down R2 L2 Circle R1 Circle Square"
+   },
+   "note": "Definitive Edition also accepts NINJATOWN."
+  },
+  {
+   "effect": "No pedestrians, light traffic",
+   "category": "Pedestrians",
+   "codes": {
+    "pc": "THGLOJ",
+    "ps": "Cross Down Up R2 Down Triangle L1 Triangle Left"
+   },
+   "note": "Definitive Edition also accepts GHOSTTOWN."
+  },
+  {
+   "effect": "Pedestrians carry weapons",
+   "category": "Pedestrians",
+   "codes": {
+    "pc": "FOOOXFT",
+    "ps": "R2 R1 Cross Triangle Cross Triangle Up Down"
+   },
+   "note": "Definitive Edition also accepts SURROUNDEDBYNUTTERS."
+  },
+  {
+   "effect": "Pedestrians attack you",
+   "category": "Pedestrians",
+   "codes": {
+    "pc": "BAGOWPG",
+    "ps": "Down Up Up Up Cross R2 R1 L2 L2"
+   },
+   "note": "Definitive Edition also accepts STOPPICKINGONME."
+  },
+  {
+   "effect": "Pedestrians attack you with guns",
+   "category": "Pedestrians",
+   "codes": {
+    "pc": "BGLUAWML",
+    "ps": "Cross L1 Up Square Down Cross L2 Triangle Down R1 L1 L1"
+   },
+   "note": "Definitive Edition also accepts ATTACKOFTHEVILLAGEPEOPLE."
+  },
+  {
+   "effect": "Pedestrians riot",
+   "category": "Pedestrians",
+   "codes": {
+    "pc": "IOJUFZN",
+    "ps": "Down Left Up Left Cross R2 R1 L2 L1"
+   },
+   "note": "Definitive Edition also accepts STATEOFEMERGENCY."
+  },
+  {
+   "effect": "Gang wars everywhere",
+   "category": "Pedestrians",
+   "codes": {
+    "pc": "AJLOJYQY",
+    "ps": "L2 Right L1 Triangle Right Right R1 L1 Right L1 L1 L1"
+   },
+   "note": "Definitive Edition also accepts ROUGHNEIGHBOURHOOD."
+  },
+  {
+   "effect": "Gang members everywhere",
+   "category": "Pedestrians",
+   "codes": {
+    "pc": "MROEMZH",
+    "ps": "Left Right Right Right Left Cross Down Up Square Right"
+   },
+   "note": "Definitive Edition also accepts ONLYHOMIESALLOWED."
+  },
+  {
+   "effect": "Only gangs on the streets",
+   "category": "Pedestrians",
+   "codes": {
+    "pc": "BIFBUZZ",
+    "ps": "L2 Up R1 R1 Left R1 R1 R2 Right Down"
+   },
+   "note": "Definitive Edition also accepts BETTERSTAYINDOORS."
+  },
+  {
+   "effect": "Recruit anyone (pistols)",
+   "category": "Pedestrians",
+   "codes": {
+    "pc": "SJMAHPE",
+    "ps": "Down Square Up R2 R2 Up Right Right Up"
+   },
+   "note": "Definitive Edition also accepts WANNABEINMYGANG."
+  },
+  {
+   "effect": "Recruit anyone (rockets)",
+   "category": "Pedestrians",
+   "codes": {
+    "pc": "SSOXFSQ",
+    "ps": "R2 R2 R2 Cross L2 L1 R2 L1 Down Cross"
+   },
+   "note": "Definitive Edition also accepts ROCKETMAYHEM."
+  }
+ ],
+ "slug": "gta-sa",
+ "count": 88
+}

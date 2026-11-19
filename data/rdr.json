@@ -1,0 +1,171 @@
+{
+ "title": "Red Dead Redemption",
+ "short": "RDR",
+ "year": 2010,
+ "order": 10,
+ "platforms": [
+  "PlayStation",
+  "Xbox"
+ ],
+ "methods": [
+  "Phrase"
+ ],
+ "inputs": [
+  {
+   "id": "phrase",
+   "label": "Phrase",
+   "type": "phrase",
+   "how": "Pause, open Options, then Cheats. Press Triangle or Y, type the phrase exactly, then switch the cheat on in the list."
+  }
+ ],
+ "warning": "Cheats block achievements and trophies, and saves made with cheats on are marked as cheat saves.",
+ "incomplete": true,
+ "sources": [
+  "https://www.pushsquare.com/guides/red-dead-redemption-cheat-codes-list-and-secrets"
+ ],
+ "cheats": [
+  {
+   "effect": "Invincibility",
+   "category": "Player",
+   "codes": {
+    "phrase": "He gives strength to the weak"
+   }
+  },
+  {
+   "effect": "Infinite Dead Eye",
+   "category": "Player",
+   "codes": {
+    "phrase": "I don't understand Imnfinity"
+   },
+   "note": "The misspelling is part of the phrase."
+  },
+  {
+   "effect": "Infinite ammo",
+   "category": "Weapons",
+   "codes": {
+    "phrase": "Abundance is everywhere"
+   }
+  },
+  {
+   "effect": "Double-barrel shotgun, Springfield rifle and Volcanic pistol",
+   "category": "Weapons",
+   "codes": {
+    "phrase": "It's my constitutional right"
+   }
+  },
+  {
+   "effect": "Buffalo rifle, fire bottles, sawed-off, Schofield, semi-auto pistol and Winchester",
+   "category": "Weapons",
+   "codes": {
+    "phrase": "I'm an American. I need guns"
+   }
+  },
+  {
+   "effect": "$500",
+   "category": "Money",
+   "codes": {
+    "phrase": "The root of all evil, we thank you!"
+   }
+  },
+  {
+   "effect": "Clear your bounty and stop new ones",
+   "category": "Wanted",
+   "codes": {
+    "phrase": "I wish I worked for Uncle Sam"
+   }
+  },
+  {
+   "effect": "Lower your bounty by $500",
+   "category": "Wanted",
+   "codes": {
+    "phrase": "They sell souls cheap here"
+   }
+  },
+  {
+   "effect": "Fame set to zero",
+   "category": "Player",
+   "codes": {
+    "phrase": "Humility before the Lord"
+   }
+  },
+  {
+   "effect": "Maximum fame",
+   "category": "Player",
+   "codes": {
+    "phrase": "I am one of them famous fellas"
+   }
+  },
+  {
+   "effect": "Several outfits, including the Elegant Suit",
+   "category": "Player",
+   "codes": {
+    "phrase": "Don't you look fine and dandy"
+   }
+  },
+  {
+   "effect": "Gang and rebel outfits",
+   "category": "Player",
+   "codes": {
+    "phrase": "You think you tough, mister?"
+   }
+  },
+  {
+   "effect": "Army, Bureau and U.S. Marshal outfits",
+   "category": "Player",
+   "codes": {
+    "phrase": "I love a man in uniform"
+   }
+  },
+  {
+   "effect": "Finish the story and play as Jack Marston",
+   "category": "Player",
+   "codes": {
+    "phrase": "Oh my son, my blessed son"
+   }
+  },
+  {
+   "effect": "Your horse never tires",
+   "category": "Vehicles",
+   "codes": {
+    "phrase": "Make hay while the Sun shines"
+   }
+  },
+  {
+   "effect": "Spawn a random horse",
+   "category": "Vehicles",
+   "codes": {
+    "phrase": "Beasts and Man together"
+   }
+  },
+  {
+   "effect": "Spawn a stagecoach, wagon or cart",
+   "category": "Vehicles",
+   "codes": {
+    "phrase": "Now who put that there?"
+   }
+  },
+  {
+   "effect": "Unlock every area except West Elizabeth",
+   "category": "World",
+   "codes": {
+    "phrase": "You got yourself a pair of fine eyes"
+   }
+  },
+  {
+   "effect": "Drunk camera",
+   "category": "World",
+   "codes": {
+    "phrase": "I'm drunk as a skunk and twice as smelly"
+   }
+  },
+  {
+   "effect": "Sepia camera filter",
+   "category": "World",
+   "codes": {
+    "phrase": "The old ways is the best ways"
+   }
+  }
+ ],
+ "slug": "rdr",
+ "count": 20
+}

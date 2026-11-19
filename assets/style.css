@@ -154,7 +154,10 @@ button:disabled { cursor: not-allowed; }
 .cheats { list-style: none; margin: 0; padding: 0; }
 .cheat { padding: 14px 0; border-bottom: 1px solid var(--rule); }
 .cheat .eff { display: flex; align-items: flex-start; font-weight: 600; padding-top: 3px; }
-.cheat .eff > span { min-width: 0; overflow-wrap: anywhere; }
+.cheat .eff > a { display: inline-block; min-width: 0; padding: 10px 0; margin: -10px 0; overflow-wrap: anywhere; color: var(--ink); text-decoration: none; }
+.cheat .eff > a:hover { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+/* A linked cheat: an ink bar down the left edge, like a pen mark in the margin. */
+.cheat.target { box-shadow: inset 3px 0 0 var(--ink); padding-left: 12px; }
 .star { flex: none; display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; margin: -13px 0 -13px -12px; padding: 0; background: transparent; border: 0; border-radius: 3px; color: var(--mute); }
 .star svg { fill: none; stroke: currentColor; stroke-width: 1.8; }
 .star:hover { color: var(--ink); }

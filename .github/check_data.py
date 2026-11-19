@@ -10,9 +10,9 @@ import struct
 import sys
 
 CATEGORIES = {'Player', 'Weapons', 'Money', 'Wanted', 'Vehicles', 'World', 'Pedestrians', 'Score', 'Levels', 'Other'}
-INPUT_IDS = {'pc', 'ps', 'ps2', 'psp', 'ds', 'phone', 'phrase', 'mobile', 'xbox', 'switch'}
+INPUT_IDS = {'pc', 'ps', 'ps2', 'psp', 'ds', 'phone', 'phrase', 'mobile', 'xbox', 'xbox360', 'xboxog', 'switch'}
 TYPES = {'text', 'combo', 'phone', 'phrase'}
-PADS = {'ps', 'xbox', 'switch', 'ds'}
+PADS = {'ps', 'xbox', 'xbox360', 'xboxog', 'switch', 'ds'}
 FAMILIES = {'PC', 'PlayStation', 'Xbox', 'Switch', 'Handheld'}
 GAME_KEYS = ['slug', 'title', 'short', 'year', 'order', 'platforms', 'consoles', 'methods', 'inputs', 'warning', 'sources', 'cheats']
 SHARED = ['title', 'short', 'year', 'order', 'platforms', 'consoles', 'methods']
@@ -132,6 +132,9 @@ def check_game(slug, entry):
             bad(where, f'category "{c.get("category")}" is not one of {sorted(CATEGORIES)}')
         for field in ('effect', 'requirement', 'note'):
             check_text(where, c.get(field) or '')
+        for nid in c.get('not', []):
+            if nid not in inputs:
+                bad(where, f'"not" names "{nid}", which is not an input')
         codes = c.get('codes')
         if not isinstance(codes, dict):
             bad(where, 'codes should be an object')

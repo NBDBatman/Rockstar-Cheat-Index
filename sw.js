@@ -1,9 +1,10 @@
 // Offline support. Pages, scripts and every game's data are saved on the first visit;
 // covers are saved as they're seen. Online, pages and data always come fresh from the
 // network, so edits show up straight away. Only same-site files and Google Fonts are touched.
-var CACHE = 'ci-v1';
+var CACHE = 'ci-v2';
 var SHELL = ['./', 'index.html', 'game.html', 'assets/style.css', 'assets/theme.js', 'assets/common.js',
-  'assets/home.js', 'assets/game.js', 'data/games.json'];
+  'assets/home.js', 'assets/game.js', 'data/games.json', 'manifest.webmanifest', 'assets/icon.svg',
+  'assets/icon-192.png'];
 
 self.addEventListener('install', function (e) {
   e.waitUntil(caches.open(CACHE).then(function (cache) {

@@ -1,17 +1,22 @@
 // Game page. game.html?g=<slug> (or game.html#<slug>) loads data/<slug>.json and renders the cheat list.
-// A platform can be added to share a view: ?g=gta-sa&p=xbox or #gta-sa/xbox.
+// A platform can be added to share a view: ?g=gta-sa&p=xbox or #gta-sa/xbox, and a cheat with &c=<cheat id>.
 (function () {
   var el = CI.el;
   var page = document.getElementById('page');
   var REPO = 'https://github.com/NBDBatman/Rockstar-Cheat-Index';
   var route = parseRoute();
-  var state = { game: null, input: null, cat: 'All', copied: null, q: '', stars: [] };
-  var listBox = null;
+  var state = { game: null, input: null, cat: 'All', copied: null, q: '', stars: [], target: route.cheat };
+  var listBox = null, printBtn = null;
 
   function parseRoute() {
     var h = location.hash.slice(1).split('/');
     var p = new URLSearchParams(location.search);
-    return { slug: h[0] || p.get('g') || '', plat: h[1] || p.get('p') || '' };
+    return { slug: h[0] || p.get('g') || '', plat: h[1] || p.get('p') || '', cheat: p.get('c') || '' };
+  }
+
+  // A cheat's id in links: its effect in lowercase, words joined by hyphens.
+  function cheatId(c) {
+    return c.effect.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
   }
 
   function showState(kind, title, body, action) {
@@ -25,20 +30,23 @@
   }
 
   // Platform to open on: the one in the link, then the visitor's last pick, then the first.
-  // PlayStation and PS2 count as the same pick, so a PS2-only game still opens on it.
+  // PlayStation and PS2 count as the same pick, so a PS2-only game still opens on it. Older Xboxes fall back to Xbox.
   function pickInput(g, wanted) {
-    var alias = { ps: 'ps2', ps2: 'ps' };
+    var alias = { ps: 'ps2', ps2: 'ps', xbox360: 'xbox', xboxog: 'xbox' };
     var tries = [wanted, CI.lastPlatform()];
     for (var i = 0; i < tries.length; i++) {
       var id = tries[i];
       if (!id) continue;
-      var hit = g.inputs.filter(function (x) { return x.id === id || x.id === alias[id]; })[0];
+      var hit = g.inputs.filter(function (x) { return x.id === id; })[0] ||
+        g.inputs.filter(function (x) { return x.id === alias[id]; })[0];
       if (hit) return hit;
     }
     return g.inputs[0] || null;
   }
 
   function codeFor(c, input) {
+    // "not" hides a cheat on tabs where it doesn't work, such as Definitive Edition-only tabs.
+    if (c.not && c.not.indexOf(input.id) !== -1) return null;
     var v = c.codes[input.derive || input.id];
     return v || null;
   }
@@ -73,8 +81,10 @@
     return REPO + '/issues/new?' + p.toString();
   }
 
-  function shareURL() {
-    return 'game.html?g=' + state.game.slug + '&p=' + state.input.id;
+  function shareURL(cid) {
+    var u = 'game.html?g=' + state.game.slug + '&p=' + state.input.id;
+    cid = cid === undefined ? state.target : cid;
+    return cid ? u + '&c=' + cid : u;
   }
 
   var STAR = 'M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8L3.5 9.7l5.9-.9z';
@@ -148,9 +158,12 @@
     var q = el('input', { id: 'fq', type: 'search', autocomplete: 'off', spellcheck: 'false', placeholder: 'Effect or code, e.g. tank',
       oninput: function (e) { state.q = e.target.value; drawList(); } });
     q.value = state.q;
+    q.setAttribute('aria-keyshortcuts', '/');
+    // Print uses what's on screen, so the Starred tab or a filter prints just those cheats.
+    printBtn = el('button', { class: 'btn print-btn', type: 'button', 'data-fk': 'print', text: 'Print list', onclick: function () { window.print(); } });
     var tools = el('div', { class: 'list-tools' }, [
       el('div', { class: 'filter' }, [el('label', { for: 'fq', text: 'Filter ' + g.short + ' cheats' }), q]),
-      el('button', { class: 'btn print-btn', type: 'button', 'data-fk': 'print', text: 'Print list', onclick: function () { window.print(); } })
+      printBtn
     ]);
 
     listBox = el('div');
@@ -194,15 +207,28 @@
         onclick: function () { state.cat = cat; render(); } }));
     });
 
+    printBtn.textContent = state.cat === 'Starred' ? 'Print starred' : state.cat === 'All' && !needle ? 'Print list' : 'Print these';
+
     var list = el('ul', { class: 'cheats' });
     rows.forEach(function (c, i) {
       var id = c.effect + '|' + i;
       var on = isStar(c);
-      list.appendChild(el('li', { class: 'cheat' + (on ? ' starred' : '') }, [
+      var cid = cheatId(c);
+      var hit = cid === state.target;
+      list.appendChild(el('li', { class: 'cheat' + (on ? ' starred' : '') + (hit ? ' target' : ''), id: 'c-' + cid }, [
         el('span', { class: 'eff' }, [
           el('button', { class: 'star', type: 'button', 'data-fk': 'star:' + c.effect, 'aria-pressed': String(on), 'aria-label': 'Star ' + c.effect,
             onclick: function () { toggleStar(c); } }, [starIcon()]),
-          el('span', { text: c.effect })
+          // The effect name links to this cheat, so one code can be shared.
+          el('a', { class: 'eff-link', href: shareURL(cid), 'data-fk': 'link:' + c.effect, 'aria-current': hit ? 'true' : null, text: c.effect,
+            onclick: function (e) {
+              if (e.ctrlKey || e.metaKey || e.shiftKey || e.button) return;
+              e.preventDefault();
+              state.target = cid;
+              try { history.replaceState(null, '', shareURL()); } catch (err) {}
+              render('link:' + c.effect);
+              CI.announce(document.getElementById('announce'), 'The address now links to ' + c.effect + '.');
+            } })
         ]),
         el('span', { class: 'cat', text: c.category }),
         el('span', { class: 'code-cell' }, [codeCell(c, input)]),
@@ -283,6 +309,8 @@
       CI.lastGame(g.slug);
       document.getElementById('crumb').textContent = g.title;
       render();
+      var t = state.target && document.getElementById('c-' + state.target);
+      if (t) t.scrollIntoView({ block: 'center' });
     }).catch(function () {
       document.getElementById('crumb').textContent = 'Couldn’t load';
       showState('error', 'This cheat list didn’t load.', 'Check your connection and try again. If it keeps failing, the file may be missing from the site.',
@@ -291,7 +319,7 @@
   }
   window.addEventListener('hashchange', function () {
     route = parseRoute();
-    state.cat = 'All'; state.copied = null; state.q = ''; load();
+    state.cat = 'All'; state.copied = null; state.q = ''; state.target = route.cheat; load();
   });
   load();
 })();

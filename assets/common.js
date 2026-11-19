@@ -44,7 +44,14 @@ var CI = (function () {
   // Switch (Definitive Edition): same button positions as PlayStation, Nintendo letters.
   var SWITCH_WORDS = { Cross: 'B', Circle: 'A', Square: 'Y', Triangle: 'X', L1: 'L', R1: 'R', L2: 'ZL', R2: 'ZR' };
   var SWITCH = { Cross: 'B', Circle: 'A', Square: 'Y', Triangle: 'X', L1: 'L', R1: 'R', L2: 'ZL', R2: 'ZR', Up: '↑', Down: '↓', Left: '←', Right: '→' };
-  var WORDS = { xbox: XBOX_WORDS, 'switch': SWITCH_WORDS };
+  // San Andreas on Xbox 360 (2014) has bumpers and triggers the other way round from later Xboxes.
+  var X360_WORDS = { Cross: 'A', Circle: 'B', Square: 'X', Triangle: 'Y', L1: 'LT', R1: 'RT', L2: 'LB', R2: 'RB' };
+  var X360 = { Cross: 'A', Circle: 'B', Square: 'X', Triangle: 'Y', L1: 'LT', R1: 'RT', L2: 'LB', R2: 'RB', Up: '↑', Down: '↓', Left: '←', Right: '→' };
+  // The original Xbox (2003 to 2005) had triggers plus White and Black buttons instead of bumpers.
+  var XOG_WORDS = { Cross: 'A', Circle: 'B', Square: 'X', Triangle: 'Y', L1: 'L trigger', R1: 'R trigger', L2: 'White', R2: 'Black' };
+  var XOG = { Cross: 'A', Circle: 'B', Square: 'X', Triangle: 'Y', L1: 'L', R1: 'R', L2: 'White', R2: 'Black', Up: '↑', Down: '↓', Left: '←', Right: '→' };
+  var WORDS = { xbox: XBOX_WORDS, 'switch': SWITCH_WORDS, xbox360: X360_WORDS, xboxog: XOG_WORDS };
+  var MAPS = { xbox: XBOX, 'switch': SWITCH, xbox360: X360, xboxog: XOG, ds: DS };
 
   function parseCombo(s) {
     var hold = null;
@@ -60,7 +67,7 @@ var CI = (function () {
   }
   function renderCombo(s, pad) {
     var c = parseCombo(s);
-    var map = pad === 'xbox' ? XBOX : pad === 'switch' ? SWITCH : pad === 'ds' ? DS : PS;
+    var map = MAPS[pad] || PS;
     var wrap = el('span', { class: 'keys', role: 'img', 'aria-label': comboWords(s, pad) });
     if (c.hold) wrap.appendChild(el('span', { class: 'hold', 'aria-hidden': 'true', text: 'Hold ' + (map[c.hold] || c.hold) + ', then' }));
     c.keys.forEach(function (k) { wrap.appendChild(el('span', { class: 'key', 'aria-hidden': 'true', text: map[k] || k })); });
@@ -155,6 +162,18 @@ var CI = (function () {
     if (list.length) all[slug] = list; else delete all[slug];
     try { localStorage.setItem('ci-stars', JSON.stringify(all)); } catch (e) {}
   }
+
+  // Press / to jump to the search box (home) or the filter (game page), unless already typing.
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== '/' || e.ctrlKey || e.metaKey || e.altKey) return;
+    var a = document.activeElement;
+    if (a && (a.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(a.tagName))) return;
+    var box = document.getElementById('q') || document.getElementById('fq');
+    if (!box) return;
+    e.preventDefault();
+    box.focus();
+    box.select();
+  });
 
   // Works offline after the first visit. Browsers only allow this on https and localhost.
   if ('serviceWorker' in navigator && window.isSecureContext) {

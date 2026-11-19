@@ -142,9 +142,9 @@ button:disabled { cursor: not-allowed; }
 .howto .h { font-size: 14px; font-weight: 500; margin-bottom: 8px; }
 .howto p { margin: 0; font-size: 17px; }
 .howto p.warn { margin-top: 8px; font-size: 15px; }
-.seg { display: grid; grid-template-columns: repeat(var(--n, 4), minmax(0, 1fr)); gap: 1px; background: var(--ctl); width: min(100%, calc(var(--n, 4) * 120px)); border: 2px solid var(--ink); border-radius: 3px; overflow: hidden; }
-@media (max-width: 420px) { .seg { grid-template-columns: repeat(min(var(--n, 4), 2), minmax(0, 1fr)); width: 100%; } }
-.seg button { min-height: 44px; min-width: 0; padding: 0 6px; border: 0; background: var(--surf); color: var(--ink); font: inherit; font-size: 15px; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.seg { display: grid; grid-template-columns: repeat(var(--cols, 4), minmax(0, 1fr)); gap: 1px; background: var(--ctl); width: min(100%, calc(var(--cols, 4) * 150px)); border: 2px solid var(--ink); border-radius: 3px; overflow: hidden; }
+@media (max-width: 420px) { .seg { grid-template-columns: repeat(min(var(--cols, 4), 2), minmax(0, 1fr)); width: 100%; } }
+.seg button { min-height: 44px; min-width: 0; padding: 4px 6px; border: 0; background: var(--surf); color: var(--ink); font: inherit; font-size: 15px; font-weight: 600; line-height: 1.2; overflow-wrap: anywhere; }
 .seg button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
 .seg button[aria-pressed="false"]:hover { background: var(--hover); }
 .list { padding-top: 16px; padding-bottom: 48px; }
@@ -166,11 +166,19 @@ button:disabled { cursor: not-allowed; }
 .cheat .cat { font-size: 14px; color: var(--mute); padding-top: 4px; }
 .cheat .copy { display: flex; flex-direction: column; align-items: flex-end; }
 /* The Report link sits beside the requirement line, so it doesn't make the row taller. */
-@media (min-width: 641px) { .cheat:has(.req, .note) .copy { grid-column: 4; grid-row: 1 / span 2; } }
+@media (min-width: 641px) { .cheat:has(.req, .note, .risk) .copy { grid-column: 4; grid-row: 1 / span 2; } }
+.cheat .copy .practise { margin-top: 6px; }
+/* Practice: keys turn to ink as they're hit, and the next one gets a ring. Ink, never the accent. */
+.key.hit { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.key.next { outline: 2px solid var(--ink); outline-offset: 2px; }
+.hold.on { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+.pad-note { margin: 4px 0 8px; font-size: 15px; }
 .cheat .report { display: inline-flex; align-items: center; justify-content: flex-end; min-height: 44px; min-width: 44px; margin-bottom: -14px; padding: 0 2px; font-size: 13px; color: var(--mute); }
 .cheat .report:hover { color: var(--ink); }
 .cheat .copy .btn { min-width: 76px; font-weight: 600; font-size: 14px; padding: 0 12px; }
-.cheat .req, .cheat .note { grid-column: 3 / 4; margin: 0; font-size: 14px; }
+.cheat .req, .cheat .note, .cheat .risk { grid-column: 3 / 4; margin: 0; font-size: 14px; }
+.cheat .risk { color: var(--warn); }
+.cheat .risk b { font-weight: 600; }
 .cheat .req { color: var(--ink); }
 .cheat .req b { font-weight: 600; }
 .cheat .note { color: var(--mute); }
@@ -182,7 +190,7 @@ button:disabled { cursor: not-allowed; }
   .cheat .copy { grid-column: 2; grid-row: 1 / span 2; }
   .cheat .cat { grid-column: 1; grid-row: 2; padding-top: 0; }
   .cheat .code-cell { grid-column: 1 / -1; grid-row: 3; margin-top: 4px; }
-  .cheat .req, .cheat .note { grid-column: 1 / -1; }
+  .cheat .req, .cheat .note, .cheat .risk { grid-column: 1 / -1; }
 }
 
 /* list tools: filter and print */
@@ -219,7 +227,7 @@ button:disabled { cursor: not-allowed; }
   .cheat-head, .cheat { grid-template-columns: minmax(0, 32%) 80px minmax(0, 1fr); }
   .cheat-head { display: grid !important; }
   .cheat { padding: 6pt 0; break-inside: avoid; }
-  .cheat .req, .cheat .note { grid-column: 3 / 4; }
+  .cheat .req, .cheat .note, .cheat .risk { grid-column: 3 / 4; }
   .code, .key { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   .key { background: #fff; color: #000; border-color: #000; }
   a { text-decoration: none; }

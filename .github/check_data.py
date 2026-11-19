@@ -3,6 +3,7 @@
 Fails (exit 1) with a list of problems if anything in data/, covers/ or sitemap.xml is out of step.
 Uses only the Python standard library.
 """
+import datetime
 import glob
 import json
 import os
@@ -14,7 +15,7 @@ INPUT_IDS = {'pc', 'ps', 'ps2', 'psp', 'ds', 'phone', 'phrase', 'mobile', 'xbox'
 TYPES = {'text', 'combo', 'phone', 'phrase'}
 PADS = {'ps', 'xbox', 'xbox360', 'xboxog', 'switch', 'ds'}
 FAMILIES = {'PC', 'PlayStation', 'Xbox', 'Switch', 'Handheld'}
-GAME_KEYS = ['slug', 'title', 'short', 'year', 'order', 'platforms', 'consoles', 'methods', 'inputs', 'warning', 'sources', 'cheats']
+GAME_KEYS = ['slug', 'title', 'short', 'year', 'order', 'platforms', 'consoles', 'methods', 'inputs', 'warning', 'sources', 'checked', 'cheats']
 SHARED = ['title', 'short', 'year', 'order', 'platforms', 'consoles', 'methods']
 BUTTONS = {'Cross', 'Circle', 'Square', 'Triangle', 'L1', 'R1', 'L2', 'R2', 'L3', 'R3', 'L', 'R',
            'Up', 'Down', 'Left', 'Right', 'A', 'B', 'X', 'Y', 'Start', 'Select'}
@@ -104,6 +105,11 @@ def check_game(slug, entry):
         return
     if not g.get('sources'):
         bad(path, 'no sources listed')
+    try:
+        if datetime.date.fromisoformat(g.get('checked', '')) > datetime.date.today() + datetime.timedelta(days=1):
+            bad(path, '"checked" is in the future')
+    except ValueError:
+        bad(path, '"checked" should be a date like 2026-11-19, the day the codes were last checked against sources')
 
     inputs = {}
     for inp in g.get('inputs', []):
@@ -130,7 +136,7 @@ def check_game(slug, entry):
             bad(where, 'no effect')
         if c.get('category') not in CATEGORIES:
             bad(where, f'category "{c.get("category")}" is not one of {sorted(CATEGORIES)}')
-        for field in ('effect', 'requirement', 'note'):
+        for field in ('effect', 'requirement', 'note', 'risk'):
             check_text(where, c.get(field) or '')
         for nid in c.get('not', []):
             if nid not in inputs:

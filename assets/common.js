@@ -74,6 +74,27 @@ var CI = (function () {
     return wrap;
   }
 
+  // Controller practice. Browsers number buttons by position (the "standard" layout): 0 is the
+  // bottom face button, 12 to 15 are the d-pad. Codes are stored by position too, so one table
+  // works for PlayStation, Xbox and Switch pads. Only the tabs below can be practised.
+  var POS = { Cross: 0, Circle: 1, Square: 2, Triangle: 3, L1: 4, R1: 5, L2: 6, R2: 7, L: 4, R: 5,
+    Select: 8, Start: 9, L3: 10, R3: 11, Up: 12, Down: 13, Left: 14, Right: 15 };
+  var PAD_POS = {
+    ps: POS, xbox: POS, 'switch': POS,
+    xbox360: Object.assign({}, POS, { L1: 6, L2: 4, R1: 7, R2: 5 }),
+    ds: Object.assign({}, POS, { A: 1, B: 0, X: 3, Y: 2 })
+  };
+  // Standard button numbers for a combo, or null if this tab can't be practised.
+  function padButtons(s, pad) {
+    var t = PAD_POS[pad];
+    if (!t) return null;
+    var c = parseCombo(s);
+    var keys = c.keys.map(function (k) { return t[k]; });
+    var hold = c.hold ? t[c.hold] : null;
+    if (keys.some(function (k) { return k === undefined; }) || hold === undefined) return null;
+    return { keys: keys, hold: hold };
+  }
+
   // Cover art: shows covers/<slug>.jpg when the file exists, otherwise a labelled slot.
   function cover(game, big) {
     var slot = el('span', { class: 'cover-slot' }, [
@@ -181,6 +202,6 @@ var CI = (function () {
   }
 
   return { el: el, getJSON: getJSON, lastGame: lastGame, lastPlatform: lastPlatform, stars: stars, setStars: setStars,
-    renderCombo: renderCombo, comboWords: comboWords, cover: cover, countText: countText,
+    renderCombo: renderCombo, comboWords: comboWords, padButtons: padButtons, cover: cover, countText: countText,
     focusKey: focusKey, restoreFocus: restoreFocus, copy: copy, announce: announce };
 })();

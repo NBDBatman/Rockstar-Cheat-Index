@@ -7,6 +7,8 @@
   var route = parseRoute();
   var state = { game: null, input: null, cat: 'All', copied: null, q: '', stars: [], target: route.cheat };
   var listBox = null, printBtn = null;
+  // Controller practice: state.practice is { id, effect, keys, hold, pos, done } while a combo is being practised.
+  var padSeen = false, prevButtons = [];
 
   function parseRoute() {
     var h = location.hash.slice(1).split('/');
@@ -100,6 +102,91 @@
     return svg;
   }
 
+  // Controller practice. Uses the browser's built-in Gamepad API, polled once a frame while practising.
+  function pads() {
+    var list = navigator.getGamepads ? navigator.getGamepads() : [];
+    return Array.prototype.filter.call(list || [], function (p) { return p && p.connected; });
+  }
+  function pressed() {
+    var p = pads()[0];
+    return p ? p.buttons.map(function (b) { return b.pressed || b.value > 0.5; }) : [];
+  }
+  function canPractise(c, input) {
+    return padSeen && input.type === 'combo' && !c.tbd && !!CI.padButtons(codeFor(c, input) || '', input.pad);
+  }
+  function startPractice(c, id) {
+    var b = CI.padButtons(codeFor(c, state.input), state.input.pad);
+    state.practice = { id: id, effect: c.effect, keys: b.keys, hold: b.hold, pos: 0, done: false };
+    prevButtons = pressed();
+    render('prac:' + id);
+    CI.announce(document.getElementById('announce'), 'Practising ' + c.effect + '. Press the buttons on your controller. Escape stops.');
+    requestAnimationFrame(tick);
+  }
+  function stopPractice() {
+    if (!state.practice) return;
+    var id = state.practice.id;
+    state.practice = null;
+    render('prac:' + id);
+    CI.announce(document.getElementById('announce'), 'Stopped practising.');
+  }
+  // Marks progress on the practised row's keycaps without redrawing the page.
+  function showProgress() {
+    var pr = state.practice;
+    var row = pr && page.querySelector('[data-prac="' + CSS.escape(pr.id) + '"]');
+    if (!row) return;
+    row.querySelectorAll('.key').forEach(function (k, i) {
+      k.classList.toggle('hit', i < pr.pos);
+      k.classList.toggle('next', !pr.done && i === pr.pos);
+    });
+    var h = row.querySelector('.hold');
+    if (h) h.classList.toggle('on', pr.hold !== null && !!pressed()[pr.hold]);
+  }
+  function tick() {
+    var pr = state.practice;
+    if (!pr) return;
+    var now = pressed();
+    if (!pr.done) {
+      // A held button has to stay down for the whole combo.
+      if (pr.hold !== null && !now[pr.hold] && pr.pos > 0) pr.pos = 0;
+      for (var i = 0; i < now.length && i <= 15; i++) {
+        if (!now[i] || prevButtons[i] || i === pr.hold) continue;
+        if (pr.hold !== null && !now[pr.hold]) { pr.pos = 0; continue; }
+        if (i === pr.keys[pr.pos]) pr.pos++;
+        else pr.pos = i === pr.keys[0] ? 1 : 0;
+        if (pr.pos === pr.keys.length) break;
+      }
+      if (pr.pos === pr.keys.length) finish(pr);
+    }
+    prevButtons = now;
+    showProgress();
+    requestAnimationFrame(tick);
+  }
+  function finish(pr) {
+    pr.done = true;
+    var btn = page.querySelector('[data-fk="prac:' + CSS.escape(pr.id) + '"]');
+    if (btn) btn.textContent = 'Done';
+    CI.announce(document.getElementById('announce'), 'Done. That\u2019s the code for ' + pr.effect + '.');
+    // Leave it lit for a moment, then reset so it can be tried again.
+    setTimeout(function () {
+      if (state.practice !== pr) return;
+      pr.done = false; pr.pos = 0;
+      if (btn) btn.textContent = 'Stop';
+    }, 1500);
+  }
+  window.addEventListener('gamepadconnected', function () {
+    if (padSeen) return;
+    padSeen = true;
+    if (state.game) render();
+    if (state.input && state.input.type === 'combo') CI.announce(document.getElementById('announce'), 'Controller connected. Choose Practise on a cheat to try its combo.');
+  });
+  window.addEventListener('gamepaddisconnected', function () {
+    if (pads().length) return;
+    padSeen = false;
+    state.practice = null;
+    if (state.game) render();
+  });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && state.practice) stopPractice(); });
+
   function render(fk) {
     fk = fk || CI.focusKey();
     draw();
@@ -139,11 +226,13 @@
     }
 
     // Platform switch and how-to.
-    var seg = el('div', { class: 'seg', role: 'group', 'aria-labelledby': 'plat-l', style: '--n:' + g.inputs.length });
+    // More than four platforms go in rows of three, so labels like "Xbox One/Series" fit.
+    var n = g.inputs.length;
+    var seg = el('div', { class: 'seg', role: 'group', 'aria-labelledby': 'plat-l', style: '--n:' + n + ';--cols:' + (n > 4 ? 3 : n) });
     g.inputs.forEach(function (inp) {
       seg.appendChild(el('button', { type: 'button', 'data-fk': 'plat:' + inp.id, 'aria-pressed': String(inp.id === input.id), text: inp.label,
         onclick: function () {
-          state.input = inp; state.copied = null;
+          state.input = inp; state.copied = null; state.practice = null;
           CI.lastPlatform(inp.id);
           try { history.replaceState(null, '', shareURL()); } catch (e) {}
           render();
@@ -171,6 +260,7 @@
       tools,
       listBox,
       g.incomplete ? el('p', { class: 'muted', style: 'margin-top:20px', text: 'This list isn’t complete yet. More codes are coming.' }) : null,
+      g.checked ? el('p', { class: 'muted', style: 'margin-top:20px;font-size:15px' }, ['Codes last checked against sources on ', el('time', { datetime: g.checked, text: niceDate(g.checked) }), '.']) : null,
       el('p', { class: 'muted foot-note', style: 'margin-top:24px;font-size:15px' }, ['Wrong or missing code? Use Report on the cheat, ', el('a', { href: REPO + '/issues', text: 'open an issue' }), ' or send a pull request on GitHub. Each game is one JSON file.'])
     ]));
     drawList();
@@ -215,7 +305,8 @@
       var on = isStar(c);
       var cid = cheatId(c);
       var hit = cid === state.target;
-      list.appendChild(el('li', { class: 'cheat' + (on ? ' starred' : '') + (hit ? ' target' : ''), id: 'c-' + cid }, [
+      var practising = !!(state.practice && state.practice.id === id);
+      list.appendChild(el('li', { class: 'cheat' + (on ? ' starred' : '') + (hit ? ' target' : ''), id: 'c-' + cid, 'data-prac': practising ? id : null }, [
         el('span', { class: 'eff' }, [
           el('button', { class: 'star', type: 'button', 'data-fk': 'star:' + c.effect, 'aria-pressed': String(on), 'aria-label': 'Star ' + c.effect,
             onclick: function () { toggleStar(c); } }, [starIcon()]),
@@ -245,17 +336,25 @@
               }
               CI.copy(copyText(c, input)).then(function () { done(true); }, function () { done(false); });
             } }),
+          canPractise(c, input) ? el('button', { class: 'btn practise', type: 'button', 'data-fk': 'prac:' + id, 'aria-pressed': String(practising),
+            'aria-label': (practising ? 'Stop practising ' : 'Practise the combo for ') + c.effect + ' on your controller',
+            text: practising ? (state.practice.done ? 'Done' : 'Stop') : 'Practise',
+            onclick: function () { if (practising) stopPractice(); else startPractice(c, id); } }) : null,
           el('a', { class: 'report', href: issueLink(g, c, input), target: '_blank', rel: 'noopener',
             'aria-label': (c.tbd ? 'Send the code for ' : 'Report a problem with the code for ') + c.effect + ', opens GitHub in a new tab',
             text: c.tbd ? 'Send code' : 'Report' })
         ]),
         c.requirement ? el('p', { class: 'req' }, [el('b', { text: 'Requirement: ' }), c.requirement]) : null,
+        c.risk ? el('p', { class: 'risk' }, [el('b', { text: 'Careful: ' }), c.risk]) : null,
         c.note ? el('p', { class: 'note', text: c.note }) : null
       ]));
     });
 
     var codeHead = input.type === 'combo' ? input.label + ' combo' : input.type === 'phone' ? 'Phone number' : input.type === 'phrase' ? 'Phrase' : input.label + ' code';
     listBox.innerHTML = '';
+    if (padSeen && input.type === 'combo' && rows.some(function (c) { return canPractise(c, input); })) {
+      listBox.appendChild(el('p', { class: 'pad-note' }, ['Controller connected. Choose ', el('b', { text: 'Practise' }), ' on a cheat, then enter the combo. Each button lights up as you get it right.']));
+    }
     listBox.appendChild(el('div', { class: 'top' }, [tabBox, el('span', { class: 'muted', style: 'font-size:14px', role: 'status', text: summary })]));
     if (!rows.length) {
       listBox.appendChild(el('div', { class: 'empty' }, [
@@ -271,6 +370,7 @@
     }
     listBox.appendChild(el('div', { class: 'cheat-head', 'aria-hidden': 'true' }, [el('span', { text: 'Effect' }), el('span', { text: 'Category' }), el('span', { text: codeHead }), el('span')]));
     listBox.appendChild(list);
+    showProgress();
   }
 
   function toggleStar(c) {
@@ -281,6 +381,11 @@
     // Unstarring on the Starred tab removes the row, so move focus to the tab instead of losing it.
     if (!page.contains(document.activeElement)) CI.restoreFocus(page, 'cat:' + state.cat);
     CI.announce(document.getElementById('announce'), (i === -1 ? 'Starred ' : 'Removed the star from ') + c.effect + '.');
+  }
+
+  function niceDate(iso) {
+    var d = new Date(iso + 'T00:00:00Z');
+    return isNaN(d) ? iso : d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
   }
 
   function setMeta(g) {
@@ -305,6 +410,7 @@
       state.game = g;
       state.input = pickInput(g, route.plat);
       state.stars = CI.stars(g.slug);
+      padSeen = pads().length > 0;
       setMeta(g);
       CI.lastGame(g.slug);
       document.getElementById('crumb').textContent = g.title;
@@ -319,7 +425,7 @@
   }
   window.addEventListener('hashchange', function () {
     route = parseRoute();
-    state.cat = 'All'; state.copied = null; state.q = ''; state.target = route.cheat; load();
+    state.cat = 'All'; state.copied = null; state.q = ''; state.target = route.cheat; state.practice = null; load();
   });
   load();
 })();

@@ -40,7 +40,7 @@
     box.innerHTML = '';
     items.forEach(function (it) {
       var id = Array.isArray(it) ? it[0] : it, label = Array.isArray(it) ? it[1] : it;
-      box.appendChild(el('button', { class: 'tab', type: 'button', 'aria-pressed': String(id === current), text: label, onclick: function () { onPick(id); } }));
+      box.appendChild(el('button', { class: 'tab', type: 'button', 'data-fk': target + ':' + id, 'aria-pressed': String(id === current), text: label, onclick: function () { onPick(id); } }));
     });
   }
 
@@ -67,6 +67,12 @@
   }
 
   function render() {
+    var fk = CI.focusKey();
+    draw();
+    CI.restoreFocus(document.getElementById('main'), fk);
+  }
+
+  function draw() {
     tabs('sorts', SORTS, state.sort, function (v) { state.sort = v; render(); });
     tabs('filters', PLATS, state.platform, function (v) { state.platform = v; render(); });
     var q = state.q.trim().toLowerCase();
@@ -85,15 +91,15 @@
     if (!shown.length) {
       var where = state.platform === 'All' ? '' : ' on ' + state.platform;
       setStatus('empty', q ? 'Nothing matches “' + state.q.trim() + '”' + where + '.' : 'No games' + where + '.', 'Try another spelling, or show every platform.',
-        el('button', { class: 'btn', type: 'button', text: 'Clear search and filters', onclick: function () { state.q = ''; $('q').value = ''; state.platform = 'All'; render(); } }));
+        el('button', { class: 'btn', type: 'button', text: 'Clear search and filters', onclick: function () { state.q = ''; $('q').value = ''; state.platform = 'All'; render(); $('q').focus(); } }));
     } else setStatus(null);
 
     shown.forEach(function (x) {
       var g = x.g;
       var label = g.title + ', ' + g.year + ', ' + g.methods.join(', ') + ', ' + CI.countText(g) + ' cheats' + (q && x.m.cheats ? ', ' + x.m.cheats + ' matching cheats' : '');
       grid.appendChild(el('li', null, [el('button', {
-        class: 'card', type: 'button', 'aria-pressed': String(g.slug === state.selected), 'aria-label': label,
-        onclick: function () { state.selected = g.slug; render(); if (window.innerWidth < 700) $('selected').scrollIntoView({ block: 'start' }); }
+        class: 'card', type: 'button', 'data-fk': 'card:' + g.slug, 'aria-pressed': String(g.slug === state.selected), 'aria-label': label,
+        onclick: function () { state.selected = g.slug; CI.lastGame(g.slug); render(); if (window.innerWidth < 700) $('selected').scrollIntoView({ block: 'start' }); }
       }, [
         CI.cover(g, false),
         el('span', null, [
@@ -107,7 +113,29 @@
     renderSelected();
   }
 
-  $('q').addEventListener('input', function (e) { state.q = e.target.value; render(); });
+  // The cheat search index is built on the first search, so visitors who only browse
+  // don't download every game file.
+  var indexing = false;
+  function buildIndex() {
+    if (indexing) return;
+    indexing = true;
+    state.games.forEach(function (g) {
+      if (g.pending) return;
+      CI.getJSON('data/' + g.slug + '.json').then(function (full) {
+        state.index[g.slug] = full.cheats.map(function (c) {
+          var codes = Object.keys(c.codes).map(function (k) { return c.codes[k]; }).join(' ');
+          return (c.effect + ' ' + c.category + ' ' + codes).toLowerCase();
+        });
+        if (state.q) render();
+      }).catch(function () {});
+    });
+  }
+
+  $('q').addEventListener('input', function (e) {
+    state.q = e.target.value;
+    if (state.q.trim() && state.games.length) buildIndex();
+    render();
+  });
   $('clear-q').addEventListener('click', function () { state.q = ''; $('q').value = ''; render(); $('q').focus(); });
   $('search-form').addEventListener('submit', function (e) { e.preventDefault(); });
 
@@ -115,19 +143,14 @@
     setStatus('loading', 'Loading games…');
     CI.getJSON('data/games.json').then(function (d) {
       state.games = d.games;
-      if (!state.selected) state.selected = (d.games.filter(function (g) { return g.slug === 'gta-v'; })[0] || d.games[0]).slug;
+      // Open on the visitor's last pick, if it's still in the list. First visit: nothing
+      // selected, so the panel stays hidden until a cover is clicked.
+      if (!state.selected) {
+        var last = CI.lastGame();
+        if (d.games.some(function (g) { return g.slug === last; })) state.selected = last;
+      }
+      if (state.q.trim()) buildIndex();
       render();
-      // Build the cheat search index in the background.
-      d.games.forEach(function (g) {
-        if (g.pending) return;
-        CI.getJSON('data/' + g.slug + '.json').then(function (full) {
-          state.index[g.slug] = full.cheats.map(function (c) {
-            var codes = Object.keys(c.codes).map(function (k) { return c.codes[k]; }).join(' ');
-            return (c.effect + ' ' + c.category + ' ' + codes).toLowerCase();
-          });
-          if (state.q) render();
-        }).catch(function () {});
-      });
     }).catch(function () {
       setStatus('empty', 'The game list didn’t load.', 'Check your connection and try again. If it keeps failing, the data file may be missing from the site.',
         el('button', { class: 'btn', type: 'button', text: 'Try again', onclick: load }));

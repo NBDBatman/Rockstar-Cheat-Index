@@ -69,17 +69,64 @@ var CI = (function () {
       big ? el('span', { class: 't', text: game.title }) : el('span', { class: 't', text: game.title }),
       big ? el('span', { class: 'path', text: 'covers/' + game.slug + '.jpg' }) : null
     ]);
+    // The img goes in the slot straight away (invisible) so loading="lazy" works:
+    // browsers don't start a lazy image until it is in the document.
     var img = new Image();
     img.alt = '';
     img.width = 600; img.height = 800;
     img.decoding = 'async';
     if (!big) img.loading = 'lazy'; else img.setAttribute('fetchpriority', 'high');
-    img.onload = function () { slot.classList.add('has-art'); img.alt = game.title + ' cover art'; slot.appendChild(img); };
+    img.onload = function () { slot.classList.add('has-art'); img.alt = game.title + ' cover art'; };
+    img.onerror = function () { img.remove(); };
     img.src = 'covers/' + game.slug + '.jpg';
+    slot.appendChild(img);
     return slot;
   }
 
   function countText(g) { return g.pending ? 'TBC' : String(g.count); }
 
-  return { el: el, getJSON: getJSON, renderCombo: renderCombo, comboWords: comboWords, cover: cover, countText: countText };
+  // Re-rendering replaces buttons, so remember which one had focus (by its data-fk key)
+  // and put focus back on its replacement.
+  function focusKey() {
+    var a = document.activeElement;
+    return a && a.getAttribute ? a.getAttribute('data-fk') : null;
+  }
+  function restoreFocus(root, key) {
+    if (!key) return;
+    var t = root.querySelector('[data-fk="' + CSS.escape(key) + '"]');
+    if (t) t.focus({ preventScroll: true });
+  }
+
+  // Resolves once the text is on the clipboard, rejects if it couldn't be copied.
+  function copy(text) {
+    if (navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(text);
+    return new Promise(function (resolve, reject) {
+      var ta = el('textarea', { readonly: true, 'aria-hidden': 'true', style: 'position:fixed;top:0;left:0;opacity:0' });
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      var ok = false;
+      try { ok = document.execCommand('copy'); } catch (e) {}
+      ta.remove();
+      if (ok) resolve(); else reject(new Error('copy failed'));
+    });
+  }
+
+  // Live-region message. Cleared first so the same message is read again.
+  function announce(node, msg) {
+    node.textContent = '';
+    setTimeout(function () { node.textContent = msg; }, 50);
+  }
+
+  // The visitor's last picked game, saved in their browser like the theme.
+  function lastGame(slug) {
+    try {
+      if (slug) localStorage.setItem('ci-game', slug);
+      else return localStorage.getItem('ci-game');
+    } catch (e) {}
+    return null;
+  }
+
+  return { el: el, getJSON: getJSON, lastGame: lastGame, renderCombo: renderCombo, comboWords: comboWords, cover: cover, countText: countText,
+    focusKey: focusKey, restoreFocus: restoreFocus, copy: copy, announce: announce };
 })();

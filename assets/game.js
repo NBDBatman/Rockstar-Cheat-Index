@@ -33,7 +33,13 @@
     return el('span', { class: 'code', text: v });
   }
 
-  function render() {
+  function render(fk) {
+    fk = fk || CI.focusKey();
+    draw();
+    CI.restoreFocus(page, fk);
+  }
+
+  function draw() {
     var g = state.game, input = state.input;
     page.innerHTML = '';
 
@@ -59,7 +65,7 @@
     // Platform switch and how-to.
     var seg = el('div', { class: 'seg', role: 'group', 'aria-labelledby': 'plat-l', style: '--n:' + g.inputs.length });
     g.inputs.forEach(function (inp) {
-      seg.appendChild(el('button', { type: 'button', 'aria-pressed': String(inp.id === input.id), text: inp.label,
+      seg.appendChild(el('button', { type: 'button', 'data-fk': 'plat:' + inp.id, 'aria-pressed': String(inp.id === input.id), text: inp.label,
         onclick: function () { state.input = inp; state.copied = null; render(); } }));
     });
     page.appendChild(el('div', { class: 'howto' }, [
@@ -74,7 +80,7 @@
     var avail = rows.filter(function (c) { return codeFor(c, input); }).length;
     var tabBox = el('div', { class: 'tabs', role: 'group', 'aria-label': 'Category' });
     cats.forEach(function (cat) {
-      tabBox.appendChild(el('button', { class: 'tab', type: 'button', 'aria-pressed': String(cat === state.cat), text: cat, onclick: function () { state.cat = cat; render(); } }));
+      tabBox.appendChild(el('button', { class: 'tab', type: 'button', 'data-fk': 'cat:' + cat, 'aria-pressed': String(cat === state.cat), text: cat, onclick: function () { state.cat = cat; render(); } }));
     });
 
     var list = el('ul', { class: 'cheats' });
@@ -85,13 +91,17 @@
         el('span', { class: 'eff', text: c.effect }),
         el('span', { class: 'cat', text: c.category }),
         el('span', { class: 'code-cell' }, [codeCell(c, input)]),
-        el('span', { class: 'copy' }, [copyable ? el('button', { class: 'btn', type: 'button', 'aria-label': 'Copy code for ' + c.effect,
-          text: state.copied === id ? 'Copied' : 'Copy',
+        el('span', { class: 'copy' }, [copyable ? el('button', { class: 'btn', type: 'button', 'data-fk': 'copy:' + id, 'aria-label': 'Copy code for ' + c.effect,
+          text: state.copied && state.copied.id === id ? (state.copied.ok ? 'Copied' : 'Failed') : 'Copy',
           onclick: function () {
-            var t = copyText(c, input);
-            try { navigator.clipboard.writeText(t); } catch (e) {}
-            state.copied = id; render();
-            document.getElementById('announce').textContent = 'Copied the code for ' + c.effect + '.';
+            function done(ok) {
+              state.copied = { id: id, ok: ok };
+              render('copy:' + id);
+              CI.announce(document.getElementById('announce'), ok
+                ? 'Copied the code for ' + c.effect + '.'
+                : 'Couldn’t copy the code for ' + c.effect + '. Select it and copy it yourself.');
+            }
+            CI.copy(copyText(c, input)).then(function () { done(true); }, function () { done(false); });
           } }) : null]),
         c.requirement ? el('p', { class: 'req' }, [el('b', { text: 'Requirement: ' }), c.requirement]) : null,
         c.note ? el('p', { class: 'note', text: c.note }) : null
@@ -103,7 +113,6 @@
       el('div', { class: 'top' }, [tabBox, el('span', { class: 'muted', style: 'font-size:14px', text: rows.length + ' of ' + g.cheats.length + ' cheats, ' + avail + ' on ' + input.label })]),
       el('div', { class: 'cheat-head', 'aria-hidden': 'true' }, [el('span', { text: 'Effect' }), el('span', { text: 'Category' }), el('span', { text: codeHead }), el('span')]),
       list,
-      el('p', { class: 'sr', 'aria-live': 'polite', id: 'announce' }),
       g.incomplete ? el('p', { class: 'muted', style: 'margin-top:20px', text: 'This list isn’t complete yet. More codes are coming.' }) : null,
       el('p', { class: 'muted', style: 'margin-top:24px;font-size:15px' }, ['Wrong or missing code? ', el('a', { href: 'https://github.com/NBDBatman/Rockstar-Cheat-Index/issues', text: 'Open an issue' }), ' or a pull request on GitHub. Each game is one JSON file.']),
       g.sources && g.sources.length ? el('div', { class: 'sources' }, [
@@ -124,6 +133,7 @@
       state.game = g;
       state.input = g.inputs[0] || null;
       document.title = g.title + ' cheats | Cheat Index';
+      CI.lastGame(g.slug);
       document.getElementById('crumb').textContent = g.title;
       render();
     }).catch(function () {
@@ -132,6 +142,9 @@
         el('button', { class: 'btn', type: 'button', text: 'Try again', onclick: load }));
     });
   }
-  window.addEventListener('hashchange', function () { slug = location.hash.slice(1); state.cat = 'All'; load(); });
+  window.addEventListener('hashchange', function () {
+    slug = location.hash.slice(1) || new URLSearchParams(location.search).get('g') || '';
+    state.cat = 'All'; state.copied = null; load();
+  });
   load();
 })();

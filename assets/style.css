@@ -78,7 +78,8 @@ button:disabled { cursor: not-allowed; }
 
 /* cover art */
 .cover-slot { position: relative; display: flex; flex-direction: column; justify-content: space-between; aspect-ratio: 3 / 4; width: 100%; padding: 10px; background: var(--surf); border: 1px dashed var(--ctl); border-radius: 3px; overflow: hidden; }
-.cover-slot img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.cover-slot img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; }
+.cover-slot.has-art img { opacity: 1; }
 .cover-slot.has-art { border-style: solid; padding: 0; }
 .cover-slot.has-art > span { display: none; }
 .cover-slot .t { font-weight: 600; font-size: 15px; line-height: 1.15; }

@@ -58,6 +58,7 @@ Each cheat looks like:
 - Never invent a code, phone number, phrase, requirement or cheat count. If it can't be sourced, leave it out. Unknown counts show as `[COUNT]` and GTA VI shows `TBC`.
 - GTA VI: add codes only once they're confirmed in the released game. Pre-launch "leaked" lists were guesses.
 - When cheats are added or removed, update `count` in `data/games.json`.
+- Every new game needs its cover, `covers/<slug>.jpg` at 600x800, in the same change.
 
 ## Design rules (full reasons in DESIGN.md)
 
@@ -80,6 +81,6 @@ Each cheat looks like:
 ## Don't
 
 - Don't add ads, analytics, trackers or third-party scripts. Google Fonts is the only external request.
-- Don't commit cover art you don't have the right to use. Don't add Rockstar logos or game fonts, or anything that makes the site look official.
+- Covers are the official front-of-box art, taken from Rockstar's own site where possible (their 640px box images, or a game's downloads page), cropped to 600x800. Rockstar logos and game fonts may appear inside a cover, but never in the site's own interface, and don't add anything else that makes the site look official.
 - Don't add a framework or build step unless the owner asks.
 - Repo: https://github.com/NBDBatman/Rockstar-Cheat-Index. Corrections go to its Issues; keep those links in the footer and on game pages.

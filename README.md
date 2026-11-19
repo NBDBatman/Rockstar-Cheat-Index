@@ -1,54 +1,76 @@
 # Cheat Index
 
-A fan reference for every official cheat code Rockstar built into their games, from Grand Theft Auto (1997) to Red Dead Redemption 2. It lists PC, PlayStation, Xbox and handheld codes. No ads, ever.
+**Every official cheat code Rockstar shipped in their games, in one place.**
 
-It's a plain static site with no build step, made for GitHub Pages.
+From Grand Theft Auto (1997) to GTA VI: PC codes, PlayStation and Xbox button combos, handheld codes, phone numbers and Red Dead phrases. Pick a game, pick your platform, copy the code.
 
-## What's in here
+**[Open Cheat Index](https://nbdbatman.github.io/Rockstar-Cheat-Index/)**
 
-```
-index.html          Home: search, sort, platform filter, game grid
-game.html           One page for every game: game.html#<slug>
-assets/             style.css, theme.js, common.js, home.js, game.js
-data/games.json     The game list (title, year, platforms, input types, cheat count)
-data/<slug>.json    One file per game with every cheat
-covers/             Cover art goes here (see below)
-DESIGN.md           Design decisions and the reasons for them
-LICENSE             MIT
-```
+No ads, and there never will be.
 
-## Run it locally
+---
 
-The pages load their data with `fetch`, so opening the HTML file directly won't work. Serve the folder instead:
+## Why it exists
 
-```
-python3 -m http.server 8000
-```
+Most cheat lists are buried under autoplay video, pop-ups and five paragraphs of filler before the first code. They mix in mod and trainer codes, and they rarely say which platform a combo is for.
 
-Then open http://localhost:8000.
+Cheat Index is the opposite. It only lists codes that are built into the games. Every list says where its codes were checked, and the code you need is one tap from the top of the page.
 
-## Put it on GitHub Pages
+## What you get
 
-1. Push this folder to a repository, with `index.html` at the root.
-2. In the repo, go to Settings, then Pages, and choose "Deploy from a branch", your main branch, `/ (root)`.
-3. The site goes live at https://nbdbatman.github.io/Rockstar-Cheat-Index/.
+- **462 cheats across 13 games**, with GTA VI added once its cheats are confirmed in the released game.
+- **A platform switch on every game.** Codes for PC, PlayStation, Xbox, PSP, DS, mobile, phone and phrase entry each get their own view, so you only see what works on your machine.
+- **Button combos drawn as buttons.** PlayStation shows ✕ ○ □ △, Xbox shows A B X Y, and held buttons are called out.
+- **One-tap copy.** Combos copy as readable words ("Hold L1, then R2, Cross…"), and typed codes copy exactly.
+- **Search across every game at once.** Search by effect ("tank"), by code ("HESOYAM") or by game.
+- **Requirements and warnings up front.** Each page notes newspaper unlocks, edition-specific codes, and whether cheats turn off achievements or saving.
+- **Dark by default, with a light mode.** It works on a phone, with a keyboard and with a screen reader.
 
-`.nojekyll` is included so GitHub serves every file as-is.
+## Games covered
 
-## Cover art
+| Game | Year | How cheats are entered | Codes listed for | Cheats |
+| --- | --- | --- | --- | --- |
+| Grand Theft Auto | 1997 | Typed | PC, PS1 | 28 |
+| Grand Theft Auto 2 | 1999 | Typed | PC, PS1 | 46 |
+| Grand Theft Auto III | 2001 | Combo, typed | PC, PS2, PS4, PS5, Xbox One, Xbox Series X/S | 25 |
+| GTA: Vice City | 2002 | Combo, typed | PC, PS2, PS4, PS5, Xbox One, Xbox Series X/S | 58 |
+| GTA: San Andreas | 2004 | Combo, typed | PC, PS2, PS3, PS4, PS5, Xbox 360, Xbox One, Xbox Series X/S | 88 |
+| GTA: Liberty City Stories | 2005 | Combo | PSP, PS2 | 43 |
+| Bully | 2006 | Combo | PS2 | 8 |
+| GTA: Vice City Stories | 2006 | Combo | PSP, PS2 | 36 |
+| Grand Theft Auto IV | 2008 | Phone | PC, PS3, Xbox 360 | 16 |
+| GTA: Chinatown Wars | 2009 | Combo, typed | DS, PSP, mobile | 21 |
+| Red Dead Redemption | 2010 | Phrase | PS3, PS4, Xbox 360 | 20 (more coming) |
+| Grand Theft Auto V | 2013 | Combo, typed, phone | PC, PS3, PS4, PS5, Xbox 360, Xbox One, Xbox Series X/S | 36 |
+| Red Dead Redemption 2 | 2018 | Phrase | PC, PS4, Xbox One | 37 |
+| Grand Theft Auto VI | 2026 | To be confirmed | PS5, Xbox Series X/S | TBC |
 
-The site doesn't ship any box art. Add your own images as `covers/<slug>.jpg`, at 600×800 (3:4). A cover appears automatically once its file exists, and until then the site shows a labelled slot. The slugs are:
+A few things to know about consoles:
 
-`gta`, `gta-2`, `gta-iii`, `gta-vc`, `gta-sa`, `gta-lcs`, `bully`, `gta-vcs`, `gta-iv`, `gta-ctw`, `rdr`, `gta-v`, `rdr2`, `gta-vi`
+- **GTA III, Vice City and San Andreas:** PS4, PS5, Xbox One and Series X/S mean the Definitive Edition, which takes the same combos as the PS2 originals. The original Xbox releases used a different button layout, and the Switch version uses Nintendo buttons, so neither is covered yet.
+- **GTA V:** button combos work on every console listed, but the phone numbers only work on PS4, PS5, Xbox One, Series X/S and PC.
+- **Backward compatibility:** a game played through backward compatibility takes the same codes as the version it's running. For example, RDR2 on PS5 or Xbox Series X/S uses the PS4 and Xbox One codes.
 
-Box art belongs to its publishers, so use images you're allowed to use.
+## Found a wrong code?
 
-## Adding or fixing cheats
+[Open an issue](https://github.com/NBDBatman/Rockstar-Cheat-Index/issues) with the game, the platform, the cheat and what happened. A link to where you found the correct code helps a lot.
 
-Spotted a wrong code? Open an issue at https://github.com/NBDBatman/Rockstar-Cheat-Index/issues, or send a pull request.
+You can also fix it yourself. Each game is a single JSON file, so most fixes are a one-line pull request. See [Contributing](#contributing).
 
+## Contributing
 
-Edit the game's file in `data/`. Each cheat looks like this:
+### The rules
+
+1. **Official in-game cheats only.** No mods, trainers, GameShark, Action Replay or CWCheat codes.
+2. **Copy codes exactly from the source**, and add the source URL to that game's `sources` list if it isn't there yet.
+3. **Never guess.** If a code, phone number, phrase or requirement can't be sourced, leave it out.
+4. **Write effects in your own words**, in sentence case and British English.
+5. **GTA VI codes go in only once they're confirmed in the released game.** Pre-launch "leaked" lists were guesses.
+6. **Every new game needs a cover picture.** A pull request that adds a game must include `covers/<slug>.jpg` at 600x800 (3:4), using the game's official front-of-box art. Pull requests that add a game without one won't be merged.
+
+### Editing a game
+
+Each game lives in `data/<slug>.json`. A cheat looks like this:
 
 ```json
 {
@@ -59,18 +81,52 @@ Edit the game's file in `data/`. Each cheat looks like this:
     "ps": "Right Cross Right Left Right R1 Right Left Cross Triangle",
     "phone": "1-999-724-654-5537"
   },
-  "requirement": "Optional. Anything you must have or do first, like a newspaper unlock or a specific edition.",
-  "note": "Optional. Anything else worth knowing, like an alternate code."
+  "requirement": "Optional. Something the player must have or do first.",
+  "note": "Optional. Anything else, like an alternate code."
 }
 ```
 
-- The keys in `codes` match the `inputs` listed at the top of that game's file (`pc`, `ps`, `ps2`, `psp`, `ds`, `phone`, `phrase`, `mobile`).
-- Write button combos with PlayStation names: `Cross Circle Square Triangle L1 R1 L2 R2 Up Down Left Right`. Xbox combos are generated from these for GTA III, Vice City, San Andreas and GTA V. Start a combo with `HOLD:L1 ` if a button has to be held down.
-- When you add or remove a cheat, update that game's `count` in `data/games.json` to match.
-- Only add codes that work in the game. Each game file lists the sources its codes were checked against.
+- **`codes`** keys match the `inputs` at the top of the file: `pc`, `ps`, `ps2`, `psp`, `ds`, `phone`, `phrase`, `mobile`. Leave a key out and the site shows "Not on <platform>".
+- **Combos** use PlayStation button names, separated by spaces: `Cross Circle Square Triangle L1 R1 L2 R2 Up Down Left Right`. Use `L` and `R` for PSP shoulders, and `A B X Y L R` for DS. Start with `HOLD:L1 ` when a button is held down.
+- **Xbox combos are generated** from the PlayStation ones, so you don't write them separately.
+- **Categories:** Player, Weapons, Money, Wanted, Vehicles, World, Pedestrians, Score, Levels, Other.
+- **Counts:** when you add or remove a cheat, update that game's `count` in `data/games.json` to match.
+- **Valid JSON:** a stray comma breaks the whole game page, so check the file is still valid JSON before you open a pull request.
+
+### Changing the design
+
+Read [DESIGN.md](DESIGN.md) first. It explains the look (a printed strategy guide with a highlighter pen) and why each choice was made. Changes need to keep both themes at WCAG AA contrast, and keep the site usable at 375px wide and with a keyboard.
+
+## How it's built
+
+Plain HTML, CSS and JavaScript, with the cheats stored as JSON, hosted on GitHub Pages. There's no framework, no build step and no dependencies.
+
+```
+index.html          Home: search, game grid, sort and platform filter
+game.html           Every game page, routed by hash: game.html#gta-sa
+assets/             style.css, theme.js, common.js, home.js, game.js
+data/games.json     The game list: title, year, platforms, input types, cheat count
+data/<slug>.json    One file per game with every cheat and its sources
+covers/             Cover art, covers/<slug>.jpg at 600x800
+DESIGN.md           Design decisions and the reasons for them
+```
+
+Pushing to `main` deploys the site. `.nojekyll` must stay so GitHub serves every file as-is.
+
+### Cover art
+
+Covers live in `covers/<slug>.jpg` at 600x800 (3:4), and the site picks them up automatically. Use the official front-of-box art, from Rockstar's own site where possible, cropped to fit. Logos only appear inside the covers, never in the site's own design.
+
+Any new game must come with its cover (see [rule 6](#the-rules)). For the games already listed, a missing cover shows a labelled placeholder until one is added.
+
+Slugs: `gta`, `gta-2`, `gta-iii`, `gta-vc`, `gta-sa`, `gta-lcs`, `bully`, `gta-vcs`, `gta-iv`, `gta-ctw`, `rdr`, `gta-v`, `rdr2`, `gta-vi`
+
+## Privacy
+
+There are no ads, analytics, trackers or cookies. The only outside request is to Google Fonts for IBM Plex. Your theme choice is saved in your own browser and never leaves it.
 
 ## Licence
 
-The site's code and data files are under the MIT License (see `LICENSE`), © 2026 MercuryHQ/NBDBatman.
+The code and data are released under the [MIT License](LICENSE), © 2026 MercuryHQ/NBDBatman.
 
-This is an unofficial fan project. It isn't affiliated with or endorsed by Rockstar Games or Take-Two Interactive. Game titles and cover art belong to their owners.
+Cheat Index is an unofficial fan project. It isn't affiliated with or endorsed by Rockstar Games or Take-Two Interactive. Game titles, cheat codes and cover art belong to their owners. Covers are official box art, shown only to identify each game, and aren't covered by the MIT License.

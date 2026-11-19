@@ -22,11 +22,31 @@
    "sample": "SUCKMYROCKET"
   },
   {
+   "slug": "gta-london",
+   "title": "GTA: London 1969",
+   "short": "London 1969",
+   "year": 1999,
+   "order": 1,
+   "platforms": [
+    "PC",
+    "PlayStation"
+   ],
+   "consoles": [
+    "PC",
+    "PS1"
+   ],
+   "methods": [
+    "Typed"
+   ],
+   "count": 22,
+   "sample": "GETCARTER"
+  },
+  {
    "slug": "gta-2",
    "title": "Grand Theft Auto 2",
    "short": "GTA 2",
    "year": 1999,
-   "order": 1,
+   "order": 2,
    "platforms": [
     "PC",
     "PlayStation"
@@ -46,34 +66,6 @@
    "title": "Grand Theft Auto III",
    "short": "GTA III",
    "year": 2001,
-   "order": 2,
-   "platforms": [
-    "PC",
-    "PlayStation",
-    "Xbox",
-    "Switch"
-   ],
-   "consoles": [
-    "PC",
-    "PS2",
-    "PS4",
-    "PS5",
-    "Switch",
-    "Xbox One",
-    "Xbox Series X/S"
-   ],
-   "methods": [
-    "Combo",
-    "Typed"
-   ],
-   "count": 25,
-   "sample": "GESUNDHEIT"
-  },
-  {
-   "slug": "gta-vc",
-   "title": "GTA: Vice City",
-   "short": "Vice City",
-   "year": 2002,
    "order": 3,
    "platforms": [
     "PC",
@@ -88,13 +80,43 @@
     "PS5",
     "Switch",
     "Xbox One",
-    "Xbox Series X/S"
+    "Xbox Series X/S",
+    "Mobile"
    ],
    "methods": [
     "Combo",
     "Typed"
    ],
-   "count": 58,
+   "count": 25,
+   "sample": "GESUNDHEIT"
+  },
+  {
+   "slug": "gta-vc",
+   "title": "GTA: Vice City",
+   "short": "Vice City",
+   "year": 2002,
+   "order": 4,
+   "platforms": [
+    "PC",
+    "PlayStation",
+    "Xbox",
+    "Switch"
+   ],
+   "consoles": [
+    "PC",
+    "PS2",
+    "PS4",
+    "PS5",
+    "Switch",
+    "Xbox One",
+    "Xbox Series X/S",
+    "Mobile"
+   ],
+   "methods": [
+    "Combo",
+    "Typed"
+   ],
+   "count": 59,
    "sample": "ASPIRINE"
   },
   {
@@ -102,7 +124,7 @@
    "title": "GTA: San Andreas",
    "short": "San Andreas",
    "year": 2004,
-   "order": 4,
+   "order": 5,
    "platforms": [
     "PC",
     "PlayStation",
@@ -116,9 +138,11 @@
     "PS4",
     "PS5",
     "Switch",
+    "Original Xbox",
     "Xbox 360",
     "Xbox One",
-    "Xbox Series X/S"
+    "Xbox Series X/S",
+    "Mobile"
    ],
    "methods": [
     "Combo",
@@ -128,11 +152,28 @@
    "sample": "HESOYAM"
   },
   {
+   "slug": "warriors",
+   "title": "The Warriors",
+   "short": "The Warriors",
+   "year": 2005,
+   "order": 6,
+   "platforms": [
+    "PlayStation"
+   ],
+   "consoles": [
+    "PS2"
+   ],
+   "methods": [
+    "Combo"
+   ],
+   "count": 11
+  },
+  {
    "slug": "gta-lcs",
    "title": "GTA: Liberty City Stories",
    "short": "LCS",
    "year": 2005,
-   "order": 5,
+   "order": 7,
    "platforms": [
     "Handheld",
     "PlayStation"
@@ -152,7 +193,7 @@
    "title": "Bully",
    "short": "Bully",
    "year": 2006,
-   "order": 6,
+   "order": 8,
    "platforms": [
     "PlayStation"
    ],
@@ -170,7 +211,7 @@
    "title": "GTA: Vice City Stories",
    "short": "VCS",
    "year": 2006,
-   "order": 7,
+   "order": 9,
    "platforms": [
     "Handheld",
     "PlayStation"
@@ -190,7 +231,7 @@
    "title": "Grand Theft Auto IV",
    "short": "GTA IV",
    "year": 2008,
-   "order": 8,
+   "order": 10,
    "platforms": [
     "PC",
     "PlayStation",
@@ -212,7 +253,7 @@
    "title": "GTA: Chinatown Wars",
    "short": "Chinatown Wars",
    "year": 2009,
-   "order": 9,
+   "order": 11,
    "platforms": [
     "Handheld"
    ],
@@ -233,7 +274,7 @@
    "title": "Red Dead Redemption",
    "short": "RDR",
    "year": 2010,
-   "order": 10,
+   "order": 12,
    "platforms": [
     "PC",
     "PlayStation",
@@ -258,7 +299,7 @@
    "title": "Grand Theft Auto V",
    "short": "GTA V",
    "year": 2013,
-   "order": 11,
+   "order": 13,
    "platforms": [
     "PC",
     "PlayStation",
@@ -286,7 +327,7 @@
    "title": "Red Dead Redemption 2",
    "short": "RDR2",
    "year": 2018,
-   "order": 12,
+   "order": 14,
    "platforms": [
     "PC",
     "PlayStation",
@@ -308,7 +349,7 @@
    "title": "Grand Theft Auto VI",
    "short": "GTA VI",
    "year": 2026,
-   "order": 13,
+   "order": 15,
    "platforms": [
     "PlayStation",
     "Xbox"

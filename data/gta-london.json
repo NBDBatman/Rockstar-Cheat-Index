@@ -1,0 +1,200 @@
+{
+ "title": "GTA: London 1969",
+ "short": "London 1969",
+ "year": 1999,
+ "order": 1,
+ "platforms": [
+  "PC",
+  "PlayStation"
+ ],
+ "consoles": [
+  "PC",
+  "PS1"
+ ],
+ "methods": [
+  "Typed"
+ ],
+ "inputs": [
+  {
+   "id": "pc",
+   "label": "PC",
+   "type": "text",
+   "how": "Enter the code as your player name, then start the game."
+  },
+  {
+   "id": "ps",
+   "label": "PlayStation",
+   "type": "text",
+   "how": "Enter the code as your player name, as a new name or with Rename. To use more than one, accept each name, then rename for the next."
+  }
+ ],
+ "warning": "Player-name codes change that save, so use a separate name for cheating.",
+ "sources": [
+  "https://gta.wiki/w/Cheats_in_GTA_London",
+  "https://www.gtaboss.gg/gta-cheat-codes/gta-1"
+ ],
+ "cheats": [
+  {
+   "effect": "Infinite lives",
+   "category": "Player",
+   "codes": {
+    "pc": "6661970"
+   }
+  },
+  {
+   "effect": "99 lives",
+   "category": "Player",
+   "codes": {
+    "ps": "MCVICAR"
+   }
+  },
+  {
+   "effect": "All weapons",
+   "category": "Weapons",
+   "codes": {
+    "pc": "deathtoall"
+   },
+   "requirement": "Press * on the numeric keypad in game to get the weapons.",
+   "note": "PC also accepts asawindow."
+  },
+  {
+   "effect": "All items",
+   "category": "Weapons",
+   "codes": {
+    "pc": "uaintnuffin"
+   },
+   "requirement": "Press * on the numeric keypad in game to get the weapons."
+  },
+  {
+   "effect": "All weapons and a Get Out of Jail Free card",
+   "category": "Weapons",
+   "codes": {
+    "ps": "DONTMESS"
+   },
+   "note": "PlayStation also accepts TOOLEDUP."
+  },
+  {
+   "effect": "All weapons, armour, a 5x multiplier and more",
+   "category": "Weapons",
+   "codes": {
+    "ps": "FREEMANS"
+   }
+  },
+  {
+   "effect": "Shoot from vehicles",
+   "category": "Weapons",
+   "codes": {
+    "pc": "driveby"
+   }
+  },
+  {
+   "effect": "No police",
+   "category": "Wanted",
+   "codes": {
+    "ps": "GRASS"
+   }
+  },
+  {
+   "effect": "Turn off the police scanner",
+   "category": "Wanted",
+   "codes": {
+    "pc": "silence"
+   }
+  },
+  {
+   "effect": "Change car colour with the horn",
+   "category": "Vehicles",
+   "codes": {
+    "pc": "psychadelic"
+   }
+  },
+  {
+   "effect": "All levels",
+   "category": "Levels",
+   "codes": {
+    "pc": "flashmotor",
+    "ps": "RAZZLE"
+   },
+   "note": "PC also accepts super well and travelcard. PlayStation also accepts READERWIFE."
+  },
+  {
+   "effect": "All levels and all weapons with infinite ammo",
+   "category": "Levels",
+   "codes": {
+    "ps": "SORTED"
+   }
+  },
+  {
+   "effect": "All levels, all weapons, armour, 99 lives, a 5x multiplier and more",
+   "category": "Levels",
+   "codes": {
+    "ps": "GETCARTER"
+   }
+  },
+  {
+   "effect": "London levels 1 and 2",
+   "category": "Levels",
+   "codes": {
+    "ps": "MAYFAIR"
+   }
+  },
+  {
+   "effect": "London levels 1 to 3",
+   "category": "Levels",
+   "codes": {
+    "ps": "PENTHOUSE"
+   }
+  },
+  {
+   "effect": "999,999,999 points",
+   "category": "Score",
+   "codes": {
+    "pc": "averyrichman"
+   }
+  },
+  {
+   "effect": "10x score multiplier",
+   "category": "Score",
+   "codes": {
+    "pc": "iamgod"
+   }
+  },
+  {
+   "effect": "5x score multiplier",
+   "category": "Score",
+   "codes": {
+    "ps": "SIDEBURN"
+   }
+  },
+  {
+   "effect": "Several cheats at once",
+   "category": "Other",
+   "codes": {
+    "pc": "herc"
+   }
+  },
+  {
+   "effect": "Debug mode",
+   "category": "Other",
+   "codes": {
+    "pc": "rommel"
+   }
+  },
+  {
+   "effect": "Debug keys",
+   "category": "Other",
+   "codes": {
+    "pc": "pieandmash"
+   }
+  },
+  {
+   "effect": "Show your coordinates",
+   "category": "Other",
+   "codes": {
+    "ps": "SWEENEY"
+   }
+  }
+ ],
+ "slug": "gta-london",
+ "count": 22
+}

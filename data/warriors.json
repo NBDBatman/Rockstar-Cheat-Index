@@ -1,0 +1,110 @@
+{
+ "title": "The Warriors",
+ "short": "The Warriors",
+ "year": 2005,
+ "order": 6,
+ "platforms": [
+  "PlayStation"
+ ],
+ "consoles": [
+  "PS2"
+ ],
+ "methods": [
+  "Combo"
+ ],
+ "inputs": [
+  {
+   "id": "ps2",
+   "label": "PS2",
+   "type": "combo",
+   "pad": "ps",
+   "how": "Enter the combo on the controller during play."
+  }
+ ],
+ "warning": "These are PS2 codes. The PSP and Xbox versions use different combos, which aren't listed here yet.",
+ "sources": [
+  "https://www.cheathappens.com/11367-PlayStation_2-Warriors_The_cheats",
+  "https://www.vcgamers.com/news/en/cheat-the-warrior-ps2"
+ ],
+ "cheats": [
+  {
+   "effect": "Unlimited health",
+   "category": "Player",
+   "codes": {
+    "ps2": "Up Triangle L3 Select Cross L2"
+   }
+  },
+  {
+   "effect": "Unlimited sprint",
+   "category": "Player",
+   "codes": {
+    "ps2": "Down Square Left Cross L1 Select"
+   }
+  },
+  {
+   "effect": "Unlimited rage",
+   "category": "Player",
+   "codes": {
+    "ps2": "Square Circle Triangle Select Cross Left"
+   }
+  },
+  {
+   "effect": "Get a knife",
+   "category": "Weapons",
+   "codes": {
+    "ps2": "Down Down Select Up Up L3"
+   }
+  },
+  {
+   "effect": "Get a baseball bat",
+   "category": "Weapons",
+   "codes": {
+    "ps2": "Square R2 Down Down L1 L1"
+   }
+  },
+  {
+   "effect": "Get a pipe",
+   "category": "Weapons",
+   "codes": {
+    "ps2": "R2 Circle Select Up L1 Right"
+   }
+  },
+  {
+   "effect": "Get a machete",
+   "category": "Weapons",
+   "codes": {
+    "ps2": "L1 Cross R1 R1 Select R2"
+   }
+  },
+  {
+   "effect": "$200, flash and spray cans",
+   "category": "Money",
+   "codes": {
+    "ps2": "R1 R2 L1 Cross Down L1"
+   }
+  },
+  {
+   "effect": "Lose the police",
+   "category": "Wanted",
+   "codes": {
+    "ps2": "Up Select Cross Triangle Triangle Square"
+   }
+  },
+  {
+   "effect": "Complete the current mission",
+   "category": "Levels",
+   "codes": {
+    "ps2": "Down Square Cross Select R1 Left"
+   }
+  },
+  {
+   "effect": "100% completion",
+   "category": "Levels",
+   "codes": {
+    "ps2": "L1 Select Square Down L2 Right"
+   }
+  }
+ ],
+ "slug": "warriors",
+ "count": 11
+}

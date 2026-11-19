@@ -2,7 +2,7 @@
  "title": "GTA: Vice City",
  "short": "Vice City",
  "year": 2002,
- "order": 3,
+ "order": 4,
  "platforms": [
   "PC",
   "PlayStation",
@@ -16,7 +16,8 @@
   "PS5",
   "Switch",
   "Xbox One",
-  "Xbox Series X/S"
+  "Xbox Series X/S",
+  "Mobile"
  ],
  "methods": [
   "Combo",
@@ -27,7 +28,7 @@
    "id": "pc",
    "label": "PC",
    "type": "text",
-   "how": "Type the code during play. There is no console and no Enter key."
+   "how": "Type the code during play. There is no console and no Enter key. On the mobile Definitive Edition, including the Netflix version, type the code with a keyboard (an external one on iPhone and iPad)."
   },
   {
    "id": "ps",
@@ -56,7 +57,10 @@
  "warning": "Cheats turn off achievements and trophies for the session. Keep a clean save.",
  "sources": [
   "https://www.grandtheftwiki.com/GTA_Vice_City_Cheats_(PC)",
-  "https://nintendowire.com/guides/grand-theft-auto-the-trilogy-the-definitive-edition/grand-theft-auto-vice-city-cheat-codes/"
+  "https://nintendowire.com/guides/grand-theft-auto-the-trilogy-the-definitive-edition/grand-theft-auto-vice-city-cheat-codes/",
+  "https://www.pushsquare.com/guides/gta-vice-city-definitive-edition-all-cheats",
+  "https://www.gtabase.com/gta-vice-city/gta-vice-city-cheats-ps5-ps4-ps3-ps2",
+  "https://toucharcade.com/2023/12/18/gta-san-andreas-vice-city-gta-3-cheats-definitive-edition-netflix-mobile-iphone-android-ipad-guide-how-to-use"
  ],
  "cheats": [
   {
@@ -407,6 +411,18 @@
     "pc": "GREENLIGHT",
     "ps": "Right R1 Up L2 L2 Left R1 L1 R1 R1"
    }
+  },
+  {
+   "effect": "Invisible cars",
+   "category": "Vehicles",
+   "codes": {
+    "ps": "Triangle L1 Triangle R2 Square L1 L1"
+   },
+   "requirement": "Not in the Definitive Edition.",
+   "not": [
+    "xbox",
+    "switch"
+   ]
   },
   {
    "effect": "Sunny weather",

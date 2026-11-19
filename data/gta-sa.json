@@ -2,7 +2,7 @@
  "title": "GTA: San Andreas",
  "short": "San Andreas",
  "year": 2004,
- "order": 4,
+ "order": 5,
  "platforms": [
   "PC",
   "PlayStation",
@@ -16,9 +16,11 @@
   "PS4",
   "PS5",
   "Switch",
+  "Original Xbox",
   "Xbox 360",
   "Xbox One",
-  "Xbox Series X/S"
+  "Xbox Series X/S",
+  "Mobile"
  ],
  "methods": [
   "Combo",
@@ -29,7 +31,7 @@
    "id": "pc",
    "label": "PC",
    "type": "text",
-   "how": "Type the code during play. There is no console and no Enter key."
+   "how": "Type the code during play. There is no console and no Enter key. On the mobile Definitive Edition, including the Netflix version, type the code with a keyboard (an external one on iPhone and iPad)."
   },
   {
    "id": "ps",
@@ -40,11 +42,26 @@
   },
   {
    "id": "xbox",
-   "label": "Xbox",
+   "label": "Xbox One/Series",
    "type": "combo",
    "pad": "xbox",
    "derive": "ps",
-   "how": "Enter the combo on the controller during play, without pausing. Xbox 360 and later, including the Definitive Edition. The original Xbox release used different buttons."
+   "how": "Enter the combo on the controller during play, without pausing. This is the Definitive Edition on Xbox One and Series X/S."
+  },
+  {
+   "id": "xbox360",
+   "label": "Xbox 360",
+   "type": "combo",
+   "pad": "xbox360",
+   "derive": "ps",
+   "how": "Enter the combo on the controller during play, without pausing. This is the 2014 Xbox 360 release, also when played on Xbox One or Series through backward compatibility. Its bumpers and triggers are the other way round from the Definitive Edition."
+  },
+  {
+   "id": "xboxog",
+   "label": "Original Xbox",
+   "type": "combo",
+   "pad": "xboxog",
+   "how": "Enter the combo on the controller during play, without pausing. This is the 2005 Xbox release. A few codes from other versions are different or missing here."
   },
   {
    "id": "switch",
@@ -60,7 +77,13 @@
   "https://wiki.gtaboom.com/wiki/san-andreas-cheats",
   "https://www.gtabase.com/gta-san-andreas/gta-san-andreas-cheats-pc-definitive-edition",
   "https://nintendowire.com/guides/grand-theft-auto-the-trilogy-the-definitive-edition/grand-theft-auto-san-andreas-cheat-codes/",
-  "https://shacknews.com/article/127651/gta-san-andreas-cheat-codes-definitive-edition"
+  "https://shacknews.com/article/127651/gta-san-andreas-cheat-codes-definitive-edition",
+  "https://www.igrandtheftauto.com/gtasa/xbox-cheats",
+  "https://www.gtabase.com/gta-san-andreas/gta-san-andreas-cheats-xbox-360-xbox-one",
+  "https://www.gtaboom.com/san-andreas-cheats-ps2-ps3/",
+  "https://pushsquare.com/guides/gta-san-andreas-definitive-edition-all-cheats",
+  "https://www.gtabase.com/gta-san-andreas/gta-san-andreas-cheats-ps5-ps4-ps3-ps2",
+  "https://toucharcade.com/2023/12/18/gta-san-andreas-vice-city-gta-3-cheats-definitive-edition-netflix-mobile-iphone-android-ipad-guide-how-to-use"
  ],
  "cheats": [
   {
@@ -68,7 +91,8 @@
    "category": "Player",
    "codes": {
     "pc": "HESOYAM",
-    "ps": "R1 R2 L1 Cross Left Down Right Up Left Down Right Up"
+    "ps": "R1 R2 L1 Cross Left Down Right Up Left Down Right Up",
+    "xboxog": "R1 R2 L1 Cross Left Down Right Up Left Down Right Up"
    },
    "note": "Definitive Edition also accepts INEEDSOMEHELP."
   },
@@ -77,16 +101,22 @@
    "category": "Player",
    "codes": {
     "pc": "BAGUVIX",
-    "ps": "Down Cross Right Left Right R1 Right Down Up Triangle"
+    "ps": "Down Cross Right Left Right R1 Right Down Up Triangle",
+    "xboxog": "Down Cross Right Left Right R1 Right Down Up Triangle"
    },
-   "note": "Definitive Edition also accepts CAINEMVHZC."
+   "requirement": "Not in the Definitive Edition.",
+   "not": [
+    "xbox",
+    "switch"
+   ]
   },
   {
    "effect": "Infinite lung capacity",
    "category": "Player",
    "codes": {
     "pc": "CVWKXAM",
-    "ps": "Down Left L1 Down Down R2 Down L2 Down"
+    "ps": "Down Left L1 Down Down R2 Down L2 Down",
+    "xboxog": "Down Left L1 Down Down R2 Down L2 Down"
    },
    "note": "Definitive Edition also accepts MANFROMATLANTIS."
   },
@@ -95,7 +125,8 @@
    "category": "Player",
    "codes": {
     "pc": "MUNASEF",
-    "ps": "Cross Cross Square R1 L1 Cross Down Left Cross"
+    "ps": "Cross Cross Square R1 L1 Cross Down Left Cross",
+    "xboxog": "Cross Cross Square R1 L1 Cross Down Left Cross"
    },
    "note": "Definitive Edition also accepts ANOSEONGLASS."
   },
@@ -104,16 +135,22 @@
    "category": "Player",
    "codes": {
     "pc": "AEDUWNV",
-    "ps": "Square L2 R1 Triangle Up Square L2 Up Cross"
+    "ps": "Square L2 R1 Triangle Up Square L2 Up Cross",
+    "xboxog": "Square L2 R1 Triangle Up Square L2 Up Cross"
    },
-   "note": "Definitive Edition also accepts IAMNEVERHUNGRY."
+   "requirement": "Not in the Definitive Edition.",
+   "not": [
+    "xbox",
+    "switch"
+   ]
   },
   {
    "effect": "Maximum fat",
    "category": "Player",
    "codes": {
     "pc": "BTCDBCB",
-    "ps": "Triangle Up Up Left Right Square Circle Down"
+    "ps": "Triangle Up Up Left Right Square Circle Down",
+    "xboxog": "Triangle Up Up Left Right Square Circle Down"
    },
    "note": "Definitive Edition also accepts WHOATEALLTHEPIES."
   },
@@ -122,7 +159,8 @@
    "category": "Player",
    "codes": {
     "pc": "JYSDSOD",
-    "ps": "Triangle Up Up Left Right Square Circle Left"
+    "ps": "Triangle Up Up Left Right Square Circle Left",
+    "xboxog": "Triangle Up Up Left Right Square Circle Left"
    },
    "note": "Definitive Edition also accepts BUFFMEUP."
   },
@@ -131,7 +169,8 @@
    "category": "Player",
    "codes": {
     "pc": "KVGYZQK",
-    "ps": "Triangle Up Up Left Right Square Circle Right"
+    "ps": "Triangle Up Up Left Right Square Circle Right",
+    "xboxog": "Triangle Up Up Left Right Square Circle Right"
    },
    "note": "Definitive Edition also accepts LEANANDMEAN."
   },
@@ -140,7 +179,8 @@
    "category": "Player",
    "codes": {
     "pc": "OGXSDAG",
-    "ps": "L1 R1 Triangle Down R2 Cross L1 Up L2 L2 L1 L1"
+    "ps": "L1 R1 Triangle Down R2 Cross L1 Up L2 L2 L1 L1",
+    "xboxog": "L1 R1 Triangle Down R2 Cross L1 Up L2 L2 L1 L1"
    },
    "note": "Definitive Edition also accepts WORSHIPME."
   },
@@ -149,7 +189,8 @@
    "category": "Player",
    "codes": {
     "pc": "EHIBXQS",
-    "ps": "Circle Triangle Triangle Up Circle R1 L2 Up Triangle L1 L1 L1"
+    "ps": "Circle Triangle Triangle Up Circle R1 L2 Up Triangle L1 L1 L1",
+    "xboxog": "Circle Triangle Triangle Up Circle R1 L2 Up Triangle L1 L1 L1"
    },
    "note": "Definitive Edition also accepts HELLOLADIES."
   },
@@ -158,7 +199,8 @@
    "category": "Player",
    "codes": {
     "pc": "VQIMAHA",
-    "ps": "Square L2 Cross R1 L2 L2 Left R1 Right L1 L1 L1"
+    "ps": "Square L2 Cross R1 L2 L2 Left R1 Right L1 L1 L1",
+    "xboxog": "Square L2 Cross R1 L2 L2 Left R1 Right L1 L1 L1"
    },
    "note": "Definitive Edition also accepts NATURALTALENT."
   },
@@ -167,7 +209,8 @@
    "category": "Player",
    "codes": {
     "pc": "LFGMHAL",
-    "ps": "Up Up Triangle Triangle Up Up Left Right Square R2 R2"
+    "ps": "Up Up Triangle Triangle Up Up Left Right Square R2 R2",
+    "xboxog": "Up Up Triangle Triangle Up Up Left Right Square R2 R2"
    },
    "note": "Definitive Edition also accepts KANGAROO."
   },
@@ -176,7 +219,8 @@
    "category": "Player",
    "codes": {
     "pc": "IAVENJQ",
-    "ps": "Up Left Cross Triangle R1 Circle Circle Circle L2"
+    "ps": "Up Left Cross Triangle R1 Circle Circle Circle L2",
+    "xboxog": "Up Left Cross Triangle R1 Circle Circle Circle L2"
    },
    "note": "Definitive Edition also accepts STINGLIKEABEE."
   },
@@ -187,14 +231,18 @@
     "pc": "EXPANDDOME",
     "ps": "Up Up Down Down Left Right Left Right Circle Cross"
    },
-   "requirement": "Definitive Edition only."
+   "requirement": "Definitive Edition only.",
+   "not": [
+    "xbox360"
+   ]
   },
   {
    "effect": "Commit suicide",
    "category": "Player",
    "codes": {
     "pc": "SZCMAWO",
-    "ps": "Right L2 Down R1 Left Left R1 L1 L2 L1"
+    "ps": "Right L2 Down R1 Left Left R1 L1 L2 L1",
+    "xboxog": "Right L2 Down R1 Left Left R1 L1 L2 L1"
    },
    "note": "Definitive Edition also accepts GOODBYECRUELWORLD."
   },
@@ -203,7 +251,8 @@
    "category": "Weapons",
    "codes": {
     "pc": "LXGIWYL",
-    "ps": "R1 R2 L1 R2 Left Down Right Up Left Down Right Up"
+    "ps": "R1 R2 L1 R2 Left Down Right Up Left Down Right Up",
+    "xboxog": "R1 R2 L1 R2 Left Down Right Up Left Down Right Up"
    },
    "note": "Definitive Edition also accepts THUGSARMOURY."
   },
@@ -212,7 +261,8 @@
    "category": "Weapons",
    "codes": {
     "pc": "KJKSZPJ",
-    "ps": "R1 R2 L1 R2 Left Down Right Up Left Down Down Left"
+    "ps": "R1 R2 L1 R2 Left Down Right Up Left Down Down Left",
+    "xboxog": "R1 R2 L1 R2 Left Down Right Up Left Down Down Left"
    },
    "note": "Definitive Edition also accepts PROFESSIONALSKIT."
   },
@@ -221,7 +271,8 @@
    "category": "Weapons",
    "codes": {
     "pc": "UZUMYMW",
-    "ps": "R1 R2 L1 R2 Left Down Right Up Left Down Down Down"
+    "ps": "R1 R2 L1 R2 Left Down Right Up Left Down Down Down",
+    "xboxog": "R1 R2 L1 R2 Left Down Right Up Left Down Down Down"
    },
    "note": "Definitive Edition also accepts NUTTERSTOYS."
   },
@@ -230,7 +281,8 @@
    "category": "Weapons",
    "codes": {
     "pc": "WANRLTW",
-    "ps": "L1 R1 Square R1 Left R2 R1 Left Square Down L1 L1"
+    "ps": "L1 R1 Square R1 Left R2 R1 Left Square Down L1 L1",
+    "xboxog": "L1 R1 Square R1 Left R2 R1 Left Square Down L1 L1"
    },
    "note": "Definitive Edition also accepts FULLCLIP."
   },
@@ -239,7 +291,8 @@
    "category": "Weapons",
    "codes": {
     "pc": "NCSGDAG",
-    "ps": "Down Square Cross Left R1 R2 Left Down Down L1 L1 L1"
+    "ps": "Down Square Cross Left R1 R2 Left Down Down L1 L1 L1",
+    "xboxog": "Down Square Cross Left R1 R2 Left Down Down L1 L1 L1"
    },
    "note": "Definitive Edition also accepts PROFESSIONALKILLER."
   },
@@ -248,7 +301,8 @@
    "category": "Weapons",
    "codes": {
     "pc": "OUIQDMW",
-    "ps": "Up Up Square L2 Right Cross R1 Down R2 Circle"
+    "ps": "Up Up Square L2 Right Cross R1 Down R2 Circle",
+    "xboxog": "Up Up Square L2 Right Cross R1 Down R2 Circle"
    },
    "note": "Definitive Edition also accepts IWANNADRIVEBY."
   },
@@ -266,7 +320,8 @@
    "category": "Weapons",
    "codes": {
     "pc": "AIYPWZQP",
-    "ps": "Left Right L1 L2 R1 R2 R2 Up Down Right L1"
+    "ps": "Left Right L1 L2 R1 R2 R2 Up Down Right L1",
+    "xboxog": "Left Right L1 L2 R1 R2 R2 Up Down Right L1"
    },
    "note": "Definitive Edition also accepts LETSGOBASEJUMPING."
   },
@@ -275,7 +330,8 @@
    "category": "Wanted",
    "codes": {
     "pc": "AEZAKMI",
-    "ps": "Circle Right Circle Right Left Square Triangle Up"
+    "ps": "Circle Right Circle Right Left Square Triangle Up",
+    "xboxog": "Circle Right Circle Right Left Square Triangle Up"
    },
    "note": "Definitive Edition also accepts IDOASIPLEASE."
   },
@@ -284,7 +340,8 @@
    "category": "Wanted",
    "codes": {
     "pc": "ASNAEB",
-    "ps": "R1 R1 Circle R2 Up Down Up Down Up Down"
+    "ps": "R1 R1 Circle R2 Up Down Up Down Up Down",
+    "xboxog": "R1 R1 Circle R2 Up Down Up Down Up Down"
    },
    "note": "Definitive Edition also accepts TURNDOWNTHEHEAT."
   },
@@ -311,7 +368,8 @@
    "category": "Vehicles",
    "codes": {
     "pc": "AIWPRTON",
-    "ps": "Circle Circle L1 Circle Circle Circle L1 L2 R1 Triangle Circle Triangle"
+    "ps": "Circle Circle L1 Circle Circle Circle L1 L2 R1 Triangle Circle Triangle",
+    "xboxog": "Circle Circle L1 Circle Circle Circle L1 L2 R1 Triangle Circle Triangle"
    },
    "note": "Definitive Edition also accepts TIMETOKICKASS."
   },
@@ -320,7 +378,8 @@
    "category": "Vehicles",
    "codes": {
     "pc": "JUMPJET",
-    "ps": "Triangle Triangle Square Circle Cross L1 L1 Down Up"
+    "ps": "Triangle Triangle Square Circle Cross L1 L1 Down Up",
+    "xboxog": "Triangle Triangle Square Circle Cross L1 L1 Down Up"
    }
   },
   {
@@ -328,7 +387,8 @@
    "category": "Vehicles",
    "codes": {
     "pc": "OHDUDE",
-    "ps": "Circle Cross L1 Circle Circle L1 Circle R1 R2 L2 L1 L1"
+    "ps": "Circle Cross L1 Circle Circle L1 Circle R1 R2 L2 L1 L1",
+    "xboxog": "Circle Cross L1 Circle Circle L1 Circle R1 R2 L2 L1 L1"
    }
   },
   {
@@ -336,7 +396,8 @@
    "category": "Vehicles",
    "codes": {
     "pc": "AGBDLCID",
-    "ps": "Right Up R1 R1 R1 Down Triangle Triangle Cross Circle L1 L1"
+    "ps": "Right Up R1 R1 R1 Down Triangle Triangle Cross Circle L1 L1",
+    "xboxog": "Right Up R1 R1 R1 Down Triangle Triangle Cross Circle L1 L1"
    },
    "note": "Definitive Edition also accepts MONSTERMASH."
   },
@@ -345,7 +406,8 @@
    "category": "Vehicles",
    "codes": {
     "pc": "AKJJYGLC",
-    "ps": "Left Left Down Down Up Up Square Circle Triangle R1 R2"
+    "ps": "Left Left Down Down Up Up Square Circle Triangle R1 R2",
+    "xboxog": "Left Left Down Down Up Up Square Circle Triangle R1 R2"
    },
    "note": "Definitive Edition also accepts FOURWHEELFUN."
   },
@@ -354,7 +416,8 @@
    "category": "Vehicles",
    "codes": {
     "pc": "URKQSRK",
-    "ps": "Circle Up L1 L2 Down R1 L1 L1 Left Left Cross Triangle"
+    "ps": "Circle Up L1 L2 Down R1 L1 L1 Left Left Cross Triangle",
+    "xboxog": "Circle Up L1 L2 Down R1 L1 L1 Left Left Cross Triangle"
    },
    "note": "Definitive Edition also accepts FLYINGTOSTUNT."
   },
@@ -363,7 +426,8 @@
    "category": "Vehicles",
    "codes": {
     "pc": "KGGGDKP",
-    "ps": "Triangle Triangle Square Circle Cross L1 L2 Down Down"
+    "ps": "Triangle Triangle Square Circle Cross L1 L2 Down Down",
+    "xboxog": "Triangle Triangle Square Circle Cross L1 L2 Down Down"
    },
    "note": "Definitive Edition also accepts IWANTTOHOVER."
   },
@@ -372,7 +436,8 @@
    "category": "Vehicles",
    "codes": {
     "pc": "AMOMHRER",
-    "ps": "R1 Up Left Right R2 Up Right Square Right L2 L1 L1"
+    "ps": "R1 Up Left Right R2 Up Right Square Right L2 L1 L1",
+    "xboxog": "R1 Up Left Right R2 Up Right Square Right L2 L1 L1"
    },
    "note": "Definitive Edition also accepts HITTHEROADJACK."
   },
@@ -381,7 +446,8 @@
    "category": "Vehicles",
    "codes": {
     "pc": "EEGCYXT",
-    "ps": "R2 L1 L1 Right Right Up Up Cross L1 Left"
+    "ps": "R2 L1 L1 Right Right Up Up Cross L1 Left",
+    "xboxog": "R2 L1 L1 Right Right Up Up Cross L1 Left"
    },
    "note": "Definitive Edition also accepts ITSALLBULL."
   },
@@ -390,7 +456,8 @@
    "category": "Vehicles",
    "codes": {
     "pc": "KRIJEBR",
-    "ps": "R2 Up L2 Left Left R1 L1 Circle Right"
+    "ps": "R2 Up L2 Left Left R1 L1 Circle Right",
+    "xboxog": "R2 Up L2 Left Left R1 L1 Circle Right"
    },
    "note": "Definitive Edition also accepts CELEBRITYSTATUS."
   },
@@ -417,7 +484,8 @@
    "category": "Vehicles",
    "codes": {
     "pc": "JQNTDMH",
-    "ps": "Up Right Right L1 Right Up Square L2"
+    "ps": "Up Right Right L1 Right Up Square L2",
+    "xboxog": "Up Right Right L1 Right Up Square L2"
    },
    "note": "Definitive Edition also accepts DOUGHNUTHANDICAP."
   },
@@ -426,7 +494,8 @@
    "category": "Vehicles",
    "codes": {
     "pc": "RZHSUEW",
-    "ps": "Circle L1 Up R1 L2 Cross R1 L1 Circle Cross"
+    "ps": "Circle L1 Up R1 L2 Cross R1 L1 Circle Cross",
+    "xboxog": "Circle L1 Up R1 L2 Cross R1 L1 Circle Cross"
    },
    "note": "Definitive Edition also accepts 18HOLES."
   },
@@ -435,7 +504,8 @@
    "category": "Vehicles",
    "codes": {
     "pc": "CQZIJMB",
-    "ps": "Down R1 Circle L2 L2 Cross R1 L1 Left Left"
+    "ps": "Down R1 Circle L2 L2 Cross R1 L1 Left Left",
+    "xboxog": "Down R1 Circle L2 L2 Cross R1 L1 Left Left"
    },
    "note": "Definitive Edition also accepts OLDSPEEDDEMON."
   },
@@ -444,7 +514,8 @@
    "category": "Vehicles",
    "codes": {
     "pc": "PDNEJOH",
-    "ps": "R1 Circle R2 Right L1 L2 Cross Cross Square R1"
+    "ps": "R1 Circle R2 Right L1 L2 Cross Cross Square R1",
+    "xboxog": "R1 Circle R2 Right L1 L2 Cross Cross Square R1"
    },
    "note": "Definitive Edition also accepts VROCKPOKEY."
   },
@@ -453,7 +524,8 @@
    "category": "Vehicles",
    "codes": {
     "pc": "VPJTQWV",
-    "ps": "R2 L1 Circle Right L1 R1 Right Up Circle R2"
+    "ps": "R2 L1 Circle Right L1 R1 Right Up Circle R2",
+    "xboxog": "R2 L1 Circle Right L1 R1 Right Up Circle R2"
    },
    "note": "Definitive Edition also accepts JUSTTRYANDSTOPME."
   },
@@ -462,7 +534,8 @@
    "category": "Vehicles",
    "codes": {
     "pc": "CPKTNWT",
-    "ps": "R2 L2 R1 L1 L2 R2 Square Triangle Circle Triangle L2 L1"
+    "ps": "R2 L2 R1 L1 L2 R2 Square Triangle Circle Triangle L2 L1",
+    "xboxog": "R2 L2 R1 L1 L2 R2 Square Triangle Circle Triangle L2 L1"
    },
    "note": "Definitive Edition also accepts ALLCARSGOBOOM."
   },
@@ -471,7 +544,8 @@
    "category": "Vehicles",
    "codes": {
     "pc": "JCNRUAD",
-    "ps": "L1 L2 L2 Up Down Down Up R1 R2 R2"
+    "ps": "L1 L2 L2 Up Down Down Up R1 R2 R2",
+    "xboxog": "L1 L2 L2 Up Down Down Up R1 R2 R2"
    },
    "note": "Definitive Edition also accepts TOUCHMYCARYOUDIE."
   },
@@ -480,7 +554,8 @@
    "category": "Vehicles",
    "codes": {
     "pc": "RIPAZHA",
-    "ps": "Square Down L2 Up L1 Circle Up Cross Left"
+    "ps": "Square Down L2 Up L1 Circle Up Cross Left",
+    "xboxog": "Square Down L2 Up L1 Circle Up Cross Left"
    },
    "note": "Definitive Edition also accepts CHITTYCHITTYBANGBANG."
   },
@@ -489,7 +564,8 @@
    "category": "Vehicles",
    "codes": {
     "pc": "AFSNMSMW",
-    "ps": "R2 Circle Up L1 Right R1 Right Up Square Triangle"
+    "ps": "R2 Circle Up L1 Right R1 Right Up Square Triangle",
+    "xboxog": "R2 Circle Up L1 Right R1 Right Up Square Triangle"
    },
    "note": "Definitive Edition also accepts FLYINGFISH."
   },
@@ -498,7 +574,8 @@
    "category": "Vehicles",
    "codes": {
     "pc": "GKPNMQ",
-    "ps": "Right R2 Circle R1 L2 Square R1 R2"
+    "ps": "Right R2 Circle R1 L2 Square R1 R2",
+    "xboxog": "Right R2 Circle R1 L2 Square R1 R2"
    },
    "note": "Definitive Edition also accepts DRIVEONWATER."
   },
@@ -507,25 +584,36 @@
    "category": "Vehicles",
    "codes": {
     "pc": "BSXSGGC",
-    "ps": "Square R2 Down Down Left Down Left Left L2 Cross"
+    "ps": "Square R2 Down Down Left Down Left Left L2 Cross",
+    "xboxog": "Square R2 Down Down Left Down Left Left L2 Cross"
    },
-   "note": "Definitive Edition also accepts BUBBLECARS."
+   "requirement": "Not in the Definitive Edition.",
+   "not": [
+    "xbox",
+    "switch"
+   ]
   },
   {
    "effect": "Invisible cars",
    "category": "Vehicles",
    "codes": {
     "pc": "XICWMD",
-    "ps": "Triangle L1 Triangle R2 Square L1 L1"
+    "ps": "Triangle L1 Triangle R2 Square L1 L1",
+    "xboxog": "Triangle L1 Triangle R2 Square L1 L1"
    },
-   "note": "Definitive Edition also accepts WHEELSONLYPLEASE."
+   "requirement": "Not in the Definitive Edition.",
+   "not": [
+    "xbox",
+    "switch"
+   ]
   },
   {
    "effect": "Perfect handling",
    "category": "Vehicles",
    "codes": {
     "pc": "PGGOMOY",
-    "ps": "Triangle R1 R1 Left R1 L1 R2 L1"
+    "ps": "Triangle R1 R1 Left R1 L1 R2 L1",
+    "xboxog": "Triangle R1 R1 Left R1 L1 R2 L1"
    },
    "note": "Definitive Edition also accepts STICKLIKEGLUE."
   },
@@ -534,7 +622,8 @@
    "category": "Vehicles",
    "codes": {
     "pc": "COXEFGU",
-    "ps": "Left Triangle R1 L1 Up Square Triangle Down Circle L2 L1 L1"
+    "ps": "Left Triangle R1 L1 Up Square Triangle Down Circle L2 L1 L1",
+    "xboxog": "Left Triangle R1 L1 Up Square Triangle Down Circle L2 L1 L1"
    },
    "note": "Definitive Edition also accepts SPEEDFREAK."
   },
@@ -543,7 +632,8 @@
    "category": "Vehicles",
    "codes": {
     "pc": "VKYPQCF",
-    "ps": "Up Cross Triangle Cross Triangle Cross Square R2 Right"
+    "ps": "Up Cross Triangle Cross Triangle Cross Square R2 Right",
+    "xboxog": "Up Cross Triangle Cross Triangle Cross Square R2 Right"
    },
    "note": "Definitive Edition also accepts TAXINITRO."
   },
@@ -552,7 +642,8 @@
    "category": "Vehicles",
    "codes": {
     "pc": "JHJOECW",
-    "ps": "Triangle Square Circle Circle Square Circle Circle L1 L2 L2 R1 R2"
+    "ps": "Triangle Square Circle Circle Square Circle Circle L1 L2 L2 R1 R2",
+    "xboxog": "Triangle Square Circle Circle Square Circle Circle L1 L2 L2 R1 R2"
    },
    "note": "Definitive Edition also accepts CJPHONEHOME."
   },
@@ -579,7 +670,8 @@
    "category": "Vehicles",
    "codes": {
     "pc": "IOWDLAC",
-    "ps": "Circle L2 Up R1 Left Cross R1 L1 Left Circle"
+    "ps": "Circle L2 Up R1 Left Cross R1 L1 Left Circle",
+    "xboxog": "Circle L2 Up R1 Left Cross R1 L1 Left Circle"
    },
    "note": "Definitive Edition also accepts SOLONGASITSBLACK."
   },
@@ -588,7 +680,8 @@
    "category": "Vehicles",
    "codes": {
     "pc": "LLQPFBN",
-    "ps": "Circle L1 Down L2 Left Cross R1 L1 Right Circle"
+    "ps": "Circle L1 Down L2 Left Cross R1 L1 Right Circle",
+    "xboxog": "Circle L1 Down L2 Left Cross R1 L1 Right Circle"
    },
    "note": "Definitive Edition also accepts PINKISTHENEWCOOL."
   },
@@ -597,7 +690,8 @@
    "category": "Vehicles",
    "codes": {
     "pc": "BGKGTJH",
-    "ps": "L2 Right L1 Up Cross L1 L2 R2 R1 L1 L1 L1"
+    "ps": "L2 Right L1 Up Cross L1 L2 R2 R1 L1 L1 L1",
+    "xboxog": "L2 Right L1 Up Cross L1 L2 R2 R1 L1 L1 L1"
    },
    "note": "Definitive Edition also accepts EVERYONEISPOOR."
   },
@@ -606,7 +700,8 @@
    "category": "Vehicles",
    "codes": {
     "pc": "GUSNHDE",
-    "ps": "Up L1 R1 Up Right Up Cross L2 Cross L1"
+    "ps": "Up L1 R1 Up Right Up Cross L2 Cross L1",
+    "xboxog": "Up L1 R1 Up Right Up Cross L2 Cross L1"
    },
    "note": "Definitive Edition also accepts EVERYONEISRICH."
   },
@@ -615,7 +710,8 @@
    "category": "World",
    "codes": {
     "pc": "MGHXYR",
-    "ps": "R2 Cross L1 L1 L2 L2 L2 Triangle"
+    "ps": "R2 Cross L1 L1 L2 L2 L2 Triangle",
+    "xboxog": "R2 Cross L1 L1 L2 L2 L2 Triangle"
    },
    "note": "Definitive Edition also accepts SCOTTISHSUMMER."
   },
@@ -624,7 +720,8 @@
    "category": "World",
    "codes": {
     "pc": "ICIKPYH",
-    "ps": "R2 Cross L1 L1 L2 L2 L2 Down"
+    "ps": "R2 Cross L1 L1 L2 L2 L2 Down",
+    "xboxog": "R2 Cross L1 L1 L2 L2 L2 Down"
    },
    "note": "Definitive Edition also accepts TOODAMNHOT."
   },
@@ -633,7 +730,8 @@
    "category": "World",
    "codes": {
     "pc": "ALNSFMZO",
-    "ps": "L2 Down Down Left Square Left R2 Square Cross R1 L1 L1"
+    "ps": "L2 Down Down Left Square Left R2 Square Cross R1 L1 L1",
+    "xboxog": "L2 Down Down Left Square Left R2 Square Cross R1 L1 L1"
    },
    "note": "Definitive Edition also accepts DULLDULLDAY."
   },
@@ -642,7 +740,8 @@
    "category": "World",
    "codes": {
     "pc": "CFVFGMJ",
-    "ps": "R2 Cross L1 L1 L2 L2 L2 Cross"
+    "ps": "R2 Cross L1 L1 L2 L2 L2 Cross",
+    "xboxog": "R2 Cross L1 L1 L2 L2 L2 Cross"
    },
    "note": "Definitive Edition also accepts CANTSEEWHEREIMGOING."
   },
@@ -651,7 +750,8 @@
    "category": "World",
    "codes": {
     "pc": "AUIFRVQS",
-    "ps": "R2 Cross L1 L1 L2 L2 L2 Circle"
+    "ps": "R2 Cross L1 L1 L2 L2 L2 Circle",
+    "xboxog": "R2 Cross L1 L1 L2 L2 L2 Circle"
    },
    "note": "Definitive Edition also accepts STAYINANDWATCHTV."
   },
@@ -660,7 +760,8 @@
    "category": "World",
    "codes": {
     "pc": "CWJXUOC",
-    "ps": "Up Down L1 L1 L2 L2 L1 L2 R1 R2"
+    "ps": "Up Down L1 L1 L2 L2 L1 L2 R1 R2",
+    "xboxog": "Up Down L1 L1 L2 L2 L1 L2 R1 R2"
    },
    "note": "Definitive Edition also accepts SANDINMYEARS."
   },
@@ -669,7 +770,8 @@
    "category": "World",
    "codes": {
     "pc": "XJVSNAJ",
-    "ps": "Square L1 R1 Right Cross Up L1 Left Left"
+    "ps": "Square L1 R1 Right Cross Up L1 Left Left",
+    "xboxog": "Square L1 R1 Right Cross Up L1 Left Left"
    },
    "note": "Definitive Edition also accepts NIGHTPROWLER."
   },
@@ -678,7 +780,8 @@
    "category": "World",
    "codes": {
     "pc": "OFVIAC",
-    "ps": "Left Left L2 R1 Right Square Square L1 L2 Cross"
+    "ps": "Left Left L2 R1 Right Square Square L1 L2 Cross",
+    "xboxog": "Left Left L2 R1 Right Square Square L1 L2 Cross"
    },
    "note": "Definitive Edition also accepts DONTBRINGONTHENIGHT."
   },
@@ -687,7 +790,8 @@
    "category": "World",
    "codes": {
     "pc": "YSOHNUL",
-    "ps": "Circle Circle L1 Square L1 Square Square Square L1 Triangle Circle Triangle"
+    "ps": "Circle Circle L1 Square L1 Square Square Square L1 Triangle Circle Triangle",
+    "xboxog": "Circle Circle L1 Square L1 Square Square Square L1 Triangle Circle Triangle"
    },
    "note": "Definitive Edition also accepts TIMEJUSTFLIESBY."
   },
@@ -696,7 +800,8 @@
    "category": "World",
    "codes": {
     "pc": "PPGWJHT",
-    "ps": "Triangle Up Right Down L2 L1 Square"
+    "ps": "Triangle Up Right Down L2 L1 Square",
+    "xboxog": "Triangle Up Right Down L2 L1 Square"
    },
    "note": "Definitive Edition also accepts SPEEDITUP."
   },
@@ -705,7 +810,8 @@
    "category": "World",
    "codes": {
     "pc": "LIYOAAY",
-    "ps": "Triangle Up Right Down Square R2 R1"
+    "ps": "Triangle Up Right Down Square R2 R1",
+    "xboxog": "Triangle Up Right Down Square R2 R1"
    },
    "note": "Definitive Edition also accepts SLOWITDOWN."
   },
@@ -714,7 +820,8 @@
    "category": "Pedestrians",
    "codes": {
     "pc": "CIKGCGX",
-    "ps": "Up Up Down Down Square Circle L1 R1 Triangle Down"
+    "ps": "Up Up Down Down Square Circle L1 R1 Triangle Down",
+    "xboxog": "Up Up Down Down Square Circle L1 R1 Triangle Down"
    },
    "note": "Definitive Edition also accepts LIFESABEACH."
   },
@@ -723,7 +830,8 @@
    "category": "Pedestrians",
    "codes": {
     "pc": "PRIEBJ",
-    "ps": "Triangle Triangle L1 Square Square Circle Square Down Circle"
+    "ps": "Triangle Triangle L1 Square Square Circle Square Down Circle",
+    "xboxog": "Triangle Triangle L1 Square Square Circle Square Down Circle"
    },
    "note": "Definitive Edition also accepts CRAZYTOWN."
   },
@@ -732,7 +840,8 @@
    "category": "Pedestrians",
    "codes": {
     "pc": "ASBHGRB",
-    "ps": "L1 Circle Triangle L1 L1 Square L2 Up Down Left"
+    "ps": "L1 Circle Triangle L1 L1 Square L2 Up Down Left",
+    "xboxog": "L1 Circle Triangle L1 L1 Square L2 Up Down Left"
    },
    "note": "Definitive Edition also accepts BLUESUEDESHOES."
   },
@@ -777,7 +886,8 @@
    "category": "Pedestrians",
    "codes": {
     "pc": "FOOOXFT",
-    "ps": "R2 R1 Cross Triangle Cross Triangle Up Down"
+    "ps": "R2 R1 Cross Triangle Cross Triangle Up Down",
+    "xboxog": "R2 R1 Cross Triangle Cross Triangle Up Down"
    },
    "note": "Definitive Edition also accepts SURROUNDEDBYNUTTERS."
   },
@@ -786,7 +896,8 @@
    "category": "Pedestrians",
    "codes": {
     "pc": "BAGOWPG",
-    "ps": "Down Up Up Up Cross R2 R1 L2 L2"
+    "ps": "Down Up Up Up Cross R2 R1 L2 L2",
+    "xboxog": "Down Up Up Up Cross R2 R1 L2 L2"
    },
    "note": "Definitive Edition also accepts STOPPICKINGONME."
   },
@@ -804,7 +915,8 @@
    "category": "Pedestrians",
    "codes": {
     "pc": "IOJUFZN",
-    "ps": "Down Left Up Left Cross R2 R1 L2 L1"
+    "ps": "Down Left Up Left Cross R2 R1 L2 L1",
+    "xboxog": "Down Left Up Left Cross R2 R1 L2 L1"
    },
    "note": "Definitive Edition also accepts STATEOFEMERGENCY."
   },
@@ -813,7 +925,8 @@
    "category": "Pedestrians",
    "codes": {
     "pc": "AJLOJYQY",
-    "ps": "L2 Right L1 Triangle Right Right R1 L1 Right L1 L1 L1"
+    "ps": "L2 Right L1 Triangle Right Right R1 L1 Right L1 L1 L1",
+    "xboxog": "L2 Right L1 Triangle Right Right R1 L1 Right L1 L1 L1"
    },
    "note": "Definitive Edition also accepts ROUGHNEIGHBOURHOOD."
   },
@@ -831,7 +944,8 @@
    "category": "Pedestrians",
    "codes": {
     "pc": "BIFBUZZ",
-    "ps": "L2 Up R1 R1 Left R1 R1 R2 Right Down"
+    "ps": "L2 Up R1 R1 Left R1 R1 R2 Right Down",
+    "xboxog": "L2 Up R1 R1 Left R1 R1 R2 Right Down"
    },
    "note": "Definitive Edition also accepts BETTERSTAYINDOORS."
   },
@@ -840,7 +954,8 @@
    "category": "Pedestrians",
    "codes": {
     "pc": "SJMAHPE",
-    "ps": "Down Square Up R2 R2 Up Right Right Up"
+    "ps": "Down Square Up R2 R2 Up Right Right Up",
+    "xboxog": "Down Square Up R2 R2 Up Right Right Up"
    },
    "note": "Definitive Edition also accepts WANNABEINMYGANG."
   },
@@ -849,7 +964,8 @@
    "category": "Pedestrians",
    "codes": {
     "pc": "SSOXFSQ",
-    "ps": "R2 R2 R2 Cross L2 L1 R2 L1 Down Cross"
+    "ps": "R2 R2 R2 Cross L2 L1 R2 L1 Down Cross",
+    "xboxog": "R2 R2 R2 Cross L2 L1 R2 L1 Down Cross"
    },
    "note": "Definitive Edition also accepts ROCKETMAYHEM."
   }

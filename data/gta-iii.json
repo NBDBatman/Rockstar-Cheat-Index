@@ -2,7 +2,7 @@
  "title": "Grand Theft Auto III",
  "short": "GTA III",
  "year": 2001,
- "order": 2,
+ "order": 3,
  "platforms": [
   "PC",
   "PlayStation",
@@ -16,7 +16,8 @@
   "PS5",
   "Switch",
   "Xbox One",
-  "Xbox Series X/S"
+  "Xbox Series X/S",
+  "Mobile"
  ],
  "methods": [
   "Combo",
@@ -27,7 +28,7 @@
    "id": "pc",
    "label": "PC",
    "type": "text",
-   "how": "Type the code during play. There is no console and no Enter key."
+   "how": "Type the code during play. There is no console and no Enter key. On the mobile Definitive Edition, including the Netflix version, type the code with a keyboard (an external one on iPhone and iPad)."
   },
   {
    "id": "ps",
@@ -57,7 +58,9 @@
  "sources": [
   "https://gtabase.com/gta-3/gta-3-cheats-pc-definitive-edition",
   "https://www.gtabase.com/gta-3/gta-3-cheats-ps5-ps4-ps3-ps2",
-  "https://nintendowire.com/guides/grand-theft-auto-the-trilogy-the-definitive-edition/grand-theft-auto-iii-cheat-codes/"
+  "https://nintendowire.com/guides/grand-theft-auto-the-trilogy-the-definitive-edition/grand-theft-auto-iii-cheat-codes/",
+  "https://www.pushsquare.com/guides/gta-3-definitive-edition-all-cheats",
+  "https://toucharcade.com/2023/12/18/gta-san-andreas-vice-city-gta-3-cheats-definitive-edition-netflix-mobile-iphone-android-ipad-guide-how-to-use"
  ],
  "cheats": [
   {
@@ -149,7 +152,11 @@
     "pc": "ANICESETOFWHEELS",
     "ps": "L1 L1 Square R2 Triangle L1 Triangle"
    },
-   "requirement": "Not in the Definitive Edition."
+   "requirement": "Not in the Definitive Edition.",
+   "not": [
+    "xbox",
+    "switch"
+   ]
   },
   {
    "effect": "Better car handling",

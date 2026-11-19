@@ -14,11 +14,11 @@ No ads, and there never will be.
 
 Most cheat lists are buried under autoplay video, pop-ups and five paragraphs of filler before the first code. They mix in mod and trainer codes, and they rarely say which platform a combo is for.
 
-Cheat Index is the opposite. It only lists codes that are built into the games. Every list says where its codes were checked, and the code you need is one tap from the top of the page.
+Cheat Index is the opposite. It only lists codes that are built into the games, each one checked against its sources, and the code you need is one tap from the top of the page.
 
 ## What you get
 
-- **462 cheats across 13 games**, with GTA VI added once its cheats are confirmed in the released game.
+- **Every cheat in 14 games**, including all 61 in GTA VI. GTA VI codes that players haven't found yet are marked TBD and filled in as they're discovered.
 - **A platform switch on every game.** Codes for PC, PlayStation, Xbox, PSP, DS, mobile, phone and phrase entry each get their own view, so you only see what works on your machine.
 - **Button combos drawn as buttons.** PlayStation shows ✕ ○ □ △, Xbox shows A B X Y, and held buttons are called out.
 - **One-tap copy.** Combos copy as readable words ("Hold L1, then R2, Cross…"), and typed codes copy exactly.
@@ -43,7 +43,7 @@ Cheat Index is the opposite. It only lists codes that are built into the games. 
 | Red Dead Redemption | 2010 | Phrase | PS3, PS4, Xbox 360 | 20 (more coming) |
 | Grand Theft Auto V | 2013 | Combo, typed, phone | PC, PS3, PS4, PS5, Xbox 360, Xbox One, Xbox Series X/S | 36 |
 | Red Dead Redemption 2 | 2018 | Phrase | PC, PS4, Xbox One | 37 |
-| Grand Theft Auto VI | 2026 | To be confirmed | PS5, Xbox Series X/S | TBC |
+| Grand Theft Auto VI | 2026 | Combo | PS5, Xbox Series X/S | 61 (43 codes TBD) |
 
 A few things to know about consoles:
 
@@ -65,7 +65,7 @@ You can also fix it yourself. Each game is a single JSON file, so most fixes are
 2. **Copy codes exactly from the source**, and add the source URL to that game's `sources` list if it isn't there yet.
 3. **Never guess.** If a code, phone number, phrase or requirement can't be sourced, leave it out.
 4. **Write effects in your own words**, in sentence case and British English.
-5. **GTA VI codes go in only once they're confirmed in the released game.** Pre-launch "leaked" lists were guesses.
+5. **GTA VI codes need two independent sources that agree**, since new codes are still being found. Cheats whose code isn't known yet stay marked `"tbd": true` until then.
 6. **Every new game needs a cover picture.** A pull request that adds a game must include `covers/<slug>.jpg` at 600x800 (3:4), using the game's official front-of-box art. Pull requests that add a game without one won't be merged.
 
 ### Editing a game
@@ -86,7 +86,7 @@ Each game lives in `data/<slug>.json`. A cheat looks like this:
 }
 ```
 
-- **`codes`** keys match the `inputs` at the top of the file: `pc`, `ps`, `ps2`, `psp`, `ds`, `phone`, `phrase`, `mobile`. Leave a key out and the site shows "Not on <platform>".
+- **`codes`** keys match the `inputs` at the top of the file: `pc`, `ps`, `ps2`, `psp`, `ds`, `phone`, `phrase`, `mobile`. Leave a key out and the cheat is hidden on that platform. If two versions use different codes for the same effect, give each version its own entry.
 - **Combos** use PlayStation button names, separated by spaces: `Cross Circle Square Triangle L1 R1 L2 R2 Up Down Left Right`. Use `L` and `R` for PSP shoulders, and `A B X Y L R` for DS. Start with `HOLD:L1 ` when a button is held down.
 - **Xbox combos are generated** from the PlayStation ones, so you don't write them separately.
 - **Categories:** Player, Weapons, Money, Wanted, Vehicles, World, Pedestrians, Score, Levels, Other.

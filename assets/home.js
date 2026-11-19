@@ -20,7 +20,7 @@
   // Search across titles, example codes, and (once loaded) every cheat's effect and codes.
   function matches(g, q) {
     if (!q) return { hit: true, cheats: 0 };
-    var head = (g.title + ' ' + g.short + ' ' + g.year + ' ' + g.methods.join(' ') + ' ' + (g.sample || '')).toLowerCase();
+    var head = (g.title + ' ' + g.short + ' ' + g.year + ' ' + g.methods.join(' ') + ' ' + (g.consoles || []).join(' ') + ' ' + (g.sample || '')).toLowerCase();
     var n = 0;
     (state.index[g.slug] || []).forEach(function (s) { if (s.indexOf(q) !== -1) n++; });
     return { hit: head.indexOf(q) !== -1 || n > 0, cheats: n };
@@ -55,7 +55,7 @@
     $('sel-title').textContent = g.title;
     $('sel-method').textContent = g.methods.join(' · ');
     $('sel-count').textContent = CI.countText(g);
-    $('sel-platforms').textContent = g.platforms.join(', ');
+    $('sel-platforms').textContent = (g.consoles || g.platforms).join(', ');
     var act = $('sel-actions');
     act.innerHTML = '';
     if (g.pending) {

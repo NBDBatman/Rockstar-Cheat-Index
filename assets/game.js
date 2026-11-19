@@ -27,8 +27,8 @@
   }
 
   function codeCell(c, input) {
+    if (c.tbd) return el('span', { class: 'tbd' }, ['TBD', el('span', { class: 'sr', text: ', code not found yet' })]);
     var v = codeFor(c, input);
-    if (!v) return el('span', { class: 'na', text: 'Not on ' + input.label });
     if (input.type === 'combo') return CI.renderCombo(v, input.pad);
     return el('span', { class: 'code', text: v });
   }
@@ -46,7 +46,7 @@
     var facts = el('dl', { class: 'facts' }, [
       el('div', null, [el('dt', { text: 'Input type' }), el('dd', { text: g.methods.join(' · ') })]),
       el('div', null, [el('dt', { text: 'Cheats' }), el('dd', { class: 'big', text: CI.countText(g) })]),
-      el('div', null, [el('dt', { text: 'Platforms' }), el('dd', { class: 'plain', text: g.platforms.join(', ') })]),
+      el('div', null, [el('dt', { text: 'Platforms' }), el('dd', { class: 'plain', text: (g.consoles || g.platforms).join(', ') })]),
       el('div', null, [el('dt', { text: 'Released' }), el('dd', { class: 'plain mono', text: String(g.year) })])
     ]);
     page.appendChild(el('div', { class: 'game-head' }, [
@@ -73,11 +73,22 @@
       el('div', { class: 'text' }, [el('div', { class: 'h', text: 'How to enter' }), el('p', { text: input.how }), g.warning ? el('p', { class: 'warn', text: g.warning }) : null])
     ]));
 
-    // Category tabs.
+    // Only cheats with a code for the selected platform are listed. Versions often name the
+    // same cheat differently, so showing the others as "Not on" rows looked like duplicates.
+    // Cheats marked tbd exist but their code hasn't been found yet; they show on every platform.
+    var onPlat = g.cheats.filter(function (c) { return c.tbd || codeFor(c, input); });
+
+    // Category tabs, from the cheats on this platform only.
     var cats = ['All'];
-    g.cheats.forEach(function (c) { if (cats.indexOf(c.category) === -1) cats.push(c.category); });
-    var rows = g.cheats.filter(function (c) { return state.cat === 'All' || c.category === state.cat; });
-    var avail = rows.filter(function (c) { return codeFor(c, input); }).length;
+    onPlat.forEach(function (c) { if (cats.indexOf(c.category) === -1) cats.push(c.category); });
+    if (cats.indexOf(state.cat) === -1) state.cat = 'All';
+    var rows = onPlat.filter(function (c) { return state.cat === 'All' || c.category === state.cat; });
+    var plural = function (n) { return n + (n === 1 ? ' cheat' : ' cheats'); };
+    var summary = state.cat === 'All'
+      ? plural(rows.length) + ' on ' + input.label
+      : rows.length + ' of ' + plural(onPlat.length) + ' on ' + input.label;
+    var tbdCount = rows.filter(function (c) { return c.tbd; }).length;
+    if (tbdCount) summary += ', ' + tbdCount + (tbdCount === 1 ? ' code' : ' codes') + ' still to be found';
     var tabBox = el('div', { class: 'tabs', role: 'group', 'aria-label': 'Category' });
     cats.forEach(function (cat) {
       tabBox.appendChild(el('button', { class: 'tab', type: 'button', 'data-fk': 'cat:' + cat, 'aria-pressed': String(cat === state.cat), text: cat, onclick: function () { state.cat = cat; render(); } }));
@@ -86,12 +97,11 @@
     var list = el('ul', { class: 'cheats' });
     rows.forEach(function (c, i) {
       var id = c.effect + '|' + i;
-      var copyable = !!codeFor(c, input);
       list.appendChild(el('li', { class: 'cheat' }, [
         el('span', { class: 'eff', text: c.effect }),
         el('span', { class: 'cat', text: c.category }),
         el('span', { class: 'code-cell' }, [codeCell(c, input)]),
-        el('span', { class: 'copy' }, [copyable ? el('button', { class: 'btn', type: 'button', 'data-fk': 'copy:' + id, 'aria-label': 'Copy code for ' + c.effect,
+        el('span', { class: 'copy' }, [c.tbd ? null : el('button', { class: 'btn', type: 'button', 'data-fk': 'copy:' + id, 'aria-label': 'Copy code for ' + c.effect,
           text: state.copied && state.copied.id === id ? (state.copied.ok ? 'Copied' : 'Failed') : 'Copy',
           onclick: function () {
             function done(ok) {
@@ -102,7 +112,7 @@
                 : 'Couldn’t copy the code for ' + c.effect + '. Select it and copy it yourself.');
             }
             CI.copy(copyText(c, input)).then(function () { done(true); }, function () { done(false); });
-          } }) : null]),
+          } })]),
         c.requirement ? el('p', { class: 'req' }, [el('b', { text: 'Requirement: ' }), c.requirement]) : null,
         c.note ? el('p', { class: 'note', text: c.note }) : null
       ]));
@@ -110,15 +120,11 @@
 
     var codeHead = input.type === 'combo' ? input.label + ' combo' : input.type === 'phone' ? 'Phone number' : input.type === 'phrase' ? 'Phrase' : input.label + ' code';
     page.appendChild(el('section', { class: 'list', 'aria-label': 'Cheat list' }, [
-      el('div', { class: 'top' }, [tabBox, el('span', { class: 'muted', style: 'font-size:14px', text: rows.length + ' of ' + g.cheats.length + ' cheats, ' + avail + ' on ' + input.label })]),
+      el('div', { class: 'top' }, [tabBox, el('span', { class: 'muted', style: 'font-size:14px', text: summary })]),
       el('div', { class: 'cheat-head', 'aria-hidden': 'true' }, [el('span', { text: 'Effect' }), el('span', { text: 'Category' }), el('span', { text: codeHead }), el('span')]),
       list,
       g.incomplete ? el('p', { class: 'muted', style: 'margin-top:20px', text: 'This list isn’t complete yet. More codes are coming.' }) : null,
-      el('p', { class: 'muted', style: 'margin-top:24px;font-size:15px' }, ['Wrong or missing code? ', el('a', { href: 'https://github.com/NBDBatman/Rockstar-Cheat-Index/issues', text: 'Open an issue' }), ' or a pull request on GitHub. Each game is one JSON file.']),
-      g.sources && g.sources.length ? el('div', { class: 'sources' }, [
-        el('span', { text: 'Checked against:' }),
-        el('ul', null, g.sources.map(function (s) { return el('li', null, [el('a', { href: s, rel: 'noopener', text: s.replace(/^https?:\/\/(www\.)?/, '') })]); }))
-      ]) : null
+      el('p', { class: 'muted', style: 'margin-top:24px;font-size:15px' }, ['Wrong or missing code? ', el('a', { href: 'https://github.com/NBDBatman/Rockstar-Cheat-Index/issues', text: 'Open an issue' }), ' or a pull request on GitHub. Each game is one JSON file.'])
     ]));
   }
 

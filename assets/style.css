@@ -161,7 +161,7 @@ button:disabled { cursor: not-allowed; }
 .cheat .req { color: var(--ink); }
 .cheat .req b { font-weight: 600; }
 .cheat .note { color: var(--mute); }
-.cheat .na { font-size: 15px; color: var(--mute); }
+.cheat .tbd { display: inline-block; padding-top: 3px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 15px; font-weight: 600; color: var(--mute); }
 @media (max-width: 640px) {
   .cheat-head { display: none; }
   .cheat { grid-template-columns: minmax(0, 1fr) auto; }
@@ -171,9 +171,6 @@ button:disabled { cursor: not-allowed; }
   .cheat .code-cell { grid-column: 1 / -1; grid-row: 3; margin-top: 4px; }
   .cheat .req, .cheat .note { grid-column: 1 / -1; }
 }
-.sources { margin-top: 32px; padding-top: 16px; border-top: 1px solid var(--rule); font-size: 14px; color: var(--mute); }
-.sources ul { margin: 6px 0 0; padding-left: 18px; }
-.sources a { overflow-wrap: anywhere; }
 
 /* states */
 .state { padding: 32px 0; }

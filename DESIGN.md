@@ -22,7 +22,7 @@ The owner tried a louder tabloid direction and preferred this one, so keep it.
 
 ## Data and states
 
-- Each game is one JSON file. The cheat count is the array length, never typed by hand. Unwritten games show `[COUNT]` and `[EXAMPLE CODE]`. GTA VI shows TBC until codes are confirmed.
+- Each game is one JSON file. The cheat count is the array length, never typed by hand. Unwritten games show `[COUNT]` and `[EXAMPLE CODE]`. A game marked `pending` shows TBC until codes are confirmed.
 - The cheat list needs loading, error (with Try again) and no-confirmed-cheats states. See the "Cheat list states" artboard.
 - Don't claim codes were tested unless they were.
 

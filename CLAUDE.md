@@ -31,7 +31,10 @@ Slugs: `gta`, `gta-2`, `gta-iii`, `gta-vc`, `gta-sa`, `gta-lcs`, `bully`, `gta-v
 
 ## Data format
 
-Each game file has `slug, title, short, year, order, platforms, methods, inputs, warning, sources, cheats`, plus optional `pending` (no confirmed cheats) and `incomplete` (list known to be partial).
+Each game file has `slug, title, short, year, order, platforms, consoles, methods, inputs, warning, sources, cheats`, plus optional `pending` (no confirmed cheats) and `incomplete` (list known to be partial).
+
+- `platforms` is the broad family (`PC`, `PlayStation`, `Xbox`, `Handheld`) and drives the home-page filter.
+- `consoles` is the exact machines the listed codes work on (`PS2`, `Xbox Series X/S`, ...) and is what the site shows. Keep it the same in `games.json` and the game's own file, and in step with the README's games table.
 
 `inputs` defines the platform switch. Each input has `id, label, type, how`:
 - `type` is `text`, `combo`, `phone` or `phrase`.
@@ -44,7 +47,8 @@ Each cheat looks like:
 { "effect": "...", "category": "Player", "codes": { "pc": "...", "ps": "..." }, "requirement": "...", "note": "..." }
 ```
 
-- `codes` keys match input ids: `pc ps ps2 psp ds phone phrase mobile`. A missing key renders as "Not on <platform>".
+- `codes` keys match input ids: `pc ps ps2 psp ds phone phrase mobile`. A cheat with no key for the selected platform is hidden from that platform's list, so a cheat named differently in another version can have its own entry without looking like a duplicate.
+- `"tbd": true` with empty `codes` marks a cheat confirmed to exist whose code hasn't been found yet. It shows on every platform with "TBD" and no Copy button, and counts towards `count`. When the code is found, add it to `codes` and remove `tbd`.
 - Write combos with PlayStation names, space-separated: `Cross Circle Square Triangle L1 R1 L2 R2 Up Down Left Right`. Use `L`/`R` for PSP shoulders, and `A B X Y L R` for DS. Prefix with `HOLD:L1 ` when a button is held.
 - Xbox is mapped in common.js: Cross→A, Circle→B, Square→X, Triangle→Y, L1→LB, R1→RB, L2→LT, R2→RT. This is only valid for Xbox 360 and later.
 - `requirement` is something the player must have or do first: a newspaper unlock, a specific edition, phone only. `note` is anything else, like an alternate code.
@@ -54,9 +58,9 @@ Each cheat looks like:
 
 - Only official in-game cheats. No mods, trainers, GameShark or CWCheat codes.
 - Copy codes exactly from the source. Write effect descriptions in your own words, in sentence case.
-- Every game file lists the sources its codes were checked against in `sources`. Add the URL when you add codes from a new source.
-- Never invent a code, phone number, phrase, requirement or cheat count. If it can't be sourced, leave it out. Unknown counts show as `[COUNT]` and GTA VI shows `TBC`.
-- GTA VI: add codes only once they're confirmed in the released game. Pre-launch "leaked" lists were guesses.
+- Every game file lists the sources its codes were checked against in `sources`. Add the URL when you add codes from a new source. Sources are kept in the data for checking, but the owner chose not to show them on the site, so don't add a sources list back to the game page.
+- Never invent a code, phone number, phrase, requirement or cheat count. If it can't be sourced, leave it out. A game marked `pending` shows `TBC`.
+- GTA VI (released 19 November 2026): all 61 cheats are listed, but cheats whose code hasn't been found are marked `tbd`. Fill in a code only when at least two independent sources give the same sequence, and add its URL to `sources`. Keep `incomplete: true` until no `tbd` cheats are left.
 - When cheats are added or removed, update `count` in `data/games.json`.
 - Every new game needs its cover, `covers/<slug>.jpg` at 600x800, in the same change.
 

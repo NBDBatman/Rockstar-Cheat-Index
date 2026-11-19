@@ -11,6 +11,10 @@
     "PC",
     "PlayStation"
    ],
+   "consoles": [
+    "PC",
+    "PS1"
+   ],
    "methods": [
     "Typed"
    ],
@@ -26,6 +30,10 @@
    "platforms": [
     "PC",
     "PlayStation"
+   ],
+   "consoles": [
+    "PC",
+    "PS1"
    ],
    "methods": [
     "Typed"
@@ -43,6 +51,14 @@
     "PC",
     "PlayStation",
     "Xbox"
+   ],
+   "consoles": [
+    "PC",
+    "PS2",
+    "PS4",
+    "PS5",
+    "Xbox One",
+    "Xbox Series X/S"
    ],
    "methods": [
     "Combo",
@@ -62,6 +78,14 @@
     "PlayStation",
     "Xbox"
    ],
+   "consoles": [
+    "PC",
+    "PS2",
+    "PS4",
+    "PS5",
+    "Xbox One",
+    "Xbox Series X/S"
+   ],
    "methods": [
     "Combo",
     "Typed"
@@ -80,6 +104,16 @@
     "PlayStation",
     "Xbox"
    ],
+   "consoles": [
+    "PC",
+    "PS2",
+    "PS3",
+    "PS4",
+    "PS5",
+    "Xbox 360",
+    "Xbox One",
+    "Xbox Series X/S"
+   ],
    "methods": [
     "Combo",
     "Typed"
@@ -97,6 +131,10 @@
     "Handheld",
     "PlayStation"
    ],
+   "consoles": [
+    "PSP",
+    "PS2"
+   ],
    "methods": [
     "Combo"
    ],
@@ -111,6 +149,9 @@
    "order": 6,
    "platforms": [
     "PlayStation"
+   ],
+   "consoles": [
+    "PS2"
    ],
    "methods": [
     "Combo"
@@ -127,6 +168,10 @@
    "platforms": [
     "Handheld",
     "PlayStation"
+   ],
+   "consoles": [
+    "PSP",
+    "PS2"
    ],
    "methods": [
     "Combo"
@@ -145,6 +190,11 @@
     "PlayStation",
     "Xbox"
    ],
+   "consoles": [
+    "PC",
+    "PS3",
+    "Xbox 360"
+   ],
    "methods": [
     "Phone"
    ],
@@ -159,6 +209,11 @@
    "order": 9,
    "platforms": [
     "Handheld"
+   ],
+   "consoles": [
+    "DS",
+    "PSP",
+    "Mobile"
    ],
    "methods": [
     "Combo",
@@ -177,6 +232,11 @@
     "PlayStation",
     "Xbox"
    ],
+   "consoles": [
+    "PS3",
+    "PS4",
+    "Xbox 360"
+   ],
    "methods": [
     "Phrase"
    ],
@@ -193,6 +253,15 @@
     "PC",
     "PlayStation",
     "Xbox"
+   ],
+   "consoles": [
+    "PC",
+    "PS3",
+    "PS4",
+    "PS5",
+    "Xbox 360",
+    "Xbox One",
+    "Xbox Series X/S"
    ],
    "methods": [
     "Combo",
@@ -213,6 +282,11 @@
     "PlayStation",
     "Xbox"
    ],
+   "consoles": [
+    "PC",
+    "PS4",
+    "Xbox One"
+   ],
    "methods": [
     "Phrase"
    ],
@@ -229,11 +303,14 @@
     "PlayStation",
     "Xbox"
    ],
-   "methods": [
-    "To be confirmed"
+   "consoles": [
+    "PS5",
+    "Xbox Series X/S"
    ],
-   "count": 0,
-   "pending": true,
+   "methods": [
+    "Combo"
+   ],
+   "count": 61,
    "sample": null
   }
  ]

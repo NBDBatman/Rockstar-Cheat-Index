@@ -7,14 +7,483 @@
   "PlayStation",
   "Xbox"
  ],
- "methods": [
-  "To be confirmed"
+ "consoles": [
+  "PS5",
+  "Xbox Series X/S"
  ],
- "pending": true,
- "inputs": [],
- "warning": "No cheats are confirmed yet. Lists claiming working GTA VI cheats before launch were guesses.",
- "sources": [],
- "cheats": [],
+ "methods": [
+  "Combo"
+ ],
+ "incomplete": true,
+ "inputs": [
+  {
+   "id": "ps",
+   "label": "PlayStation",
+   "type": "combo",
+   "pad": "ps",
+   "how": "Finish the main story to open Cheats in the Progress menu, then unlock each cheat with its challenge. In free roam, press Up to bring out the phone, hold L1 and R1, and enter the sequence on the d-pad."
+  },
+  {
+   "id": "xbox",
+   "label": "Xbox",
+   "type": "combo",
+   "pad": "xbox",
+   "derive": "ps",
+   "how": "Finish the main story to open Cheats in the Progress menu, then unlock each cheat with its challenge. In free roam, press Up to bring out the phone, hold LB and RB, and enter the sequence on the d-pad."
+  }
+ ],
+ "warning": "Story mode only, not GTA Online. A cheat turns off saving, trophies and achievements for the session, so make a manual save first.",
+ "sources": [
+  "https://www.redbull.com/gb-en/gta-6-cheat-codes",
+  "https://www.vice.com/en/article/gta-6-cheat-codes-list/",
+  "https://screenrant.com/gta-6-cheats-ps5-xbox/"
+ ],
+ "cheats": [
+  {
+   "effect": "Give $250,000",
+   "category": "Money",
+   "codes": {
+    "ps": "Up Right Down Left Up Left Down Right"
+   },
+   "requirement": "Finish the main story."
+  },
+  {
+   "effect": "Full body armour",
+   "category": "Player",
+   "codes": {
+    "ps": "Down Up Left Up Up Up Up Up Down Down"
+   },
+   "requirement": "Complete 100 workouts."
+  },
+  {
+   "effect": "Unlimited Focus",
+   "category": "Player",
+   "codes": {
+    "ps": "Down Up Up Down Up Down Up Down Up Right"
+   },
+   "requirement": "Finish the main story."
+  },
+  {
+   "effect": "Raise the heat level across the map",
+   "category": "Wanted",
+   "codes": {
+    "ps": "Left Down Right Down Up Down Up"
+   },
+   "requirement": "Escape a three-star wanted level 25 times."
+  },
+  {
+   "effect": "Raise the wanted level",
+   "category": "Wanted",
+   "codes": {
+    "ps": "Left Down Right Down Up Right Up"
+   },
+   "requirement": "Escape a three-star wanted level 50 times."
+  },
+  {
+   "effect": "Refill all ammo",
+   "category": "Weapons",
+   "codes": {
+    "ps": "Down Up Right Down Left Left Up Up Down Left"
+   },
+   "requirement": "Earn 25 bronze or better medals at shooting ranges."
+  },
+  {
+   "effect": "Infinite ammo",
+   "category": "Weapons",
+   "codes": {
+    "ps": "Down Up Right Down Left Left Up Down Down Down"
+   },
+   "requirement": "Earn 25 silver or better medals at shooting ranges."
+  },
+  {
+   "effect": "Infinite ammo with no reloading",
+   "category": "Weapons",
+   "codes": {
+    "ps": "Down Up Right Down Left Left Up Down Down Up"
+   },
+   "requirement": "Earn 25 gold medals at shooting ranges."
+  },
+  {
+   "effect": "Bullets and melee hits send people flying",
+   "category": "Weapons",
+   "codes": {
+    "ps": "Down Up Left Left Right Down Down Up Down"
+   },
+   "requirement": "Finish the main story."
+  },
+  {
+   "effect": "Sports balls explode on impact",
+   "category": "Weapons",
+   "codes": {
+    "ps": "Down Up Left Left Right Down Down Up Right"
+   },
+   "requirement": "Hit 20 enemies with explosive damage."
+  },
+  {
+   "effect": "Vehicle crashes send people flying",
+   "category": "Vehicles",
+   "codes": {
+    "ps": "Down Up Left Left Right Down Left Up Down"
+   },
+   "requirement": "Kill 25 enemies with a vehicle."
+  },
+  {
+   "effect": "Spawn a Maibatsu Boomazoom",
+   "category": "Vehicles",
+   "codes": {
+    "ps": "Left Up Right Down Left Left Up Left"
+   },
+   "requirement": "Complete 5 shopping challenges."
+  },
+  {
+   "effect": "Spawn an MTL Pumper fire truck",
+   "category": "Vehicles",
+   "codes": {
+    "ps": "Left Up Right Down Left Right Right Up"
+   },
+   "requirement": "Discover it in the Progress menu."
+  },
+  {
+   "effect": "Spawn an HVY Bulldozer",
+   "category": "Vehicles",
+   "codes": {
+    "ps": "Left Up Right Down Left Right Right Down"
+   },
+   "requirement": "Discover it in the Progress menu."
+  },
+  {
+   "effect": "Cycle the weather",
+   "category": "World",
+   "codes": {
+    "ps": "Down Right Up Down Right Up Right"
+   }
+  },
+  {
+   "effect": "Cataclysm screen filter",
+   "category": "Other",
+   "codes": {
+    "ps": "Down Down Up Right Right Up Left Left Right Right"
+   },
+   "requirement": "Discover Martha's Vamos in the Progress menu."
+  },
+  {
+   "effect": "Dollhouse screen filter",
+   "category": "Other",
+   "codes": {
+    "ps": "Down Down Up Right Right Up Left Left Down Right"
+   },
+   "requirement": "Spend 8 hours with your partner."
+  },
+  {
+   "effect": "Faded Glory screen filter",
+   "category": "Other",
+   "codes": {
+    "ps": "Down Down Up Right Right Up Left Left Left Right"
+   },
+   "requirement": "Rob 50 stores with your partner."
+  },
+  {
+   "effect": "Get drunk",
+   "category": "Player",
+   "tbd": true,
+   "codes": {},
+   "requirement": "Spend $2,500 on alcohol."
+  },
+  {
+   "effect": "No fall damage",
+   "category": "Player",
+   "tbd": true,
+   "codes": {},
+   "requirement": "Survive a 40-foot freefall 20 times."
+  },
+  {
+   "effect": "Give a parachute",
+   "category": "Player",
+   "tbd": true,
+   "codes": {},
+   "requirement": "Make 50 skydives or BASE jumps from at least 300 feet."
+  },
+  {
+   "effect": "Repair your vehicle",
+   "category": "Vehicles",
+   "tbd": true,
+   "codes": {},
+   "requirement": "Finish first in 10 races at Gellhorn Raceway, Thrillbilly Mud Club and Boone Speedway."
+  },
+  {
+   "effect": "Unlimited nitrous",
+   "category": "Vehicles",
+   "tbd": true,
+   "codes": {},
+   "requirement": "Complete 50 stunt jumps."
+  },
+  {
+   "effect": "Give all explosive weapons",
+   "category": "Weapons",
+   "tbd": true,
+   "codes": {},
+   "requirement": "Throw 100 grenades."
+  },
+  {
+   "effect": "Incendiary ammo",
+   "category": "Weapons",
+   "tbd": true,
+   "codes": {},
+   "requirement": "Burn 100 enemies with fire damage."
+  },
+  {
+   "effect": "Exploding bottles",
+   "category": "Weapons",
+   "tbd": true,
+   "codes": {},
+   "requirement": "Throw 100 Molotovs."
+  },
+  {
+   "effect": "Give an explosive shotgun",
+   "category": "Weapons",
+   "tbd": true,
+   "codes": {},
+   "requirement": "Hit 100 enemies with explosive damage."
+  },
+  {
+   "effect": "Give a Hauners H-AT",
+   "category": "Weapons",
+   "tbd": true,
+   "codes": {},
+   "requirement": "Destroy 100 vehicles."
+  },
+  {
+   "effect": "Spawn an Interstate Ambulance",
+   "category": "Vehicles",
+   "tbd": true,
+   "codes": {},
+   "requirement": "Discover it in the Progress menu."
+  },
+  {
+   "effect": "Spawn an Airboat 09",
+   "category": "Vehicles",
+   "tbd": true,
+   "codes": {},
+   "requirement": "Complete 5 survival challenges."
+  },
+  {
+   "effect": "Spawn a Bravado Banshee",
+   "category": "Vehicles",
+   "tbd": true,
+   "codes": {},
+   "requirement": "Complete every combat challenge."
+  },
+  {
+   "effect": "Spawn a Tuff BMX",
+   "category": "Vehicles",
+   "tbd": true,
+   "codes": {},
+   "requirement": "Complete 5 fitness challenges."
+  },
+  {
+   "effect": "Spawn a Nagasaki Carbon RS",
+   "category": "Vehicles",
+   "tbd": true,
+   "codes": {},
+   "requirement": "Complete every exploration challenge."
+  },
+  {
+   "effect": "Spawn a '65 Vapid Dominator",
+   "category": "Vehicles",
+   "tbd": true,
+   "codes": {},
+   "requirement": "Complete every fitness challenge."
+  },
+  {
+   "effect": "Spawn a Progen Emerus",
+   "category": "Vehicles",
+   "tbd": true,
+   "codes": {},
+   "requirement": "Complete every vehicle challenge."
+  },
+  {
+   "effect": "Spawn an Inflatable Flamingo",
+   "category": "Vehicles",
+   "tbd": true,
+   "codes": {},
+   "requirement": "Destroy 50 cocaine flamingos."
+  },
+  {
+   "effect": "Spawn a Vapid Stanier G2 Taxi",
+   "category": "Vehicles",
+   "tbd": true,
+   "codes": {},
+   "requirement": "Complete 5 sports challenges."
+  },
+  {
+   "effect": "Spawn a Hauners P-996 Lazer",
+   "category": "Vehicles",
+   "tbd": true,
+   "codes": {},
+   "requirement": "Complete every challenge."
+  },
+  {
+   "effect": "Spawn a Lapwing Mallard",
+   "category": "Vehicles",
+   "tbd": true,
+   "codes": {},
+   "requirement": "Complete 5 vehicle challenges."
+  },
+  {
+   "effect": "Spawn a Brimstone Golfer",
+   "category": "Vehicles",
+   "tbd": true,
+   "codes": {},
+   "requirement": "Complete every sports challenge."
+  },
+  {
+   "effect": "Spawn a Hauners Rhino Tank",
+   "category": "Vehicles",
+   "tbd": true,
+   "codes": {},
+   "requirement": "Complete every survival challenge."
+  },
+  {
+   "effect": "Spawn a Maibatsu Sanchez",
+   "category": "Vehicles",
+   "tbd": true,
+   "codes": {},
+   "requirement": "Complete 5 criminal challenges."
+  },
+  {
+   "effect": "Spawn a Nagasaki Sea Sparrow",
+   "category": "Vehicles",
+   "tbd": true,
+   "codes": {},
+   "requirement": "Complete 5 exploration challenges."
+  },
+  {
+   "effect": "Spawn a Speeder 700 GT",
+   "category": "Vehicles",
+   "tbd": true,
+   "codes": {},
+   "requirement": "Complete 5 combat challenges."
+  },
+  {
+   "effect": "Spawn a Truffade Thrax",
+   "category": "Vehicles",
+   "tbd": true,
+   "codes": {},
+   "requirement": "Complete every shopping challenge."
+  },
+  {
+   "effect": "Spawn a Western Zombie Bobber",
+   "category": "Vehicles",
+   "tbd": true,
+   "codes": {},
+   "requirement": "Complete every criminal challenge."
+  },
+  {
+   "effect": "Move time forward",
+   "category": "World",
+   "tbd": true,
+   "codes": {},
+   "requirement": "Collect 10 watches."
+  },
+  {
+   "effect": "Pause the time of day",
+   "category": "World",
+   "tbd": true,
+   "codes": {},
+   "requirement": "Collect 20 watches."
+  },
+  {
+   "effect": "Golden Hour screen filter",
+   "category": "Other",
+   "tbd": true,
+   "codes": {},
+   "requirement": "Spend 4 hours holding hands."
+  },
+  {
+   "effect": "Powdered Sugar screen filter",
+   "category": "Other",
+   "tbd": true,
+   "codes": {},
+   "requirement": "Scan all space debris with WAiNK."
+  },
+  {
+   "effect": "Pinhole screen filter",
+   "category": "Other",
+   "tbd": true,
+   "codes": {},
+   "requirement": "Clear 25 gang operations with your partner."
+  },
+  {
+   "effect": "Neon Jungle screen filter",
+   "category": "Other",
+   "tbd": true,
+   "codes": {},
+   "requirement": "Discover all 16 Girlypop vehicles."
+  },
+  {
+   "effect": "Yesteryear screen filter",
+   "category": "Other",
+   "tbd": true,
+   "codes": {},
+   "requirement": "Discover the Ridgway."
+  },
+  {
+   "effect": "Videotape screen filter",
+   "category": "Other",
+   "tbd": true,
+   "codes": {},
+   "requirement": "Complete 50 activities with your partner."
+  },
+  {
+   "effect": "Dark Mirror screen filter",
+   "category": "Other",
+   "tbd": true,
+   "codes": {},
+   "requirement": "Earn $500,000 selling vehicles."
+  },
+  {
+   "effect": "Migraine screen filter",
+   "category": "Other",
+   "tbd": true,
+   "codes": {},
+   "requirement": "Survive 6 minutes at a six-star wanted level."
+  },
+  {
+   "effect": "Bubblegum screen filter",
+   "category": "Other",
+   "tbd": true,
+   "codes": {},
+   "requirement": "Collect all 24 Vice City Flamingos cards."
+  },
+  {
+   "effect": "Fast Forward screen filter",
+   "category": "Other",
+   "tbd": true,
+   "codes": {},
+   "requirement": "Complete 50 meditations."
+  },
+  {
+   "effect": "Fisheye screen filter",
+   "category": "Other",
+   "tbd": true,
+   "codes": {},
+   "requirement": "Catch 100 fish."
+  },
+  {
+   "effect": "Pixel Art screen filter",
+   "category": "Other",
+   "tbd": true,
+   "codes": {},
+   "requirement": "Earn $250,000 selling collectibles."
+  },
+  {
+   "effect": "Hellscape screen filter",
+   "category": "Other",
+   "tbd": true,
+   "codes": {},
+   "requirement": "Steal 100 police vehicles."
+  }
+ ],
  "slug": "gta-vi",
- "count": 0
+ "count": 61
 }

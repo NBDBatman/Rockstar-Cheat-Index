@@ -6,6 +6,11 @@
  "platforms": [
   "Handheld"
  ],
+ "consoles": [
+  "DS",
+  "PSP",
+  "Mobile"
+ ],
  "methods": [
   "Combo",
   "Typed"

@@ -7,6 +7,10 @@
   "PC",
   "PlayStation"
  ],
+ "consoles": [
+  "PC",
+  "PS1"
+ ],
  "methods": [
   "Typed"
  ],

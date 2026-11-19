@@ -7,6 +7,11 @@
   "PlayStation",
   "Xbox"
  ],
+ "consoles": [
+  "PS3",
+  "PS4",
+  "Xbox 360"
+ ],
  "methods": [
   "Phrase"
  ],

@@ -8,6 +8,11 @@
   "PlayStation",
   "Xbox"
  ],
+ "consoles": [
+  "PC",
+  "PS3",
+  "Xbox 360"
+ ],
  "methods": [
   "Phone"
  ],

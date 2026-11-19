@@ -8,6 +8,14 @@
   "PlayStation",
   "Xbox"
  ],
+ "consoles": [
+  "PC",
+  "PS2",
+  "PS4",
+  "PS5",
+  "Xbox One",
+  "Xbox Series X/S"
+ ],
  "methods": [
   "Combo",
   "Typed"

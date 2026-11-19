@@ -8,15 +8,19 @@ The owner is MercuryHQ (GitHub: NBDBatman). British English in all copy.
 
 ```
 index.html          Home: hero + search, selected-game panel, cover grid, input-type legend
-game.html           Game page, routed by hash: game.html#<slug> (?g=<slug> also works)
+game.html           Game page: game.html?g=<slug>&p=<input id>. Old game.html#<slug>[/<input id>] links still work
 assets/style.css    All styles. Theme tokens are CSS variables on [data-theme]
 assets/theme.js     Runs in <head> before paint. Dark is the default, saved in localStorage 'ci-theme'
-assets/common.js    window.CI: el(), getJSON(), renderCombo(), comboWords(), cover(), countText()
+assets/common.js    window.CI: el(), getJSON(), renderCombo(), comboWords(), cover(), countText(), copy(), stars...
+                    Also registers sw.js
 assets/home.js      Grid, sort, platform filter, search (titles, then every cheat once loaded)
-assets/game.js      Cheat list, platform switch, category tabs, copy, loading/error/empty states
+assets/game.js      Cheat list, platform switch, filter, category tabs, stars, copy, report links, print, states
 data/games.json     Index of games. `count` must equal the length of that game's cheats array
 data/<slug>.json    One file per game
 covers/<slug>.jpg   Cover art, 600x800. The site shows a labelled slot when the file is missing
+sw.js               Service worker for offline use. Network first for pages and data, cache first for covers and fonts
+sitemap.xml         Home plus game.html?g=<slug> for every game. Add new games here
+.github/            check_data.py (data checks), workflows/check-data.yml (runs it on every push), ISSUE_TEMPLATE/
 DESIGN.md           Design decisions and reasons. Read it before any visual change
 LICENSE             MIT, Copyright (c) 2026 MercuryHQ/NBDBatman
 ```
@@ -26,20 +30,21 @@ Slugs: `gta`, `gta-2`, `gta-iii`, `gta-vc`, `gta-sa`, `gta-lcs`, `bully`, `gta-v
 ## Commands
 
 - Run locally: `python3 -m http.server 8000`, then open http://localhost:8000. Opening the HTML file directly fails because the pages `fetch` their JSON.
-- Validate data: `python3 -c "import json,glob; [json.load(open(f)) for f in glob.glob('data/*.json')]"`
+- Check data: `python3 .github/check_data.py` from the repo root. It checks JSON, counts, `consoles`/`platforms` matching games.json, input ids, combo button names, tbd/incomplete, em dashes, covers at 600x800 and the sitemap. GitHub runs it on every push and pull request, so keep it passing.
 - Deploy: push to `main`. GitHub Pages serves from the root at https://nbdbatman.github.io/Rockstar-Cheat-Index/. `.nojekyll` must stay.
 
 ## Data format
 
 Each game file has `slug, title, short, year, order, platforms, consoles, methods, inputs, warning, sources, cheats`, plus optional `pending` (no confirmed cheats) and `incomplete` (list known to be partial).
 
-- `platforms` is the broad family (`PC`, `PlayStation`, `Xbox`, `Handheld`) and drives the home-page filter.
+- `platforms` is the broad family (`PC`, `PlayStation`, `Xbox`, `Switch`, `Handheld`) and drives the home-page filter.
 - `consoles` is the exact machines the listed codes work on (`PS2`, `Xbox Series X/S`, ...) and is what the site shows. Keep it the same in `games.json` and the game's own file, and in step with the README's games table.
 
 `inputs` defines the platform switch. Each input has `id, label, type, how`:
 - `type` is `text`, `combo`, `phone` or `phrase`.
-- Combos also have `pad`: `ps`, `xbox` or `ds`.
-- `derive: "ps"` makes Xbox combos from the PlayStation ones.
+- Combos also have `pad`: `ps`, `xbox`, `switch` or `ds`.
+- `derive: "ps"` makes Xbox and Switch combos from the PlayStation ones.
+- Input ids are shared across games so the remembered platform (localStorage `ci-plat`) carries over. `ps` and `ps2` count as the same pick.
 
 Each cheat looks like:
 
@@ -47,10 +52,11 @@ Each cheat looks like:
 { "effect": "...", "category": "Player", "codes": { "pc": "...", "ps": "..." }, "requirement": "...", "note": "..." }
 ```
 
-- `codes` keys match input ids: `pc ps ps2 psp ds phone phrase mobile`. A cheat with no key for the selected platform is hidden from that platform's list, so a cheat named differently in another version can have its own entry without looking like a duplicate.
+- `codes` keys match input ids: `pc ps ps2 psp ds phone phrase mobile` (`xbox` and `switch` are derived, never written). A cheat with no key for the selected platform is hidden from that platform's list, so a cheat named differently in another version can have its own entry without looking like a duplicate.
 - `"tbd": true` with empty `codes` marks a cheat confirmed to exist whose code hasn't been found yet. It shows on every platform with "TBD" and no Copy button, and counts towards `count`. When the code is found, add it to `codes` and remove `tbd`.
 - Write combos with PlayStation names, space-separated: `Cross Circle Square Triangle L1 R1 L2 R2 Up Down Left Right`. Use `L`/`R` for PSP shoulders, and `A B X Y L R` for DS. Prefix with `HOLD:L1 ` when a button is held.
 - Xbox is mapped in common.js: Cross→A, Circle→B, Square→X, Triangle→Y, L1→LB, R1→RB, L2→LT, R2→RT. This is only valid for Xbox 360 and later.
+- Switch (Definitive Edition only) keeps button positions: Cross→B, Circle→A, Square→Y, Triangle→X, L1→L, R1→R, L2→ZL, R2→ZR. Checked against Nintendo Wire's lists for all three games.
 - `requirement` is something the player must have or do first: a newspaper unlock, a specific edition, phone only. `note` is anything else, like an alternate code.
 - Categories in use: Player, Weapons, Money, Wanted, Vehicles, World, Pedestrians, Score, Levels, Other.
 
@@ -62,7 +68,12 @@ Each cheat looks like:
 - Never invent a code, phone number, phrase, requirement or cheat count. If it can't be sourced, leave it out. A game marked `pending` shows `TBC`.
 - GTA VI (released 19 November 2026): all 61 cheats are listed, but cheats whose code hasn't been found are marked `tbd`. Fill in a code only when at least two independent sources give the same sequence, and add its URL to `sources`. Keep `incomplete: true` until no `tbd` cheats are left.
 - When cheats are added or removed, update `count` in `data/games.json`.
-- Every new game needs its cover, `covers/<slug>.jpg` at 600x800, in the same change.
+- Every new game needs its cover, `covers/<slug>.jpg` at 600x800, and a `sitemap.xml` entry, in the same change.
+- Stars are saved by effect name (localStorage `ci-stars`), so renaming an effect drops anyone's star on it. Rename only when it's worth it.
+
+## Offline cache
+
+`sw.js` serves covers and fonts from its cache once saved. When you replace a cover or change `sw.js`, bump `CACHE` in `sw.js` (`ci-v1` → `ci-v2`) so visitors get the new files. Pages, scripts and data are network first and don't need a bump.
 
 ## Design rules (full reasons in DESIGN.md)
 

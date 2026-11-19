@@ -19,10 +19,15 @@ Cheat Index is the opposite. It only lists codes that are built into the games, 
 ## What you get
 
 - **Every cheat in 14 games**, including all 61 in GTA VI. GTA VI codes that players haven't found yet are marked TBD and filled in as they're discovered.
-- **A platform switch on every game.** Codes for PC, PlayStation, Xbox, PSP, DS, mobile, phone and phrase entry each get their own view, so you only see what works on your machine.
-- **Button combos drawn as buttons.** PlayStation shows ✕ ○ □ △, Xbox shows A B X Y, and held buttons are called out.
+- **A platform switch on every game.** Codes for PC, PlayStation, Xbox, Switch, PSP, DS, mobile, phone and phrase entry each get their own view, so you only see what works on your machine. The site remembers your platform for the next game.
+- **Button combos drawn as buttons.** PlayStation shows ✕ ○ □ △, Xbox shows A B X Y, Switch shows B A Y X and ZL ZR, and held buttons are called out.
 - **One-tap copy.** Combos copy as readable words ("Hold L1, then R2, Cross…"), and typed codes copy exactly.
-- **Search across every game at once.** Search by effect ("tank"), by code ("HESOYAM") or by game.
+- **Search across every game at once,** by effect ("tank"), by code ("HESOYAM") or by game. Each game page also has its own filter.
+- **Star the cheats you use.** Starred cheats get their own tab, saved in your browser.
+- **Share a platform.** Links like `game.html?g=gta-sa&p=xbox` open straight on that platform's codes.
+- **Print a code sheet.** Print list gives a plain page of the codes for your platform, to keep next to the console.
+- **Works offline.** After your first visit, every game's cheats open with no connection.
+- **Report a code from the code itself.** Each cheat has a Report link that opens a GitHub issue with the game, platform and cheat filled in.
 - **Requirements and warnings up front.** Each page notes newspaper unlocks, edition-specific codes, and whether cheats turn off achievements or saving.
 - **Dark by default, with a light mode.** It works on a phone, with a keyboard and with a screen reader.
 
@@ -32,28 +37,29 @@ Cheat Index is the opposite. It only lists codes that are built into the games, 
 | --- | --- | --- | --- | --- |
 | Grand Theft Auto | 1997 | Typed | PC, PS1 | 28 |
 | Grand Theft Auto 2 | 1999 | Typed | PC, PS1 | 46 |
-| Grand Theft Auto III | 2001 | Combo, typed | PC, PS2, PS4, PS5, Xbox One, Xbox Series X/S | 25 |
-| GTA: Vice City | 2002 | Combo, typed | PC, PS2, PS4, PS5, Xbox One, Xbox Series X/S | 58 |
-| GTA: San Andreas | 2004 | Combo, typed | PC, PS2, PS3, PS4, PS5, Xbox 360, Xbox One, Xbox Series X/S | 88 |
+| Grand Theft Auto III | 2001 | Combo, typed | PC, PS2, PS4, PS5, Switch, Xbox One, Xbox Series X/S | 25 |
+| GTA: Vice City | 2002 | Combo, typed | PC, PS2, PS4, PS5, Switch, Xbox One, Xbox Series X/S | 58 |
+| GTA: San Andreas | 2004 | Combo, typed | PC, PS2, PS3, PS4, PS5, Switch, Xbox 360, Xbox One, Xbox Series X/S | 88 |
 | GTA: Liberty City Stories | 2005 | Combo | PSP, PS2 | 43 |
 | Bully | 2006 | Combo | PS2 | 8 |
 | GTA: Vice City Stories | 2006 | Combo | PSP, PS2 | 36 |
 | Grand Theft Auto IV | 2008 | Phone | PC, PS3, Xbox 360 | 16 |
 | GTA: Chinatown Wars | 2009 | Combo, typed | DS, PSP, mobile | 21 |
-| Red Dead Redemption | 2010 | Phrase | PS3, PS4, Xbox 360 | 20 (more coming) |
+| Red Dead Redemption | 2010 | Phrase | PC, PS3, PS4, Switch, Xbox 360 | 21 |
 | Grand Theft Auto V | 2013 | Combo, typed, phone | PC, PS3, PS4, PS5, Xbox 360, Xbox One, Xbox Series X/S | 36 |
 | Red Dead Redemption 2 | 2018 | Phrase | PC, PS4, Xbox One | 37 |
 | Grand Theft Auto VI | 2026 | Combo | PS5, Xbox Series X/S | 61 (43 codes TBD) |
 
 A few things to know about consoles:
 
-- **GTA III, Vice City and San Andreas:** PS4, PS5, Xbox One and Series X/S mean the Definitive Edition, which takes the same combos as the PS2 originals. The original Xbox releases used a different button layout, and the Switch version uses Nintendo buttons, so neither is covered yet.
+- **GTA III, Vice City and San Andreas:** PS4, PS5, Switch, Xbox One and Series X/S mean the Definitive Edition, which takes the same combos as the PS2 originals. On Switch the buttons keep their positions: ✕ is B, ○ is A, □ is Y, △ is X, L2 and R2 are ZL and ZR. The original Xbox releases used a different button layout, so they aren't covered yet.
+- **Red Dead Redemption:** the phrases are the same on every version, including the 2023 PS4 and Switch release and the 2024 PC release.
 - **GTA V:** button combos work on every console listed, but the phone numbers only work on PS4, PS5, Xbox One, Series X/S and PC.
 - **Backward compatibility:** a game played through backward compatibility takes the same codes as the version it's running. For example, RDR2 on PS5 or Xbox Series X/S uses the PS4 and Xbox One codes.
 
 ## Found a wrong code?
 
-[Open an issue](https://github.com/NBDBatman/Rockstar-Cheat-Index/issues) with the game, the platform, the cheat and what happened. A link to where you found the correct code helps a lot.
+Use the Report link next to the cheat, or [open an issue](https://github.com/NBDBatman/Rockstar-Cheat-Index/issues/new/choose). The form asks for the game, the platform, the cheat and what happened. A link to where you found the correct code helps a lot. For a GTA VI cheat marked TBD, the link says Send code instead.
 
 You can also fix it yourself. Each game is a single JSON file, so most fixes are a one-line pull request. See [Contributing](#contributing).
 
@@ -66,7 +72,7 @@ You can also fix it yourself. Each game is a single JSON file, so most fixes are
 3. **Never guess.** If a code, phone number, phrase or requirement can't be sourced, leave it out.
 4. **Write effects in your own words**, in sentence case and British English.
 5. **GTA VI codes need two independent sources that agree**, since new codes are still being found. Cheats whose code isn't known yet stay marked `"tbd": true` until then.
-6. **Every new game needs a cover picture.** A pull request that adds a game must include `covers/<slug>.jpg` at 600x800 (3:4), using the game's official front-of-box art. Pull requests that add a game without one won't be merged.
+6. **Every new game needs a cover picture.** A pull request that adds a game must include `covers/<slug>.jpg` at 600x800 (3:4), using the game's official front-of-box art. Pull requests that add a game without one won't be merged. Add the game's page to `sitemap.xml` as well.
 
 ### Editing a game
 
@@ -88,10 +94,10 @@ Each game lives in `data/<slug>.json`. A cheat looks like this:
 
 - **`codes`** keys match the `inputs` at the top of the file: `pc`, `ps`, `ps2`, `psp`, `ds`, `phone`, `phrase`, `mobile`. Leave a key out and the cheat is hidden on that platform. If two versions use different codes for the same effect, give each version its own entry.
 - **Combos** use PlayStation button names, separated by spaces: `Cross Circle Square Triangle L1 R1 L2 R2 Up Down Left Right`. Use `L` and `R` for PSP shoulders, and `A B X Y L R` for DS. Start with `HOLD:L1 ` when a button is held down.
-- **Xbox combos are generated** from the PlayStation ones, so you don't write them separately.
+- **Xbox and Switch combos are generated** from the PlayStation ones, so you don't write them separately.
 - **Categories:** Player, Weapons, Money, Wanted, Vehicles, World, Pedestrians, Score, Levels, Other.
 - **Counts:** when you add or remove a cheat, update that game's `count` in `data/games.json` to match.
-- **Valid JSON:** a stray comma breaks the whole game page, so check the file is still valid JSON before you open a pull request.
+- **Checks:** every push and pull request runs `.github/check_data.py`. It catches invalid JSON, a wrong `count`, mismatched `consoles`, unknown buttons, missing covers and more. You can run it yourself from the repo root before opening a pull request.
 
 ### Changing the design
 
@@ -103,15 +109,20 @@ Plain HTML, CSS and JavaScript, with the cheats stored as JSON, hosted on GitHub
 
 ```
 index.html          Home: search, game grid, sort and platform filter
-game.html           Every game page, routed by hash: game.html#gta-sa
+game.html           Every game page: game.html?g=gta-sa
 assets/             style.css, theme.js, common.js, home.js, game.js
 data/games.json     The game list: title, year, platforms, input types, cheat count
 data/<slug>.json    One file per game with every cheat and its sources
 covers/             Cover art, covers/<slug>.jpg at 600x800
+sw.js               Offline support: saves the pages and every game's data
+sitemap.xml         Every game page, for search engines
+.github/            Data check, its workflow, and the issue forms
 DESIGN.md           Design decisions and the reasons for them
 ```
 
 Pushing to `main` deploys the site. `.nojekyll` must stay so GitHub serves every file as-is.
+
+Game pages live at `game.html?g=<slug>`, with an optional `&p=<platform>`. The older `game.html#<slug>` links still work.
 
 ### Cover art
 
@@ -123,7 +134,7 @@ Slugs: `gta`, `gta-2`, `gta-iii`, `gta-vc`, `gta-sa`, `gta-lcs`, `bully`, `gta-v
 
 ## Privacy
 
-There are no ads, analytics, trackers or cookies. The only outside request is to Google Fonts for IBM Plex. Your theme choice is saved in your own browser and never leaves it.
+There are no ads, analytics, trackers or cookies. The only outside request is to Google Fonts for IBM Plex. Your theme, last game, platform and starred cheats are saved in your own browser and never leave it. For offline use, the site keeps a copy of its own pages and data in your browser too.
 
 ## Licence
 

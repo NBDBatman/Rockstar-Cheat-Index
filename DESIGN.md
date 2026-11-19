@@ -13,6 +13,9 @@ The owner tried a louder tabloid direction and preferred this one, so keep it.
 - **IBM Plex Sans + IBM Plex Mono:** one family, so they never clash. Mono is only for things you type or read character by character: codes, keycaps, years, file paths. Labels are sentence case in Plex Sans.
 - **Radius 3px**, 2px on code highlights. No pills, so it feels printed rather than app-like.
 - **Motion:** hover and pressed states only. The 1px press nudge is off under `prefers-reduced-motion`.
+- **Stars** are outline icons in the muted ink, filled with ink when on. Never the accent, because starring is a selected state.
+- **Report links** are small muted text under Copy, so they're there when needed without competing with the code.
+- **Print** drops the header, footer, controls, cover and Copy column, and keeps the highlight behind codes. It's meant to look like a page torn from the guide.
 
 ## Layout
 

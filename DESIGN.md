@@ -14,6 +14,8 @@ The owner tried a louder tabloid direction and preferred this one, so keep it.
 - **Radius 3px**, 2px on code highlights. No pills, so it feels printed rather than app-like.
 - **Motion:** hover and pressed states only. The 1px press nudge is off under `prefers-reduced-motion`.
 - **Stars** are outline icons in the muted ink, filled with ink when on. Never the accent, because starring is a selected state.
+- **Linked cheat:** a cheat opened from a link gets a 3px ink bar down its left edge, like a pen mark in the margin. Ink, not the accent.
+- **App icon:** a charcoal page with three lines, the middle one highlighted in butter yellow. No text, no game art, nothing that looks like Rockstar's branding. The link preview image uses the same type and colours as the site.
 - **Report links** are small muted text under Copy, so they're there when needed without competing with the code.
 - **Print** drops the header, footer, controls, cover and Copy column, and keeps the highlight behind codes. It's meant to look like a page torn from the guide.
 

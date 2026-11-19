@@ -20,12 +20,14 @@ data/<slug>.json    One file per game
 covers/<slug>.jpg   Cover art, 600x800. The site shows a labelled slot when the file is missing
 sw.js               Service worker for offline use. Network first for pages and data, cache first for covers and fonts
 sitemap.xml         Home plus game.html?g=<slug> for every game. Add new games here
+404.html            GitHub Pages' not-found page. Uses absolute /Rockstar-Cheat-Index/ paths, as it's shown at any depth
+manifest.webmanifest  App install. Icons: assets/icon.svg (favicon), icon-192/512.png, apple-touch-icon.png; og.png is the 1200x630 link preview
 .github/            check_data.py (data checks), workflows/check-data.yml (runs it on every push), ISSUE_TEMPLATE/
 DESIGN.md           Design decisions and reasons. Read it before any visual change
 LICENSE             MIT, Copyright (c) 2026 MercuryHQ/NBDBatman
 ```
 
-Slugs: `gta`, `gta-2`, `gta-iii`, `gta-vc`, `gta-sa`, `gta-lcs`, `bully`, `gta-vcs`, `gta-iv`, `gta-ctw`, `rdr`, `gta-v`, `rdr2`, `gta-vi`.
+Slugs: `gta`, `gta-london`, `gta-2`, `gta-iii`, `gta-vc`, `gta-sa`, `warriors`, `gta-lcs`, `bully`, `gta-vcs`, `gta-iv`, `gta-ctw`, `rdr`, `gta-v`, `rdr2`, `gta-vi`.
 
 ## Commands
 
@@ -42,7 +44,7 @@ Each game file has `slug, title, short, year, order, platforms, consoles, method
 
 `inputs` defines the platform switch. Each input has `id, label, type, how`:
 - `type` is `text`, `combo`, `phone` or `phrase`.
-- Combos also have `pad`: `ps`, `xbox`, `switch` or `ds`.
+- Combos also have `pad`: `ps`, `xbox`, `xbox360`, `xboxog`, `switch` or `ds`.
 - `derive: "ps"` makes Xbox and Switch combos from the PlayStation ones.
 - Input ids are shared across games so the remembered platform (localStorage `ci-plat`) carries over. `ps` and `ps2` count as the same pick.
 
@@ -52,10 +54,12 @@ Each cheat looks like:
 { "effect": "...", "category": "Player", "codes": { "pc": "...", "ps": "..." }, "requirement": "...", "note": "..." }
 ```
 
-- `codes` keys match input ids: `pc ps ps2 psp ds phone phrase mobile` (`xbox` and `switch` are derived, never written). A cheat with no key for the selected platform is hidden from that platform's list, so a cheat named differently in another version can have its own entry without looking like a duplicate.
+- `codes` keys match input ids: `pc ps ps2 psp ds phone phrase mobile xboxog` (`xbox`, `xbox360` and `switch` are derived, never written). A cheat with no key for the selected platform is hidden from that platform's list, so a cheat named differently in another version can have its own entry without looking like a duplicate.
 - `"tbd": true` with empty `codes` marks a cheat confirmed to exist whose code hasn't been found yet. It shows on every platform with "TBD" and no Copy button, and counts towards `count`. When the code is found, add it to `codes` and remove `tbd`.
 - Write combos with PlayStation names, space-separated: `Cross Circle Square Triangle L1 R1 L2 R2 Up Down Left Right`. Use `L`/`R` for PSP shoulders, and `A B X Y L R` for DS. Prefix with `HOLD:L1 ` when a button is held.
 - Xbox is mapped in common.js: Cross→A, Circle→B, Square→X, Triangle→Y, L1→LB, R1→RB, L2→LT, R2→RT. This is only valid for Xbox 360 and later.
+- San Andreas only: `xbox360` (2014 port) swaps bumpers and triggers: L1→LT, L2→LB, R1→RT, R2→RB. `xboxog` (2005 original Xbox) is L1→L trigger, R1→R trigger, L2→White, R2→Black. The `xboxog` input isn't derived: each cheat has its own `xboxog` code, written with PlayStation names, and only where iGrandTheftAuto's Xbox list matched. Some original Xbox sequences differ from PS2, so don't derive it.
+- `"not": ["xbox", "switch"]` hides a cheat on those tabs even when the input is derived. Used for cheats removed from the Definitive Edition, on tabs that only cover the Definitive Edition.
 - Switch (Definitive Edition only) keeps button positions: Cross→B, Circle→A, Square→Y, Triangle→X, L1→L, R1→R, L2→ZL, R2→ZR. Checked against Nintendo Wire's lists for all three games.
 - `requirement` is something the player must have or do first: a newspaper unlock, a specific edition, phone only. `note` is anything else, like an alternate code.
 - Categories in use: Player, Weapons, Money, Wanted, Vehicles, World, Pedestrians, Score, Levels, Other.
@@ -66,6 +70,7 @@ Each cheat looks like:
 - Copy codes exactly from the source. Write effect descriptions in your own words, in sentence case.
 - Every game file lists the sources its codes were checked against in `sources`. Add the URL when you add codes from a new source. Sources are kept in the data for checking, but the owner chose not to show them on the site, so don't add a sources list back to the game page.
 - Never invent a code, phone number, phrase, requirement or cheat count. If it can't be sourced, leave it out. A game marked `pending` shows `TBC`.
+- New games and new codes need two sources that give the same code. For a code only one source has, leave it out and say so.
 - GTA VI (released 19 November 2026): all 61 cheats are listed, but cheats whose code hasn't been found are marked `tbd`. Fill in a code only when at least two independent sources give the same sequence, and add its URL to `sources`. Keep `incomplete: true` until no `tbd` cheats are left.
 - When cheats are added or removed, update `count` in `data/games.json`.
 - Every new game needs its cover, `covers/<slug>.jpg` at 600x800, and a `sitemap.xml` entry, in the same change.

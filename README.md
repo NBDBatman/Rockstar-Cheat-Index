@@ -18,15 +18,16 @@ Cheat Index is the opposite. It only lists codes that are built into the games, 
 
 ## What you get
 
-- **Every cheat in 14 games**, including all 61 in GTA VI. GTA VI codes that players haven't found yet are marked TBD and filled in as they're discovered.
+- **Every cheat in 16 games**, including all 61 in GTA VI. GTA VI codes that players haven't found yet are marked TBD and filled in as they're discovered.
 - **A platform switch on every game.** Codes for PC, PlayStation, Xbox, Switch, PSP, DS, mobile, phone and phrase entry each get their own view, so you only see what works on your machine. The site remembers your platform for the next game.
 - **Button combos drawn as buttons.** PlayStation shows ✕ ○ □ △, Xbox shows A B X Y, Switch shows B A Y X and ZL ZR, and held buttons are called out.
 - **One-tap copy.** Combos copy as readable words ("Hold L1, then R2, Cross…"), and typed codes copy exactly.
 - **Search across every game at once,** by effect ("tank"), by code ("HESOYAM") or by game. Each game page also has its own filter.
 - **Star the cheats you use.** Starred cheats get their own tab, saved in your browser.
-- **Share a platform.** Links like `game.html?g=gta-sa&p=xbox` open straight on that platform's codes.
-- **Print a code sheet.** Print list gives a plain page of the codes for your platform, to keep next to the console.
-- **Works offline.** After your first visit, every game's cheats open with no connection.
+- **Share a platform or a single cheat.** Links like `game.html?g=gta-sa&p=xbox` open on that platform's codes. Click a cheat's name to link straight to it.
+- **Print a code sheet.** Print gives a plain page of what's on screen: the whole list, a filter, or just your starred cheats.
+- **Works offline, and installs like an app.** After your first visit, every game's cheats open with no connection. Add it to your home screen to keep it a tap away.
+- **Press `/` to search** from anywhere, or to filter on a game page.
 - **Report a code from the code itself.** Each cheat has a Report link that opens a GitHub issue with the game, platform and cheat filled in.
 - **Requirements and warnings up front.** Each page notes newspaper unlocks, edition-specific codes, and whether cheats turn off achievements or saving.
 - **Dark by default, with a light mode.** It works on a phone, with a keyboard and with a screen reader.
@@ -36,10 +37,12 @@ Cheat Index is the opposite. It only lists codes that are built into the games, 
 | Game | Year | How cheats are entered | Codes listed for | Cheats |
 | --- | --- | --- | --- | --- |
 | Grand Theft Auto | 1997 | Typed | PC, PS1 | 28 |
+| GTA: London 1969 | 1999 | Typed | PC, PS1 | 22 |
 | Grand Theft Auto 2 | 1999 | Typed | PC, PS1 | 46 |
-| Grand Theft Auto III | 2001 | Combo, typed | PC, PS2, PS4, PS5, Switch, Xbox One, Xbox Series X/S | 25 |
-| GTA: Vice City | 2002 | Combo, typed | PC, PS2, PS4, PS5, Switch, Xbox One, Xbox Series X/S | 58 |
-| GTA: San Andreas | 2004 | Combo, typed | PC, PS2, PS3, PS4, PS5, Switch, Xbox 360, Xbox One, Xbox Series X/S | 88 |
+| Grand Theft Auto III | 2001 | Combo, typed | PC, PS2, PS4, PS5, Switch, Xbox One, Xbox Series X/S, mobile | 25 |
+| GTA: Vice City | 2002 | Combo, typed | PC, PS2, PS4, PS5, Switch, Xbox One, Xbox Series X/S, mobile | 59 |
+| GTA: San Andreas | 2004 | Combo, typed | PC, PS2, PS3, PS4, PS5, Switch, original Xbox, Xbox 360, Xbox One, Xbox Series X/S, mobile | 88 |
+| The Warriors | 2005 | Combo | PS2 | 11 |
 | GTA: Liberty City Stories | 2005 | Combo | PSP, PS2 | 43 |
 | Bully | 2006 | Combo | PS2 | 8 |
 | GTA: Vice City Stories | 2006 | Combo | PSP, PS2 | 36 |
@@ -52,7 +55,8 @@ Cheat Index is the opposite. It only lists codes that are built into the games, 
 
 A few things to know about consoles:
 
-- **GTA III, Vice City and San Andreas:** PS4, PS5, Switch, Xbox One and Series X/S mean the Definitive Edition, which takes the same combos as the PS2 originals. On Switch the buttons keep their positions: ✕ is B, ○ is A, □ is Y, △ is X, L2 and R2 are ZL and ZR. The original Xbox releases used a different button layout, so they aren't covered yet.
+- **GTA III, Vice City and San Andreas:** PS4, PS5, Switch, Xbox One, Series X/S and mobile mean the Definitive Edition, which takes the same combos as the PS2 originals. On Switch the buttons keep their positions: ✕ is B, ○ is A, □ is Y, △ is X, L2 and R2 are ZL and ZR. On mobile, type the PC codes with a keyboard. A few cheats were removed from the Definitive Edition; they're marked, and hidden on the Switch and Xbox One/Series tabs.
+- **San Andreas on older Xboxes:** the 2014 Xbox 360 release has the bumpers and triggers the other way round, and the 2005 original Xbox used White and Black buttons. Each has its own tab. The original Xbox tab lists the 74 codes confirmed for that version. Original Xbox codes for GTA III and Vice City aren't covered yet.
 - **Red Dead Redemption:** the phrases are the same on every version, including the 2023 PS4 and Switch release and the 2024 PC release.
 - **GTA V:** button combos work on every console listed, but the phone numbers only work on PS4, PS5, Xbox One, Series X/S and PC.
 - **Backward compatibility:** a game played through backward compatibility takes the same codes as the version it's running. For example, RDR2 on PS5 or Xbox Series X/S uses the PS4 and Xbox One codes.
@@ -92,7 +96,7 @@ Each game lives in `data/<slug>.json`. A cheat looks like this:
 }
 ```
 
-- **`codes`** keys match the `inputs` at the top of the file: `pc`, `ps`, `ps2`, `psp`, `ds`, `phone`, `phrase`, `mobile`. Leave a key out and the cheat is hidden on that platform. If two versions use different codes for the same effect, give each version its own entry.
+- **`codes`** keys match the `inputs` at the top of the file: `pc`, `ps`, `ps2`, `psp`, `ds`, `phone`, `phrase`, `mobile`. Leave a key out and the cheat is hidden on that platform. If two versions use different codes for the same effect, give each version its own entry. A cheat that's missing from one version of a derived tab gets `"not": ["switch"]` (for example), which hides it there.
 - **Combos** use PlayStation button names, separated by spaces: `Cross Circle Square Triangle L1 R1 L2 R2 Up Down Left Right`. Use `L` and `R` for PSP shoulders, and `A B X Y L R` for DS. Start with `HOLD:L1 ` when a button is held down.
 - **Xbox and Switch combos are generated** from the PlayStation ones, so you don't write them separately.
 - **Categories:** Player, Weapons, Money, Wanted, Vehicles, World, Pedestrians, Score, Levels, Other.
@@ -116,6 +120,8 @@ data/<slug>.json    One file per game with every cheat and its sources
 covers/             Cover art, covers/<slug>.jpg at 600x800
 sw.js               Offline support: saves the pages and every game's data
 sitemap.xml         Every game page, for search engines
+404.html            The page GitHub shows for a broken link
+manifest.webmanifest  Lets the site install like an app; icons live in assets/
 .github/            Data check, its workflow, and the issue forms
 DESIGN.md           Design decisions and the reasons for them
 ```
@@ -130,7 +136,7 @@ Covers live in `covers/<slug>.jpg` at 600x800 (3:4), and the site picks them up 
 
 Any new game must come with its cover (see [rule 6](#the-rules)). For the games already listed, a missing cover shows a labelled placeholder until one is added.
 
-Slugs: `gta`, `gta-2`, `gta-iii`, `gta-vc`, `gta-sa`, `gta-lcs`, `bully`, `gta-vcs`, `gta-iv`, `gta-ctw`, `rdr`, `gta-v`, `rdr2`, `gta-vi`
+Slugs: `gta`, `gta-london`, `gta-2`, `gta-iii`, `gta-vc`, `gta-sa`, `warriors`, `gta-lcs`, `bully`, `gta-vcs`, `gta-iv`, `gta-ctw`, `rdr`, `gta-v`, `rdr2`, `gta-vi`
 
 ## Privacy
 

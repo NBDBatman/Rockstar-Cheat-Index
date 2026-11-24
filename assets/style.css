@@ -3,12 +3,18 @@
   --bg: #1a1c20; --surf: #22252a; --head: #15171a; --ink: #d9dbd6; --mute: #969a9f;
   --rule: #2c2f34; --ctl: #767b82; --hover: #2a2d33; --hl: #e8d77a; --hl2: #f0e29a;
   --warn: #e39a7f; --focus: #e8d77a; --on-hl: #1a1c20;
+  /* header and logo */
+  --head-ink: #d9dbd6; --head-mute: #969a9f; --head-ctl: #767b82; --head-hover: #2a2d33; --head-rule: #2c2f34; --head-focus: #e8d77a;
+  --lg-bg: #1a1c20; --lg-edge: #1a1c20; --lg-line: #969a9f; --lg-hl: #e8d77a; --lg-ink: #1a1c20;
   color-scheme: dark;
 }
 [data-theme="light"] {
-  --bg: #f3f3f0; --surf: #ffffff; --head: #22252a; --ink: #25282c; --mute: #5c6066;
+  --bg: #f3f3f0; --surf: #ffffff; --ink: #25282c; --mute: #5c6066;
   --rule: #dcddd8; --ctl: #80848a; --hover: #e6e7e2; --hl: #efd96a; --hl2: #f5e48e;
   --warn: #b04a2f; --focus: #25282c;
+  /* header and logo: a white header with a hairline, and the logo as a light page with an ink edge */
+  --head: #ffffff; --head-ink: #25282c; --head-mute: #5c6066; --head-ctl: #80848a; --head-hover: #e6e7e2; --head-rule: #dcddd8; --head-focus: #25282c;
+  --lg-bg: #f3f3f0; --lg-edge: #c4c6c0; --lg-line: #80848a; --lg-hl: #efd96a; --lg-ink: #25282c;
   color-scheme: light;
 }
 * { box-sizing: border-box; }
@@ -27,20 +33,24 @@ button:disabled { cursor: not-allowed; }
 .muted { color: var(--mute); }
 
 /* header */
-.site-head { --focus: #e8d77a; background: var(--head); color: #d9dbd6; border-bottom: 1px solid var(--rule); }
+.site-head { --focus: var(--head-focus); background: var(--head); color: var(--head-ink); border-bottom: 1px solid var(--head-rule); }
 .site-head .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px; min-height: 64px; padding-top: 8px; padding-bottom: 8px; }
-.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: #d9dbd6; padding: 8px 0; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--head-ink); padding: 8px 0; }
 /* The logo is the favicon (assets/icon.svg), inlined so it needs no extra request. */
 .brand svg { flex: none; display: block; }
+.logo .lg-bg { fill: var(--lg-bg); stroke: var(--lg-edge); }
+.logo .lg-line { fill: var(--lg-line); }
+.logo .lg-hl { fill: var(--lg-hl); }
+.logo .lg-ink { fill: var(--lg-ink); }
 .brand-text { display: flex; align-items: baseline; gap: 12px; }
 .brand b { font-size: 20px; letter-spacing: -0.01em; }
-.brand-text span { font-size: 13px; color: #969a9f; }
+.brand-text span { font-size: 13px; color: var(--head-mute); }
 .head-tools { display: flex; flex-wrap: wrap; align-items: center; gap: 4px; }
 .head-tools nav { display: flex; flex-wrap: wrap; font-size: 15px; }
-.head-tools nav a { color: #d9dbd6; text-decoration: none; padding: 12px 14px; border-radius: 3px; }
-.head-tools nav a:hover { background: #22252a; }
-.theme-btn { display: flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 14px; background: transparent; color: #d9dbd6; border: 1px solid #767b82; border-radius: 3px; font: inherit; font-size: 14px; }
-.theme-btn:hover { background: #2a2d33; }
+.head-tools nav a { color: var(--head-ink); text-decoration: none; padding: 12px 14px; border-radius: 3px; }
+.head-tools nav a:hover { background: var(--head-hover); }
+.theme-btn { display: flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 14px; background: transparent; color: var(--head-ink); border: 1px solid var(--head-ctl); border-radius: 3px; font: inherit; font-size: 14px; }
+.theme-btn:hover { background: var(--head-hover); }
 @media (max-width: 560px) { .brand-text span { display: none; } }
 
 /* buttons and tabs */

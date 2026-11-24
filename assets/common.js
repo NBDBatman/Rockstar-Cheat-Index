@@ -37,6 +37,8 @@ var CI = (function () {
     if (!b) return;
     var next = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
     document.documentElement.setAttribute('data-theme', next);
+    var m = document.querySelector('meta[name="theme-color"]');
+    if (m) m.setAttribute('content', next === 'light' ? '#ffffff' : '#15171a');
     try { localStorage.setItem('ci-theme', next); } catch (err) {}
     syncTheme();
   });

@@ -22,7 +22,7 @@ covers/<slug>.jpg   Cover art, 600x800. The site shows a labelled slot when the 
 sw.js               Service worker for offline use. Network first for pages and data, cache first for covers and fonts
 sitemap.xml         Home plus games/<slug>/ for every game. Written by build_pages.py
 404.html            GitHub Pages' not-found page. Uses absolute /Rockstar-Cheat-Index/ paths, as it's shown at any depth
-manifest.webmanifest  App install. Icons: assets/icon.svg (favicon), icon-192/512.png, apple-touch-icon.png; og.png is the 1200x630 link preview
+manifest.webmanifest  App install. Icons: assets/icon.svg (favicon), icon-192/512.png, apple-touch-icon.png; og.png is the 1200x630 link preview, made from .github/og-image.html
 .github/            build_pages.py (writes games/, sitemap.xml and the home page's Discord embed), game-page.html (its template),
                     check_data.py (data checks), workflows/check-data.yml (runs it on every push), ISSUE_TEMPLATE/
 DESIGN.md           Design decisions and reasons. Read it before any visual change

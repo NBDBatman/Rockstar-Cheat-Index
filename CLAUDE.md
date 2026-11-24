@@ -82,6 +82,10 @@ Each cheat looks like:
 
 On combo tabs, once the browser has seen a gamepad, each cheat gets a Practise button. `CI.padButtons(code, pad)` maps a stored combo to the browser's standard button numbers (0 bottom face button, 4/5 L1/R1, 6/7 L2/R2, 12 to 15 d-pad). Supported pads: `ps`, `xbox`, `switch`, `xbox360` (triggers and bumpers swapped), `ds`. `xboxog` can't be practised, as no modern pad has White/Black. Progress is shown with ink classes `.key.hit` and `.key.next`, never the accent. Escape stops. Keep the Practise button hidden when no pad has been seen.
 
+## Discord link preview
+
+`index.html` has a `<script id="discord:component-embed">` in its `<head>`: a Components V2 layout Discord shows instead of the plain Open Graph card (spec: discord-api-docs, `developers/link-previews/component-embeds.mdx`). Discord doesn't run JavaScript, so it's static, and `game.html` doesn't have one, as one file serves every game. Keep it under 3,000 bytes and 40 components, with link buttons only and the Open Graph tags kept as the fallback. Its "**N cheats** across **N games**" line must match games.json; the data check enforces this. Test with Discord's Embed Debugger (https://discord.com/developers/embeds). Discord caches previews for about 30 minutes, so add `?v=2` to see a change.
+
 ## Offline cache
 
 `sw.js` serves covers and fonts from its cache once saved. When you replace a cover or change `sw.js`, bump `CACHE` in `sw.js` (`ci-v1` → `ci-v2`) so visitors get the new files. Pages, scripts and data are network first and don't need a bump.

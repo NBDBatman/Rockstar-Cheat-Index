@@ -195,6 +195,7 @@ def main():
         if name != 'games' and name not in slugs:
             bad(path, 'not listed in data/games.json')
             load(path)
+    check_discord_embed(index.get('games', []))
     try:
         sitemap = open('sitemap.xml', encoding='utf-8').read()
         for s in slugs:
@@ -202,6 +203,69 @@ def main():
                 bad('sitemap.xml', f'missing game.html?g={s}')
     except OSError:
         bad('sitemap.xml', 'missing')
+
+
+SITE = 'https://nbdbatman.github.io/Rockstar-Cheat-Index/'
+EMBED_TYPES = {1, 2, 9, 10, 11, 12, 14, 17}
+BUTTON_KEYS = {'id', 'type', 'url', 'style', 'label', 'emoji', 'disabled'}
+
+
+def check_discord_embed(games):
+    """The Discord link preview in index.html. Discord drops it if it breaks their rules, and its
+    counts are typed into the page, so check both. Rules: discord-api-docs, link-previews/component-embeds."""
+    where = 'index.html discord:component-embed'
+    try:
+        html = open('index.html', encoding='utf-8').read()
+    except OSError:
+        return
+    m = re.search(r'<script id="discord:component-embed" type="application/json">(.*?)</script>', html, re.S)
+    if not m:
+        bad(where, 'missing')
+        return
+    raw = m.group(1).strip()
+    if len(raw.encode('utf-8')) > 3000:
+        bad(where, f'{len(raw.encode("utf-8"))} bytes; Discord allows 3,000')
+    try:
+        top = json.loads(raw)['component']
+    except (ValueError, KeyError, TypeError) as e:
+        bad(where, f'not valid ({e})')
+        return
+    if top.get('type') != 17:
+        bad(where, 'the top-level component must be a Container (type 17)')
+    found = []
+
+    def walk(c, depth):
+        found.append(c)
+        t = c.get('type')
+        if t not in EMBED_TYPES:
+            bad(where, f'component type {t} is not allowed in a component embed')
+        if t == 17 and depth:
+            bad(where, 'a Container cannot hold another Container')
+        if t == 2:
+            if c.get('style') != 5 or not c.get('url', '').startswith('https://'):
+                bad(where, f'button "{c.get("label")}" must be a link button (style 5) with an https url')
+            if set(c) - BUTTON_KEYS:
+                bad(where, f'button "{c.get("label")}" has keys Discord rejects: {sorted(set(c) - BUTTON_KEYS)}')
+        if t == 10:
+            check_text(where, c.get('content', ''))
+        media = [c.get('media')] + [i.get('media') for i in c.get('items', [])]
+        for md in filter(None, media):
+            url = md.get('url', '')
+            if url.startswith(SITE) and not os.path.isfile(url[len(SITE):]):
+                bad(where, f'image {url} is not in the repo')
+        for k in c.get('components', []) + ([c['accessory']] if 'accessory' in c else []):
+            walk(k, depth + 1)
+
+    walk(top, 0)
+    if len(found) > 40:
+        bad(where, f'{len(found)} components; Discord allows 40')
+    text = ' '.join(c.get('content', '') for c in found if c.get('type') == 10)
+    total = sum(g.get('count', 0) for g in games if not g.get('pending'))
+    for hit in re.finditer(r'\*\*([\d,]+) (cheats|games)\*\*', text):
+        n, word = hit.groups()
+        want = total if word == 'cheats' else len(games)
+        if int(n.replace(',', '')) != want:
+            bad(where, f'says {n} {word}, but games.json has {want}')
 
 
 if __name__ == '__main__':

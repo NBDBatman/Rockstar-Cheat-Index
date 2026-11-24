@@ -1,5 +1,6 @@
-// Game page. game.html?g=<slug> (or game.html#<slug>) loads data/<slug>.json and renders the cheat list.
-// A platform can be added to share a view: ?g=gta-sa&p=xbox or #gta-sa/xbox, and a cheat with &c=<cheat id>.
+// Game page. Each game has its own page, games/<slug>/, written by .github/build_pages.py with the slug
+// on <main data-game>. It loads data/<slug>.json and renders the cheat list.
+// A platform can be added to share a view: games/gta-sa/?p=xbox, and a cheat with &c=<cheat id>.
 (function () {
   var el = CI.el;
   var page = document.getElementById('page');
@@ -11,9 +12,8 @@
   var padSeen = false, prevButtons = [];
 
   function parseRoute() {
-    var h = location.hash.slice(1).split('/');
     var p = new URLSearchParams(location.search);
-    return { slug: h[0] || p.get('g') || '', plat: h[1] || p.get('p') || '', cheat: p.get('c') || '' };
+    return { slug: document.getElementById('main').getAttribute('data-game') || '', plat: p.get('p') || '', cheat: p.get('c') || '' };
   }
 
   // A cheat's id in links: its effect in lowercase, words joined by hyphens.
@@ -84,7 +84,7 @@
   }
 
   function shareURL(cid) {
-    var u = 'game.html?g=' + state.game.slug + '&p=' + state.input.id;
+    var u = '?p=' + state.input.id;
     cid = cid === undefined ? state.target : cid;
     return cid ? u + '&c=' + cid : u;
   }
@@ -388,24 +388,11 @@
     return isNaN(d) ? iso : d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
   }
 
-  function setMeta(g) {
-    document.title = g.title + ' cheats | Cheat Index';
-    var d = document.querySelector('meta[name="description"]');
-    var text = g.pending ? 'Cheat codes for ' + g.title + ' are not confirmed yet.'
-      : 'All ' + g.count + ' official ' + g.title + ' cheat codes for ' + (g.consoles || g.platforms).join(', ') + '. Copy any code in one tap. No ads.';
-    if (d) d.setAttribute('content', text);
-    // game.html has no canonical of its own: one pointing at the bare page would tell search
-    // engines every game is the same page. Each game gets its own once it loads.
-    var canon = document.querySelector('link[rel="canonical"]');
-    if (!canon) { canon = el('link', { rel: 'canonical' }); document.head.appendChild(canon); }
-    canon.setAttribute('href', 'https://nbdbatman.github.io/Rockstar-Cheat-Index/game.html?g=' + g.slug);
-  }
-
   function load() {
     var slug = route.slug;
     if (!/^[a-z0-9-]+$/.test(slug)) {
       document.getElementById('crumb').textContent = 'Not found';
-      showState('error', 'That game isn’t in the index.', 'Pick a game from the list instead.', el('a', { class: 'btn-primary', href: './', text: 'Back to all games' }));
+      showState('error', 'That game isn’t in the index.', 'Pick a game from the list instead.', el('a', { class: 'btn-primary', href: CI.root, text: 'Back to all games' }));
       return;
     }
     showState('loading', 'Loading cheats…');
@@ -414,7 +401,6 @@
       state.input = pickInput(g, route.plat);
       state.stars = CI.stars(g.slug);
       padSeen = pads().length > 0;
-      setMeta(g);
       CI.lastGame(g.slug);
       document.getElementById('crumb').textContent = g.title;
       render();
@@ -426,9 +412,5 @@
         el('button', { class: 'btn', type: 'button', text: 'Try again', onclick: load }));
     });
   }
-  window.addEventListener('hashchange', function () {
-    route = parseRoute();
-    state.cat = 'All'; state.copied = null; state.q = ''; state.target = route.cheat; state.practice = null; load();
-  });
   load();
 })();

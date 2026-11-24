@@ -24,7 +24,7 @@ Cheat Index is the opposite. It only lists codes that are built into the games, 
 - **One-tap copy.** Combos copy as readable words ("Hold L1, then R2, Cross…"), and typed codes copy exactly.
 - **Search across every game at once,** by effect ("tank"), by code ("HESOYAM") or by game. Each game page also has its own filter.
 - **Star the cheats you use.** Starred cheats get their own tab, saved in your browser.
-- **Share a platform or a single cheat.** Links like `game.html?g=gta-sa&p=xbox` open on that platform's codes. Click a cheat's name to link straight to it.
+- **Share a platform or a single cheat.** Links like `games/gta-sa/?p=xbox` open on that platform's codes. Click a cheat's name to link straight to it.
 - **Print a code sheet.** Print gives a plain page of what's on screen: the whole list, a filter, or just your starred cheats.
 - **Works offline, and installs like an app.** After your first visit, every game's cheats open with no connection. Add it to your home screen to keep it a tap away.
 - **Press `/` to search** from anywhere, or to filter on a game page.
@@ -95,7 +95,7 @@ If you use it, a link back to Cheat Index is appreciated, and so are corrections
 3. **Never guess.** If a code, phone number, phrase or requirement can't be sourced, leave it out.
 4. **Write effects in your own words**, in sentence case and British English.
 5. **GTA VI codes need two independent sources that agree**, since new codes are still being found. Cheats whose code isn't known yet stay marked `"tbd": true` until then.
-6. **Every new game needs a cover picture.** A pull request that adds a game must include `covers/<slug>.jpg` at 600x800 (3:4), using the game's official front-of-box art. Pull requests that add a game without one won't be merged. Add the game's page to `sitemap.xml` as well.
+6. **Every new game needs a cover picture.** A pull request that adds a game must include `covers/<slug>.jpg` at 600x800 (3:4), using the game's official front-of-box art. Pull requests that add a game without one won't be merged. Then run `python3 .github/build_pages.py` to write the game's page and its `sitemap.xml` entry.
 
 ### Editing a game
 
@@ -131,26 +131,29 @@ Read [DESIGN.md](DESIGN.md) first. It explains the look (a printed strategy guid
 
 ## How it's built
 
-Plain HTML, CSS and JavaScript, with the cheats stored as JSON, hosted on GitHub Pages. There's no framework, no build step and no dependencies.
+Plain HTML, CSS and JavaScript, with the cheats stored as JSON, hosted on GitHub Pages. There's no framework and no dependencies. One small Python script, `.github/build_pages.py`, writes a page for each game from the data, so link previews in Discord, search engines and chat apps show that game. Its output is committed, so there's nothing to build when deploying.
 
 ```
 index.html          Home: search, game grid, sort and platform filter
-game.html           Every game page: game.html?g=gta-sa
+games/<slug>/       One page per game, written by .github/build_pages.py: games/gta-sa/
+game.html           Sends old game.html?g=gta-sa links to the new pages
 assets/             style.css, theme.js, common.js, home.js, game.js
 data/games.json     The game list: title, year, platforms, input types, cheat count
 data/<slug>.json    One file per game with every cheat and its sources
 covers/             Cover art, covers/<slug>.jpg at 600x800
 sw.js               Offline support: saves the pages and every game's data
-sitemap.xml         Every game page, for search engines
+sitemap.xml         Every game page, for search engines (written by build_pages.py)
 404.html            The page GitHub shows for a broken link
 manifest.webmanifest  Lets the site install like an app; icons live in assets/
-.github/            Data check, its workflow, and the issue forms
+.github/            Page builder and its template, data check, its workflow, and the issue forms
 DESIGN.md           Design decisions and the reasons for them
 ```
 
 Pushing to `main` deploys the site. `.nojekyll` must stay so GitHub serves every file as-is.
 
-Game pages live at `game.html?g=<slug>`, with an optional `&p=<platform>`. The older `game.html#<slug>` links still work.
+Game pages live at `games/<slug>/`, with an optional `?p=<platform>`. Old `game.html?g=<slug>` and `game.html#<slug>` links redirect there.
+
+After changing anything in `data/`, or the page template `.github/game-page.html`, run `python3 .github/build_pages.py` and commit what it writes. Don't edit `games/` by hand. The data check fails if the pages are out of date.
 
 ### Cover art
 

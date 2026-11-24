@@ -1,6 +1,7 @@
 """Checks the cheat data before it goes live. Run from the repo root: python .github/check_data.py
 
-Fails (exit 1) with a list of problems if anything in data/, covers/ or sitemap.xml is out of step.
+Fails (exit 1) with a list of problems if anything in data/, covers/ or the pages written from them
+(games/, sitemap.xml, the home page's Discord embed) is out of step.
 Uses only the Python standard library.
 """
 import datetime
@@ -195,14 +196,19 @@ def main():
         if name != 'games' and name not in slugs:
             bad(path, 'not listed in data/games.json')
             load(path)
-    check_discord_embed(index.get('games', []))
+    if problems:
+        return  # the pages are written from the data, so fix the data first
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    sys.dont_write_bytecode = True
+    import build_pages
     try:
-        sitemap = open('sitemap.xml', encoding='utf-8').read()
-        for s in slugs:
-            if f'game.html?g={s}<' not in sitemap:
-                bad('sitemap.xml', f'missing game.html?g={s}')
-    except OSError:
-        bad('sitemap.xml', 'missing')
+        for path in build_pages.stale():
+            bad(path, 'out of date with the data; run python3 .github/build_pages.py and commit what it writes')
+    except (OSError, ValueError, KeyError) as e:
+        bad('.github/build_pages.py', f'could not write the pages ({e})')
+        return
+    for path in ['index.html'] + [f'games/{s}/index.html' for s in slugs]:
+        check_discord_embed(path)
 
 
 SITE = 'https://nbdbatman.github.io/Rockstar-Cheat-Index/'
@@ -210,12 +216,12 @@ EMBED_TYPES = {1, 2, 9, 10, 11, 12, 14, 17}
 BUTTON_KEYS = {'id', 'type', 'url', 'style', 'label', 'emoji', 'disabled'}
 
 
-def check_discord_embed(games):
-    """The Discord link preview in index.html. Discord drops it if it breaks their rules, and its
-    counts are typed into the page, so check both. Rules: discord-api-docs, link-previews/component-embeds."""
-    where = 'index.html discord:component-embed'
+def check_discord_embed(path):
+    """A page's Discord link preview. Discord drops one that breaks its rules, sometimes with no
+    preview at all. Rules: discord-api-docs, developers/link-previews/component-embeds.mdx."""
+    where = f'{path} discord:component-embed'
     try:
-        html = open('index.html', encoding='utf-8').read()
+        html = open(path, encoding='utf-8').read()
     except OSError:
         return
     m = re.search(r'<script id="discord:component-embed" type="application/json">(.*?)</script>', html, re.S)
@@ -259,13 +265,6 @@ def check_discord_embed(games):
     walk(top, 0)
     if len(found) > 40:
         bad(where, f'{len(found)} components; Discord allows 40')
-    text = ' '.join(c.get('content', '') for c in found if c.get('type') == 10)
-    total = sum(g.get('count', 0) for g in games if not g.get('pending'))
-    for hit in re.finditer(r'\*\*([\d,]+) (cheats|games)\*\*', text):
-        n, word = hit.groups()
-        want = total if word == 'cheats' else len(games)
-        if int(n.replace(',', '')) != want:
-            bad(where, f'says {n} {word}, but games.json has {want}')
 
 
 if __name__ == '__main__':

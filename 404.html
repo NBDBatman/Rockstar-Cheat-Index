@@ -52,7 +52,7 @@
     var p = document.getElementById('guess');
     p.textContent = 'Looking for ';
     var a = document.createElement('a');
-    a.href = '/Rockstar-Cheat-Index/game.html?g=' + g.slug;
+    a.href = '/Rockstar-Cheat-Index/games/' + g.slug + '/';
     a.textContent = g.title + ' cheats';
     p.appendChild(a);
     p.appendChild(document.createTextNode('?'));

@@ -61,7 +61,7 @@
     if (g.pending) {
       act.appendChild(el('p', { style: 'margin:0;font-weight:500', text: 'No cheats are confirmed for ' + g.short + ' yet.' }));
     } else {
-      act.appendChild(el('a', { class: 'btn-primary', href: 'game.html?g=' + g.slug, text: 'See all ' + g.count + ' ' + g.short + ' cheats' }));
+      act.appendChild(el('a', { class: 'btn-primary', href: CI.gamePage(g.slug), text: 'See all ' + g.count + ' ' + g.short + ' cheats' }));
       if (g.sample) act.appendChild(el('span', { class: 'muted', style: 'font-size:15px' }, ['Example: ', el('span', { class: 'mono', style: 'font-weight:600;color:var(--ink)', text: g.sample })]));
     }
   }

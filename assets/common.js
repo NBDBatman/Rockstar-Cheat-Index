@@ -1,5 +1,9 @@
 // Shared helpers for both pages.
 var CI = (function () {
+  // The site's root URL, worked out from this script's own address (assets/common.js), so pages at
+  // any depth (index.html, games/<slug>/) fetch data, covers and the service worker from one place.
+  var ROOT = new URL('..', document.currentScript.src).href;
+
   function el(tag, attrs, kids) {
     var n = document.createElement(tag);
     if (attrs) for (var k in attrs) {
@@ -14,7 +18,9 @@ var CI = (function () {
     return n;
   }
 
-  function getJSON(url) {
+  // Paths are from the site root: getJSON('data/games.json').
+  function getJSON(path) {
+    var url = ROOT + path;
     return fetch(url, { cache: 'no-cache' }).then(function (r) {
       if (!r.ok) throw new Error(r.status + ' ' + url);
       return r.json();
@@ -111,10 +117,13 @@ var CI = (function () {
     if (!big) img.loading = 'lazy'; else img.setAttribute('fetchpriority', 'high');
     img.onload = function () { slot.classList.add('has-art'); img.alt = game.title + ' cover art'; };
     img.onerror = function () { img.remove(); };
-    img.src = 'covers/' + game.slug + '.jpg';
+    img.src = ROOT + 'covers/' + game.slug + '.jpg';
     slot.appendChild(img);
     return slot;
   }
+
+  // A game's own page, from the site root: games/<slug>/
+  function gamePage(slug) { return ROOT + 'games/' + slug + '/'; }
 
   function countText(g) { return g.pending ? 'TBC' : String(g.count); }
 
@@ -198,10 +207,10 @@ var CI = (function () {
 
   // Works offline after the first visit. Browsers only allow this on https and localhost.
   if ('serviceWorker' in navigator && window.isSecureContext) {
-    window.addEventListener('load', function () { navigator.serviceWorker.register('sw.js').catch(function () {}); });
+    window.addEventListener('load', function () { navigator.serviceWorker.register(ROOT + 'sw.js').catch(function () {}); });
   }
 
-  return { el: el, getJSON: getJSON, lastGame: lastGame, lastPlatform: lastPlatform, stars: stars, setStars: setStars,
+  return { root: ROOT, gamePage: gamePage, el: el, getJSON: getJSON, lastGame: lastGame, lastPlatform: lastPlatform, stars: stars, setStars: setStars,
     renderCombo: renderCombo, comboWords: comboWords, padButtons: padButtons, cover: cover, countText: countText,
     focusKey: focusKey, restoreFocus: restoreFocus, copy: copy, announce: announce };
 })();

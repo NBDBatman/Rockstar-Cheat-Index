@@ -1,7 +1,7 @@
 // Offline support. Pages, scripts and every game's data are saved on the first visit;
 // covers are saved as they're seen. Online, pages and data always come fresh from the
 // network, so edits show up straight away. Only same-site files and Google Fonts are touched.
-var CACHE = 'ci-v2';
+var CACHE = 'ci-v3';
 var SHELL = ['./', 'index.html', 'game.html', 'assets/style.css', 'assets/theme.js', 'assets/common.js',
   'assets/home.js', 'assets/game.js', 'data/games.json', 'manifest.webmanifest', 'assets/icon.svg',
   'assets/icon-192.png'];
@@ -9,9 +9,9 @@ var SHELL = ['./', 'index.html', 'game.html', 'assets/style.css', 'assets/theme.
 self.addEventListener('install', function (e) {
   e.waitUntil(caches.open(CACHE).then(function (cache) {
     return cache.addAll(SHELL).then(function () {
-      // Every game file, from the index, so any game opens offline.
+      // Every game's page and data file, from the index, so any game opens offline.
       return fetch('data/games.json').then(function (r) { return r.json(); }).then(function (d) {
-        return cache.addAll(d.games.map(function (g) { return 'data/' + g.slug + '.json'; }));
+        return cache.addAll([].concat.apply([], d.games.map(function (g) { return ['games/' + g.slug + '/', 'data/' + g.slug + '.json']; })));
       }).catch(function () {});
     });
   }).then(function () { return self.skipWaiting(); }));
@@ -31,7 +31,7 @@ function save(req, res) {
   return res;
 }
 
-// Game pages differ only by ?g=, so offline any saved copy of the page will do.
+// Offline, a page's saved copy serves any ?p= or &c= on it; a page never saved falls back to home.
 function fromCache(req) {
   var nav = req.mode === 'navigate';
   return caches.match(req, { ignoreSearch: nav }).then(function (hit) {

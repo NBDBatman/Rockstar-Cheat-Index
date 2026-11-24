@@ -29,16 +29,19 @@ button:disabled { cursor: not-allowed; }
 /* header */
 .site-head { --focus: #e8d77a; background: var(--head); color: #d9dbd6; border-bottom: 1px solid var(--rule); }
 .site-head .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px; min-height: 64px; padding-top: 8px; padding-bottom: 8px; }
-.brand { display: flex; align-items: baseline; gap: 12px; text-decoration: none; color: #d9dbd6; padding: 8px 0; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: #d9dbd6; padding: 8px 0; }
+/* The logo is the favicon (assets/icon.svg), inlined so it needs no extra request. */
+.brand svg { flex: none; display: block; }
+.brand-text { display: flex; align-items: baseline; gap: 12px; }
 .brand b { font-size: 20px; letter-spacing: -0.01em; }
-.brand span { font-size: 13px; color: #969a9f; }
+.brand-text span { font-size: 13px; color: #969a9f; }
 .head-tools { display: flex; flex-wrap: wrap; align-items: center; gap: 4px; }
 .head-tools nav { display: flex; flex-wrap: wrap; font-size: 15px; }
 .head-tools nav a { color: #d9dbd6; text-decoration: none; padding: 12px 14px; border-radius: 3px; }
 .head-tools nav a:hover { background: #22252a; }
 .theme-btn { display: flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 14px; background: transparent; color: #d9dbd6; border: 1px solid #767b82; border-radius: 3px; font: inherit; font-size: 14px; }
 .theme-btn:hover { background: #2a2d33; }
-@media (max-width: 560px) { .brand span { display: none; } }
+@media (max-width: 560px) { .brand-text span { display: none; } }
 
 /* buttons and tabs */
 .btn { min-height: 44px; padding: 0 16px; background: transparent; color: var(--ink); border: 1px solid var(--ctl); border-radius: 3px; font: inherit; font-size: 15px; font-weight: 500; }

@@ -15,7 +15,7 @@ The owner tried a louder tabloid direction and preferred this one, so keep it.
 - **Motion:** hover and pressed states only. The 1px press nudge is off under `prefers-reduced-motion`.
 - **Stars** are outline icons in the muted ink, filled with ink when on. Never the accent, because starring is a selected state.
 - **Linked cheat:** a cheat opened from a link gets a 3px ink bar down its left edge, like a pen mark in the margin. Ink, not the accent.
-- **App icon:** a charcoal page with three lines, the middle one highlighted in butter yellow. No text, no game art, nothing that looks like Rockstar's branding. The link preview image uses the same type and colours as the site.
+- **App icon and logo:** a charcoal page with three lines, the middle one highlighted in butter yellow. The same drawing is the favicon (`assets/icon.svg`), the app icons and the header logo, inlined beside the name at 32px on every page. No text, no game art, nothing that looks like Rockstar's branding. The link preview image uses the same type and colours as the site.
 - **Careful lines** (cheat risks) use the warning colour with a bold "Careful:", the same as game-level warnings. They're reserved for real harm: lost saves, crashes, missions that can't be finished.
 - **Practice mode** marks hit keys by inverting them to ink and rings the next key in ink. No accent, no animation beyond the state change, so it stays calm and works under reduced motion.
 - **Report links** are small muted text under Copy, so they're there when needed without competing with the code.

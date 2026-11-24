@@ -36,9 +36,12 @@
  "sources": [
   "https://www.redbull.com/gb-en/gta-6-cheat-codes",
   "https://www.vice.com/en/article/gta-6-cheat-codes-list/",
-  "https://screenrant.com/gta-6-cheats-ps5-xbox/"
+  "https://screenrant.com/gta-6-cheats-ps5-xbox/",
+  "https://www.gtabase.com/gta-6/gta-6-cheats-ps5-cheat-codes",
+  "https://www.gamesradar.com/games/grand-theft-auto/gta-6-cheats/",
+  "https://www.pcgamer.com/games/grand-theft-auto/gta-6-cheats-list/"
  ],
- "checked": "2026-11-19",
+ "checked": "2026-11-24",
  "cheats": [
   {
    "effect": "Give $250,000",
@@ -186,8 +189,9 @@
   {
    "effect": "Get drunk",
    "category": "Player",
-   "tbd": true,
-   "codes": {},
+   "codes": {
+    "ps": "Up Left Right Up Up Left Right Up Left Right"
+   },
    "requirement": "Spend $2,500 on alcohol."
   },
   {
@@ -431,15 +435,17 @@
   {
    "effect": "Videotape screen filter",
    "category": "Other",
-   "tbd": true,
-   "codes": {},
+   "codes": {
+    "ps": "Down Down Up Right Right Up Left Left Right Down"
+   },
    "requirement": "Complete 50 activities with your partner."
   },
   {
    "effect": "Dark Mirror screen filter",
    "category": "Other",
-   "tbd": true,
-   "codes": {},
+   "codes": {
+    "ps": "Down Down Up Right Right Up Left Left Right Left"
+   },
    "requirement": "Earn $500,000 selling vehicles."
   },
   {

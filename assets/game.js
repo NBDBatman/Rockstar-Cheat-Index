@@ -7,7 +7,7 @@
   var REPO = 'https://github.com/NBDBatman/Rockstar-Cheat-Index';
   var route = parseRoute();
   var state = { game: null, input: null, cat: 'All', copied: null, q: '', stars: [], target: route.cheat };
-  var listBox = null, printBtn = null;
+  var listBox = null, printBtn = null, starCopyBtn = null, shareBtn = null;
   // Controller practice: state.practice is { id, effect, keys, hold, pos, done } while a combo is being practised.
   var padSeen = false, prevButtons = [];
 
@@ -250,9 +250,14 @@
     q.setAttribute('aria-keyshortcuts', '/');
     // Print uses what's on screen, so the Starred tab or a filter prints just those cheats.
     printBtn = el('button', { class: 'btn print-btn', type: 'button', 'data-fk': 'print', text: 'Print list', onclick: function () { window.print(); } });
+    // Copies every starred cheat on this platform as plain text. Shown once something is starred.
+    starCopyBtn = el('button', { class: 'btn', type: 'button', 'data-fk': 'copy-starred', onclick: copyStarred });
+    // The phone's own share menu, with this page's address (which names the linked cheat, if any).
+    // Only where the browser has one.
+    shareBtn = navigator.share ? el('button', { class: 'btn', type: 'button', 'data-fk': 'share', onclick: share }) : null;
     var tools = el('div', { class: 'list-tools' }, [
       el('div', { class: 'filter' }, [el('label', { for: 'fq', text: 'Filter ' + g.short + ' cheats' }), q]),
-      printBtn
+      el('div', { class: 'tool-btns' }, [shareBtn, starCopyBtn, printBtn])
     ]);
 
     listBox = el('div');
@@ -298,6 +303,11 @@
     });
 
     printBtn.textContent = state.cat === 'Starred' ? 'Print starred' : state.cat === 'All' && !needle ? 'Print list' : 'Print these';
+    var nStar = onPlat.filter(function (c) { return isStar(c) && !c.tbd; }).length;
+    starCopyBtn.hidden = !nStar;
+    starCopyBtn.textContent = state.starCopied ? (state.starCopied.ok ? 'Copied' : 'Failed') : 'Copy ' + nStar + ' starred';
+    starCopyBtn.setAttribute('aria-label', 'Copy the codes for your ' + nStar + ' starred ' + (nStar === 1 ? 'cheat' : 'cheats') + ' on ' + input.label);
+    if (shareBtn) shareBtn.textContent = state.target ? 'Share this cheat' : 'Share';
 
     var list = el('ul', { class: 'cheats' });
     rows.forEach(function (c, i) {
@@ -371,6 +381,27 @@
     listBox.appendChild(el('div', { class: 'cheat-head', 'aria-hidden': 'true' }, [el('span', { text: 'Effect' }), el('span', { text: 'Category' }), el('span', { text: codeHead }), el('span')]));
     listBox.appendChild(list);
     showProgress();
+  }
+
+  // Plain text, one cheat per line: "Effect: code". Combos use the button names the Copy button gives.
+  function copyStarred() {
+    var g = state.game, input = state.input;
+    var rows = onPlatform(g, input).filter(function (c) { return !c.tbd && state.stars.indexOf(c.effect) !== -1; });
+    var text = g.title + ', ' + input.label + '\n' + rows.map(function (c) { return c.effect + ': ' + copyText(c, input); }).join('\n');
+    function done(ok) {
+      state.starCopied = { ok: ok };
+      render('copy-starred');
+      CI.announce(document.getElementById('announce'), ok ? 'Copied ' + rows.length + ' starred codes.' : 'Couldn’t copy. Try printing the Starred tab instead.');
+      // Back to the normal label after a moment. Only the list is redrawn, so focus and the filter stay put.
+      setTimeout(function () { state.starCopied = null; if (listBox && page.contains(listBox)) drawList(); }, 2000);
+    }
+    CI.copy(text).then(function () { done(true); }, function () { done(false); });
+  }
+
+  function share() {
+    var g = state.game;
+    var c = state.target && g.cheats.filter(function (x) { return cheatId(x) === state.target; })[0];
+    navigator.share({ title: (c ? c.effect + ', ' : '') + g.title + ' cheats', url: location.href }).catch(function () {});
   }
 
   function toggleStar(c) {

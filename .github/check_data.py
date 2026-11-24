@@ -7,6 +7,7 @@ import datetime
 import glob
 import json
 import os
+import re
 import struct
 import sys
 
@@ -130,10 +131,17 @@ def check_game(slug, entry):
     code_keys = {i for i, inp in inputs.items() if not inp.get('derive')}
 
     tbd = 0
+    # Stars and cheat links are keyed by effect name, so two cheats with one name share a star and a link.
+    seen = {}
     for n, c in enumerate(cheats, 1):
         where = f'{path} cheat {n} ({c.get("effect", "?")})'
         if not c.get('effect'):
             bad(where, 'no effect')
+        else:
+            link_id = re.sub(r'[^a-z0-9]+', '-', c['effect'].lower()).strip('-')
+            if link_id in seen:
+                bad(where, f'same effect name as cheat {seen[link_id]}; stars and links would treat them as one cheat')
+            seen.setdefault(link_id, n)
         if c.get('category') not in CATEGORIES:
             bad(where, f'category "{c.get("category")}" is not one of {sorted(CATEGORIES)}')
         for field in ('effect', 'requirement', 'note', 'risk'):

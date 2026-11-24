@@ -394,8 +394,11 @@
     var text = g.pending ? 'Cheat codes for ' + g.title + ' are not confirmed yet.'
       : 'All ' + g.count + ' official ' + g.title + ' cheat codes for ' + (g.consoles || g.platforms).join(', ') + '. Copy any code in one tap. No ads.';
     if (d) d.setAttribute('content', text);
+    // game.html has no canonical of its own: one pointing at the bare page would tell search
+    // engines every game is the same page. Each game gets its own once it loads.
     var canon = document.querySelector('link[rel="canonical"]');
-    if (canon) canon.setAttribute('href', 'https://nbdbatman.github.io/Rockstar-Cheat-Index/game.html?g=' + g.slug);
+    if (!canon) { canon = el('link', { rel: 'canonical' }); document.head.appendChild(canon); }
+    canon.setAttribute('href', 'https://nbdbatman.github.io/Rockstar-Cheat-Index/game.html?g=' + g.slug);
   }
 
   function load() {

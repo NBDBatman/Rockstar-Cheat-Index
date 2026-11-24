@@ -32,7 +32,7 @@ Slugs: `gta`, `gta-london`, `gta-2`, `gta-iii`, `gta-vc`, `gta-sa`, `warriors`, 
 ## Commands
 
 - Run locally: `python3 -m http.server 8000`, then open http://localhost:8000. Opening the HTML file directly fails because the pages `fetch` their JSON.
-- Check data: `python3 .github/check_data.py` from the repo root. It checks JSON, counts, `consoles`/`platforms` matching games.json, input ids, combo button names, tbd/incomplete, em dashes, covers at 600x800 and the sitemap. GitHub runs it on every push and pull request, so keep it passing.
+- Check data: `python3 .github/check_data.py` from the repo root. It checks JSON, counts, duplicate effect names, `consoles`/`platforms` matching games.json, input ids, combo button names, tbd/incomplete, em dashes, covers at 600x800 and the sitemap. GitHub runs it on every push and pull request, so keep it passing.
 - Deploy: push to `main`. GitHub Pages serves from the root at https://nbdbatman.github.io/Rockstar-Cheat-Index/. `.nojekyll` must stay.
 
 ## Data format

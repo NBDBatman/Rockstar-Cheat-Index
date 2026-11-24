@@ -65,7 +65,7 @@
    }
   },
   {
-   "effect": "Invincibility, alternate",
+   "effect": "Invincibility, alternate 2",
    "category": "Player",
    "codes": {
     "pc": "YAKUZADEATH"
@@ -115,7 +115,7 @@
    }
   },
   {
-   "effect": "All weapons, alternate",
+   "effect": "All weapons, alternate 2",
    "category": "Weapons",
    "codes": {
     "pc": "NAVARONE"

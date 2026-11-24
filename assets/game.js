@@ -426,8 +426,15 @@
       showState('error', 'That game isn’t in the index.', 'Pick a game from the list instead.', el('a', { class: 'btn-primary', href: CI.root, text: 'Back to all games' }));
       return;
     }
-    showState('loading', 'Loading cheats…');
+    // The page arrives with its first view already in the HTML (written by build_pages.py), so keep
+    // that on screen while the data loads instead of a loading state. Retries after an error do show it.
+    var pre = page.hasAttribute('data-prerendered');
+    if (!pre) showState('loading', 'Loading cheats…');
     CI.getJSON('data/' + slug + '.json').then(function (g) {
+      page.removeAttribute('data-prerendered');
+      // Anything typed into the filter before the script took over carries across.
+      var early = document.getElementById('fq');
+      if (pre && early && early.value) state.q = early.value;
       state.game = g;
       state.input = pickInput(g, route.plat);
       state.stars = CI.stars(g.slug);
@@ -438,6 +445,16 @@
       var t = state.target && document.getElementById('c-' + state.target);
       if (t) t.scrollIntoView({ block: 'center' });
     }).catch(function () {
+      if (pre) {
+        // Keep the written-in list readable, and say why its buttons don't work yet.
+        var old = document.getElementById('load-error');
+        if (old) old.remove();
+        page.insertBefore(el('div', { class: 'state', id: 'load-error', role: 'alert' }, [
+          el('p', { text: 'The codes below are readable, but filtering, stars and Copy didn’t load. Check your connection and try again.' }),
+          el('button', { class: 'btn', type: 'button', text: 'Try again', onclick: load })
+        ]), page.firstChild);
+        return;
+      }
       document.getElementById('crumb').textContent = 'Couldn’t load';
       showState('error', 'This cheat list didn’t load.', 'Check your connection and try again. If it keeps failing, the file may be missing from the site.',
         el('button', { class: 'btn', type: 'button', text: 'Try again', onclick: load }));

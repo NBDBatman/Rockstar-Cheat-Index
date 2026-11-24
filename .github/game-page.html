@@ -47,8 +47,10 @@
 
 <main id="main" class="wrap" data-game="{{slug}}">
   <nav class="crumbs" aria-label="Breadcrumb"><a href="../../">All games</a> <span aria-hidden="true">/</span> <span aria-current="page" id="crumb">{{title}}</span></nav>
-  <div id="page"></div>
-  <noscript><p style="padding-top:24px">Cheat Index needs JavaScript to load the cheat lists. The data is also on <a href="https://github.com/NBDBatman/Rockstar-Cheat-Index/tree/main/data">GitHub</a> as plain JSON files.</p></noscript>
+  <div id="page" data-prerendered>
+{{prerender}}
+</div>
+  <noscript><p style="padding-top:24px">The platform switch, filter, stars and Copy buttons need JavaScript. The data is also on <a href="https://github.com/NBDBatman/Rockstar-Cheat-Index/tree/main/data">GitHub</a> as plain JSON files.</p></noscript>
   <p class="sr" aria-live="polite" id="announce"></p>
 </main>
 

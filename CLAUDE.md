@@ -35,6 +35,7 @@ Slugs: `gta`, `gta-london`, `gta-2`, `gta-iii`, `gta-vc`, `gta-sa`, `warriors`, 
 
 - Run locally: `python3 -m http.server 8000`, then open http://localhost:8000. Opening the HTML file directly fails because the pages `fetch` their JSON.
 - Build pages: `python3 .github/build_pages.py` from the repo root, after any change to `data/` or `.github/game-page.html`. Commit what it writes. To change the game page's HTML, edit the template, never the files in `games/`.
+- Each game page has its first view (first platform, nothing filtered) written into the HTML by `prerender()` in build_pages.py, so search engines see the codes and the list shows before scripts run. game.js keeps it on screen while loading, then redraws it live. `prerender()` copies the markup of game.js's `draw()` and `drawList()`: when you change one, change the other, and check that the page doesn't jump when the script takes over.
 - Check data: `python3 .github/check_data.py` from the repo root. It checks JSON, counts, duplicate effect names, `consoles`/`platforms` matching games.json, input ids, combo button names, tbd/incomplete, em dashes, covers at 600x800, every Discord embed against Discord's rules, and that the pages build_pages.py writes are up to date. GitHub runs it on every push and pull request, so keep it passing.
 - Deploy: push to `main`. GitHub Pages serves from the root at https://nbdbatman.github.io/Rockstar-Cheat-Index/. `.nojekyll` must stay.
 

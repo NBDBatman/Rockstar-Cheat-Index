@@ -43,78 +43,34 @@ def text(content):
     return {'type': 10, 'content': content}
 
 
-def combo_words(code):
-    """PlayStation button names as a short sentence, like the Copy button gives on the PlayStation tab."""
-    keys = code.split(' ')
-    hold = None
-    if keys[0].startswith('HOLD:'):
-        hold = keys.pop(0)[5:]
-    return (f'Hold {hold}, then ' if hold else '') + ', '.join(keys)
-
-
-def code_for(c, inp):
-    if inp['id'] in c.get('not', []):
-        return None
-    return c['codes'].get(inp.get('derive', inp['id']))
-
-
-def examples(g, n=4):
-    """A few cheats to show in the embed: one from each category in list order, on the first typed
-    input if there is one (they're short), otherwise the first input. Never a TBD cheat."""
-    inp = next((i for i in g['inputs'] if i['type'] != 'combo'), g['inputs'][0] if g['inputs'] else None)
-    if not inp:
-        return None, []
-    have = [c for c in g['cheats'] if not c.get('tbd') and code_for(c, inp)]
-    picked, cats = [], set()
-    for c in have:
-        if c['category'] not in cats:
-            picked.append(c)
-            cats.add(c['category'])
-    for c in have:
-        if c not in picked:
-            picked.append(c)
-    return inp, picked[:n]
-
-
-def plural(n, word):
-    return f'{n} {word}' + ('' if n == 1 else 's')
+def platform_list(platforms):
+    """Platform families as a phrase: "PC, PlayStation, Xbox and handhelds"."""
+    order = ['PC', 'PlayStation', 'Xbox', 'Switch', 'Handheld']
+    names = ['handhelds' if p == 'Handheld' else p for p in sorted(set(platforms), key=order.index)]
+    return ', '.join(names[:-1]) + ' and ' + names[-1] if len(names) > 1 else names[0]
 
 
 def game_embed(g):
+    """Site logo, the game's title and a one-line description, its cover, then buttons. No codes."""
     url = page_url(g['slug'])
-    consoles = ', '.join(g.get('consoles') or g['platforms'])
-    head = f'# [{md(g["title"])}]({url})\n'
     if g.get('pending'):
-        head += f'No cheats are confirmed yet.\n-# {g["year"]} · {md(consoles)}'
+        blurb = 'No cheats are confirmed yet. This page fills in once they are.'
     else:
-        head += f'**{plural(len(g["cheats"]), "cheat")}** for {md(consoles)}\n-# {g["year"]} · {md(" · ".join(g["methods"]))}'
-    parts = [{'type': 9, 'components': [text(head)],
-              'accessory': {'type': 11, 'media': {'url': f'{SITE}covers/{g["slug"]}.jpg'}, 'description': f'{g["title"]} cover art'}}]
-
-    inp, ex = examples(g)
-    if ex:
-        heading = {'phone': 'A few phone numbers', 'phrase': 'A few phrases'}.get(inp['type'], f'A few {md(inp["label"])} codes')
-        lines = [f'**{heading}**']
-        for c in ex:
-            code = code_for(c, inp)
-            shown = combo_words(code) if inp['type'] == 'combo' else code
-            lines.append(f'{md(c["effect"])}: `{shown}`')
-        parts += [{'type': 14, 'spacing': 1}, text('\n'.join(lines))]
-    tbd = sum(1 for c in g['cheats'] if c.get('tbd'))
-    if tbd:
-        parts.append(text(f'-# {tbd} of {len(g["cheats"])} codes are still to be found.'))
-
+        blurb = (f'Every official cheat code, {len(g["cheats"])} in all, for {platform_list(g["platforms"])}. '
+                 'Pick your platform and copy the code.')
+    parts = [
+        {'type': 9, 'components': [text(f'-# Cheat Index\n# [{md(g["title"])}]({url})\n{md(blurb)}')],
+         'accessory': {'type': 11, 'media': {'url': SITE + 'assets/icon-512.png'}, 'description': 'Cheat Index icon'}},
+        {'type': 12, 'items': [{'media': {'url': f'{SITE}covers/{g["slug"]}.jpg'}, 'description': f'{g["title"]} cover art'}]},
+        {'type': 14, 'spacing': 1},
+    ]
     if not g.get('pending') and len(g['inputs']) > 1:
         # A button per platform, opening the page on that tab. Rows of three keep the labels readable.
         plats = [btn(i['label'], f'{url}?p={i["id"]}') for i in g['inputs']]
-        parts.append({'type': 14, 'spacing': 1})
         for i in range(0, len(plats), 3):
             parts.append({'type': 1, 'components': plats[i:i + 3]})
-    else:
-        parts.append({'type': 14, 'spacing': 1})
     parts.append({'type': 1, 'components': [btn('All games', SITE), btn('Report a wrong code', REPO + '/issues')]})
-    note = ('-# ' + md(g['warning']) + '\n' if g.get('warning') else '') + '-# Unofficial fan reference, not affiliated with Rockstar Games.'
-    parts.append(text(note))
+    parts.append(text('-# Unofficial fan reference, not affiliated with Rockstar Games.'))
     return {'component': {'type': 17, 'accent_color': YELLOW, 'components': parts}}
 
 
@@ -122,9 +78,7 @@ def home_embed(games):
     total = sum(g['count'] for g in games if not g.get('pending'))
     gallery = [s for s in ('gta-vi', 'rdr2', 'gta-v', 'gta-sa') if any(g['slug'] == s for g in games)]
     titles = {g['slug']: g['title'] for g in games}
-    order = ['PC', 'PlayStation', 'Xbox', 'Switch', 'Handheld']
-    families = ['handhelds' if p == 'Handheld' else p for p in sorted({p for g in games for p in g['platforms']}, key=order.index)]
-    fam = ', '.join(families[:-1]) + ' and ' + families[-1] if len(families) > 1 else families[0]
+    fam = platform_list([p for g in games for p in g['platforms']])
     newest = max(games, key=lambda g: g['order'])
     return {'component': {'type': 17, 'accent_color': YELLOW, 'components': [
         {'type': 9, 'components': [text(f'# [Cheat Index]({SITE})\nEvery official cheat code Rockstar built into their games, '

@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-Cheat Index is a fan reference site listing the official in-game cheat codes from Rockstar games, from GTA (1997) to GTA VI. It's a static site on GitHub Pages: plain HTML, CSS and JavaScript with JSON data. There's no framework, no build step and no dependencies.
+Cheat Index is a fan reference site listing the official in-game cheat codes from Rockstar games, from GTA (1997) to GTA VI. It's a static site on GitHub Pages: plain HTML, CSS and JavaScript with JSON data. There's no framework and no dependencies. One script, `.github/build_pages.py`, writes a page per game from the data; its output is committed, so deploying is still just a push.
 
 The owner is MercuryHQ (GitHub: NBDBatman). British English in all copy.
 
@@ -8,21 +8,23 @@ The owner is MercuryHQ (GitHub: NBDBatman). British English in all copy.
 
 ```
 index.html          Home: hero + search, selected-game panel, cover grid, input-type legend
-game.html           Game page: game.html?g=<slug>&p=<input id>. Old game.html#<slug>[/<input id>] links still work
+games/<slug>/       One page per game: games/<slug>/?p=<input id>&c=<cheat id>. Written by build_pages.py; never edit by hand
+game.html           Redirects old game.html?g=<slug>&p=... and game.html#<slug>/<input id> links to games/<slug>/
 assets/style.css    All styles. Theme tokens are CSS variables on [data-theme]
 assets/theme.js     Runs in <head> before paint. Dark is the default, saved in localStorage 'ci-theme'
-assets/common.js    window.CI: el(), getJSON(), renderCombo(), comboWords(), cover(), countText(), copy(), stars...
-                    Also registers sw.js
+assets/common.js    window.CI: root, gamePage(), el(), getJSON(), renderCombo(), comboWords(), cover(), countText(), copy(), stars...
+                    Also registers sw.js. CI.root is the site root, so paths work at any page depth; getJSON() takes root paths
 assets/home.js      Grid, sort, platform filter, search (titles, then every cheat once loaded)
-assets/game.js      Cheat list, platform switch, filter, category tabs, stars, copy, report links, print, states
+assets/game.js      Reads the slug from <main data-game>. Cheat list, platform switch, filter, category tabs, stars, copy, report links, print, states
 data/games.json     Index of games. `count` must equal the length of that game's cheats array
 data/<slug>.json    One file per game
 covers/<slug>.jpg   Cover art, 600x800. The site shows a labelled slot when the file is missing
 sw.js               Service worker for offline use. Network first for pages and data, cache first for covers and fonts
-sitemap.xml         Home plus game.html?g=<slug> for every game. Add new games here
+sitemap.xml         Home plus games/<slug>/ for every game. Written by build_pages.py
 404.html            GitHub Pages' not-found page. Uses absolute /Rockstar-Cheat-Index/ paths, as it's shown at any depth
 manifest.webmanifest  App install. Icons: assets/icon.svg (favicon), icon-192/512.png, apple-touch-icon.png; og.png is the 1200x630 link preview
-.github/            check_data.py (data checks), workflows/check-data.yml (runs it on every push), ISSUE_TEMPLATE/
+.github/            build_pages.py (writes games/, sitemap.xml and the home page's Discord embed), game-page.html (its template),
+                    check_data.py (data checks), workflows/check-data.yml (runs it on every push), ISSUE_TEMPLATE/
 DESIGN.md           Design decisions and reasons. Read it before any visual change
 LICENSE             MIT, Copyright (c) 2026 MercuryHQ/NBDBatman
 ```
@@ -32,7 +34,8 @@ Slugs: `gta`, `gta-london`, `gta-2`, `gta-iii`, `gta-vc`, `gta-sa`, `warriors`, 
 ## Commands
 
 - Run locally: `python3 -m http.server 8000`, then open http://localhost:8000. Opening the HTML file directly fails because the pages `fetch` their JSON.
-- Check data: `python3 .github/check_data.py` from the repo root. It checks JSON, counts, duplicate effect names, `consoles`/`platforms` matching games.json, input ids, combo button names, tbd/incomplete, em dashes, covers at 600x800 and the sitemap. GitHub runs it on every push and pull request, so keep it passing.
+- Build pages: `python3 .github/build_pages.py` from the repo root, after any change to `data/` or `.github/game-page.html`. Commit what it writes. To change the game page's HTML, edit the template, never the files in `games/`.
+- Check data: `python3 .github/check_data.py` from the repo root. It checks JSON, counts, duplicate effect names, `consoles`/`platforms` matching games.json, input ids, combo button names, tbd/incomplete, em dashes, covers at 600x800, every Discord embed against Discord's rules, and that the pages build_pages.py writes are up to date. GitHub runs it on every push and pull request, so keep it passing.
 - Deploy: push to `main`. GitHub Pages serves from the root at https://nbdbatman.github.io/Rockstar-Cheat-Index/. `.nojekyll` must stay.
 
 ## Data format
@@ -75,7 +78,7 @@ Each cheat looks like:
 - New games and new codes need two sources that give the same code. For a code only one source has, leave it out and say so.
 - GTA VI (released 19 November 2026): all 61 cheats are listed, but cheats whose code hasn't been found are marked `tbd`. Fill in a code only when at least two independent sources give the same sequence, and add its URL to `sources`. Keep `incomplete: true` until no `tbd` cheats are left.
 - When cheats are added or removed, update `count` in `data/games.json`.
-- Every new game needs its cover, `covers/<slug>.jpg` at 600x800, and a `sitemap.xml` entry, in the same change.
+- Every new game needs its cover, `covers/<slug>.jpg` at 600x800, in the same change. Run `build_pages.py` to write its page and sitemap entry.
 - Stars are saved by effect name (localStorage `ci-stars`), so renaming an effect drops anyone's star on it. Rename only when it's worth it.
 
 ## Controller practice
@@ -84,11 +87,16 @@ On combo tabs, once the browser has seen a gamepad, each cheat gets a Practise b
 
 ## Discord link preview
 
-`index.html` has a `<script id="discord:component-embed">` in its `<head>`: a Components V2 layout Discord shows instead of the plain Open Graph card (spec: discord-api-docs, `developers/link-previews/component-embeds.mdx`). Discord doesn't run JavaScript, so it's static, and `game.html` doesn't have one, as one file serves every game. Keep it under 3,000 bytes and 40 components, with link buttons only and the Open Graph tags kept as the fallback. Its "**N cheats** across **N games**" line must match games.json; the data check enforces this. Test with Discord's Embed Debugger (https://discord.com/developers/embeds). Discord caches previews for about 30 minutes, so add `?v=2` to see a change.
+Every page has a `<script id="discord:component-embed">` in its `<head>`: a Components V2 layout Discord shows instead of the plain Open Graph card (spec: discord-api-docs, `developers/link-previews/component-embeds.mdx`). Discord doesn't run JavaScript, which is why each game has its own page. `build_pages.py` writes them all:
+
+- `game_embed()`, for game pages: "Cheat Index" with the site logo, the game's title and a one-line description, its cover, then a button per platform plus All games and Report a wrong code, and a one-line unofficial note. The owner chose no codes, warnings or TBD counts in it, so keep them out.
+- `home_embed()`, for `index.html` between its BEGIN/END markers: title and logo, four covers, the cheat and game counts, three buttons and the unofficial note.
+
+Keep each under 3,000 bytes and 40 components, with link buttons only and the Open Graph tags kept as the fallback. The data check enforces the limits. Test with Discord's Embed Debugger (https://discord.com/developers/embeds). Discord caches previews for about 30 minutes, so add `?v=2` to see a change.
 
 ## Offline cache
 
-`sw.js` serves covers and fonts from its cache once saved. When you replace a cover or change `sw.js`, bump `CACHE` in `sw.js` (`ci-v1` → `ci-v2`) so visitors get the new files. Pages, scripts and data are network first and don't need a bump.
+`sw.js` saves every game page and data file on install, and serves covers and fonts from its cache once saved. When you replace a cover or change `sw.js`, bump `CACHE` in `sw.js` (`ci-v1` → `ci-v2`) so visitors get the new files. Pages, scripts and data are network first and don't need a bump.
 
 ## Design rules (full reasons in DESIGN.md)
 
@@ -112,5 +120,5 @@ On combo tabs, once the browser has seen a gamepad, each cheat gets a Practise b
 
 - Don't add ads, analytics, trackers or third-party scripts. Google Fonts is the only external request.
 - Covers are the official front-of-box art, taken from Rockstar's own site where possible (their 640px box images, or a game's downloads page), cropped to 600x800. Rockstar logos and game fonts may appear inside a cover, but never in the site's own interface, and don't add anything else that makes the site look official.
-- Don't add a framework or build step unless the owner asks.
+- Don't add a framework or another build step unless the owner asks. `build_pages.py` is the one the owner asked for: keep it standard-library Python, and keep its output committed.
 - Repo: https://github.com/NBDBatman/Rockstar-Cheat-Index. Corrections go to its Issues; keep those links in the footer and on game pages.

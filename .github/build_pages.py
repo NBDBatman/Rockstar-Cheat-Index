@@ -98,7 +98,7 @@ def game_embed(g):
         for c in ex:
             code = code_for(c, inp)
             shown = combo_words(code) if inp['type'] == 'combo' else code
-            lines.append(f'`{shown}` {md(c["effect"])}')
+            lines.append(f'{md(c["effect"])}: `{shown}`')
         parts += [{'type': 14, 'spacing': 1}, text('\n'.join(lines))]
     tbd = sum(1 for c in g['cheats'] if c.get('tbd'))
     if tbd:

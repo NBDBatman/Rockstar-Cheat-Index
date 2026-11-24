@@ -90,10 +90,12 @@ On combo tabs, once the browser has seen a gamepad, each cheat gets a Practise b
 
 Every page has a `<script id="discord:component-embed">` in its `<head>`: a Components V2 layout Discord shows instead of the plain Open Graph card (spec: discord-api-docs, `developers/link-previews/component-embeds.mdx`). Discord doesn't run JavaScript, which is why each game has its own page. `build_pages.py` writes them all:
 
-- `game_embed()`, for game pages: "Cheat Index" with the site logo, the game's title and a one-line description, its cover, then a button per platform plus All games and Report a wrong code, and a one-line unofficial note. The owner chose no codes, warnings or TBD counts in it, so keep them out.
+- `game_embed()`, for game pages: "Cheat Index" with the site logo, the game's title and a one-line description, its cover, then a button per platform plus All games and Report a wrong code, and a one-line unofficial note. The owner chose no warnings or TBD counts in it.
 - `home_embed()`, for `index.html` between its BEGIN/END markers: title and logo, four covers, the cheat and game counts, three buttons and the unofficial note.
 
-Keep each under 3,000 bytes and 40 components, with link buttons only and the Open Graph tags kept as the fallback. The data check enforces the limits. Test with Discord's Embed Debugger (https://discord.com/developers/embeds). Discord caches previews for about 30 minutes, so add `?v=2` to see a change.
+No cheat codes in any link preview: not in the Discord embeds, Open Graph text or `assets/og.png`. The owner asked for this. When you replace `og.png`, bump its `?v=` in index.html's `og:image` so X and Discord fetch the new one.
+
+Keep each embed under 3,000 bytes and 40 components, with link buttons only and the Open Graph tags kept as the fallback. The data check enforces the limits. Test with Discord's Embed Debugger (https://discord.com/developers/embeds). Discord caches previews for about 30 minutes, so add `?v=2` to see a change.
 
 ## Offline cache
 

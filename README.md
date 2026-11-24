@@ -169,15 +169,9 @@ There are no ads, analytics, trackers or cookies. The only outside request is to
 
 ## AI disclosure
 
-Cheat Index is built with AI. MercuryHQ runs the project and decides what goes live, working with Claude, Anthropic's AI model, through Claude Code. Claude wrote most of the code, the design and the page text, and gathered and cross-checked the cheat data. Every commit made this way says so in a `Co-Authored-By: Claude` line, so the history shows exactly which changes it was part of.
+Cheat Index is made by MercuryHQ, assisted by Claude, Anthropic's AI model. Commits it helped with are marked `Co-Authored-By: Claude`.
 
-AI can get things wrong, so the cheat data follows rules that don't rely on trusting it:
-
-- Codes are copied from published sources, never generated. Each game's JSON file lists the sources its codes were checked against.
-- A new code needs two independent sources that give the same sequence. A code only one source has is left out, and a cheat with no confirmed code shows "TBD" rather than a guess.
-- The cover art is official box art, not AI-generated.
-
-If a code doesn't work in your game, please [report it](https://github.com/NBDBatman/Rockstar-Cheat-Index/issues). Each game page also has a Report link next to every cheat.
+Every code is copied from published sources and checked against at least two of them, never made up. If one doesn't work, please [report it](https://github.com/NBDBatman/Rockstar-Cheat-Index/issues).
 
 ## Licence
 
